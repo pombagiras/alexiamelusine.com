@@ -19,6 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize evolution slideshow
     initEvolutionSlideshow();
+
+    // Click to Copy Email functionality
+    const copyEmailBtn = document.querySelector('.copy-email-btn');
+    if (copyEmailBtn) {
+        const emailToCopy = copyEmailBtn.getAttribute('data-email');
+        const tooltip = copyEmailBtn.querySelector('.copy-tooltip');
+        
+        copyEmailBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailToCopy).then(() => {
+                // Change tooltip text and style to success state
+                tooltip.textContent = 'E-mail Copiado!';
+                tooltip.classList.add('copied');
+                
+                // Vibration feedback
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(30);
+                }
+                
+                // Reset tooltip after 2.5 seconds
+                setTimeout(() => {
+                    tooltip.textContent = 'Copiar e-mail';
+                    tooltip.classList.remove('copied');
+                }, 2500);
+            }).catch(err => {
+                console.error('Falha ao copiar e-mail: ', err);
+            });
+        });
+    }
 });
 
 /* ==========================================================================
