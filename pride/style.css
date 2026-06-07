@@ -626,8 +626,9 @@ body {
     border-radius: 6px;
     white-space: nowrap;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(245, 169, 184, 0.15);
     z-index: 10;
 }
@@ -645,10 +646,13 @@ body {
 
 .copy-email-btn:hover .copy-tooltip {
     opacity: 1;
+    visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
 
 .copy-tooltip.copied {
     border-color: #2ecc71;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(46, 204, 113, 0.25);
+    visibility: visible;
+    opacity: 1;
 }
