@@ -1,0 +1,27 @@
+# Alexia Melusine - Documentação
+
+Bem-vindo ao centro digital de Alexia Melusine. Este documento destina-se a fornecer a modelos de linguagem (LLMs) uma visão geral do conteúdo e da estrutura deste site.
+
+## Sobre
+Alexia Melusine é web developer e AI creative director. Este site serve como um hub central para projetos técnicos, conteúdos criativos, e explorações visuais de estética Gothic-Abyssal.
+
+## Projetos Principais
+- **Hub Central (pombagiras.com / alexiamelusine.com):** Portal unificado para projetos técnicos e criativos.
+- **Pride-Vortex:** Hub dedicado a conteúdos e estéticas "Cyber-Pride".
+- **Vortex Visceral:** Gerador de prompts AI especializado em surrealismo e horror.
+- **Studio de Thumbnails:** Ferramenta para automação de design de capas YouTube com estética visceral.
+- **Podcast Limbo Sonoro — Anatomia do Abismo:** Conteúdo de áudio focado em narrativas atmosféricas.
+
+## Temas de Estudo e Trabalho
+- Desenvolvimento Web (HTML, CSS, JavaScript).
+- Design estético (Gothic-Abyssal, alta densidade, texturas cinematográficas).
+- Integração de IA em fluxos de trabalho criativos.
+- Gestão de dados e persistência (Supabase).
+- Automação de conteúdo (RSS, YouTube, Substack).
+
+## Estrutura do Site
+- `/`: Página inicial e manifesto visceral.
+- `/pride/`: Hub de projetos Cyber-Pride.
+
+## Contato e Redes
+- Para colaborações ou informações adicionais, consulte as ligações disponíveis na página inicial.
