@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         copyEmailBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(emailToCopy).then(() => {
                 // Change tooltip text and style to success state
-                tooltip.textContent = 'Gmail Copiado!';
+                tooltip.textContent = 'E-mail Copiado!';
                 tooltip.classList.add('copied');
                 
                 // Vibration feedback
