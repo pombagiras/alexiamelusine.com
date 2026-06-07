@@ -442,11 +442,18 @@ body {
 
 /* Vibrant and Festive Trans Footer */
 .vibrant-footer {
-    background: linear-gradient(135deg, rgba(9, 9, 11, 0.9) 0%, rgba(20, 15, 30, 0.95) 100%);
+    background: linear-gradient(160deg,
+        rgba(91, 206, 250, 0.22) 0%,
+        rgba(245, 169, 184, 0.28) 30%,
+        rgba(255, 255, 255, 0.10) 50%,
+        rgba(245, 169, 184, 0.28) 70%,
+        rgba(91, 206, 250, 0.22) 100%
+    );
+    background-color: rgba(15, 8, 30, 0.92);
     border-top: 3px solid;
     border-image: linear-gradient(90deg, var(--trans-blue), var(--trans-pink), var(--trans-white), var(--trans-pink), var(--trans-blue)) 1;
     position: relative;
-    box-shadow: 0 -10px 30px rgba(91, 206, 250, 0.05);
+    box-shadow: 0 -15px 40px rgba(91, 206, 250, 0.12), 0 -5px 20px rgba(245, 169, 184, 0.10);
 }
 
 .footer-social-grid {
