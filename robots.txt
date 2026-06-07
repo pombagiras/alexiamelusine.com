@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link para o seu sitemap
+Sitemap: https://alexiamelusine.com/sitemap.xml
