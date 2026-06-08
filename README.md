@@ -1,7 +1,7 @@
 # 🌙 Alexia Melusine
 
 <p align="center">
-  <img src="https://luauvcxdhhyzpafvcqwu.supabase.co/storage/v1/object/public/pride/AlePerfil.png" alt="Alexia Melusine" width="280">
+  <img src="assets/ale-perfil.png" alt="Alexia Melusine" width="280">
 </p>
 
 <p align="center">
@@ -134,7 +134,6 @@ Este trabalho está estruturado em um ecossistema de projetos complementares:
 * JavaScript
 * GitHub Pages
 * Cloudflare
-* Supabase
 * Structured Data (Schema.org)
 * SEO Técnico
 * Open Graph

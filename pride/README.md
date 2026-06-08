@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://rbygxkbewzknvjjhxdvw.supabase.co/storage/v1/object/public/fotos-horiz/Xcard%20(6).png" 
+  <img src="../assets/xcard.png" 
        alt="Alexia Melusine" 
        width="180" 
        style="border-radius: 50%; 

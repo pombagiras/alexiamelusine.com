@@ -16,7 +16,7 @@ Alexia Melusine é web developer e AI creative director. Este site serve como um
 - Desenvolvimento Web (HTML, CSS, JavaScript).
 - Design estético (Gothic-Abyssal, alta densidade, texturas cinematográficas).
 - Integração de IA em fluxos de trabalho criativos.
-- Gestão de dados e persistência (Supabase).
+- Gestão de dados e persistência (Arquivos locais no repositório).
 - Automação de conteúdo (RSS, YouTube, Substack).
 
 ## Estrutura do Site
