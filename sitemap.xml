@@ -3,15 +3,15 @@
   <!-- Página inicial -->
   <url>
     <loc>https://alexiamelusine.com/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Página Pride -->
   <url>
     <loc>https://alexiamelusine.com/pride/</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

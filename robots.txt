@@ -1,5 +1,21 @@
 User-agent: *
 Allow: /
 
+# AI Agent rules (coexist with LLMs)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Anthropic-AI
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+
 # Link para o seu sitemap
 Sitemap: https://alexiamelusine.com/sitemap.xml
