@@ -21,16 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initEvolutionSlideshow();
 
     // Click to Copy Email functionality
-    const copyEmailBtn = document.querySelector('.copy-email-btn');
-    if (copyEmailBtn) {
-        const emailToCopy = copyEmailBtn.getAttribute('data-email');
-        const tooltip = copyEmailBtn.querySelector('.copy-tooltip');
+    const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
+    copyEmailBtns.forEach(btn => {
+        const emailToCopy = btn.getAttribute('data-email');
+        const tooltip = btn.querySelector('.copy-tooltip');
         
-        copyEmailBtn.addEventListener('click', () => {
+        btn.addEventListener('click', () => {
             navigator.clipboard.writeText(emailToCopy).then(() => {
                 // Change tooltip text and style to success state
-                tooltip.textContent = 'E-mail Copiado!';
-                tooltip.classList.add('copied');
+                if (tooltip) {
+                    tooltip.textContent = 'E-mail Copiado!';
+                    tooltip.classList.add('copied');
+                }
                 
                 // Vibration feedback
                 if ('vibrate' in navigator) {
@@ -39,14 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Reset tooltip after 2.5 seconds
                 setTimeout(() => {
-                    tooltip.textContent = 'Copiar e-mail';
-                    tooltip.classList.remove('copied');
+                    if (tooltip) {
+                        tooltip.textContent = 'Copiar e-mail';
+                        tooltip.classList.remove('copied');
+                    }
                 }, 2500);
             }).catch(err => {
                 console.error('Falha ao copiar e-mail: ', err);
             });
         });
-    }
+    });
 });
 
 /* ==========================================================================

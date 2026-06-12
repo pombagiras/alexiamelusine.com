@@ -100,10 +100,13 @@
                 <p>
                     Em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), garantimos o pleno exercício de seus direitos quanto aos seus dados de navegação. Caso você deseje esclarecer dúvidas sobre os processos técnicos do nosso laboratório ou requerer a exclusão de comunicações por e-mail, entre em contato diretamente.
                 </p>
-                <p style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; font-size: 0.9rem;">
-                    <strong>Contato para Privacidade e Proteção de Dados (LGPD):</strong><br>
-                    Para solicitações, dúvidas ou exercício de direitos relacionados a dados pessoais: <a href="mailto:privacy@alexiamelusine.com" class="link-highlight" style="color: var(--accent-primary); text-decoration: underline;">privacy@alexiamelusine.com</a> ou <a href="mailto:contato@alexiamelusine.com" class="link-highlight" style="color: var(--accent-primary); text-decoration: underline;">contato@alexiamelusine.com</a>.
-                </p>
+                <div style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; font-size: 0.9rem; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                    <strong>Contato para Privacidade e Proteção de Dados (LGPD):</strong>
+                    <button class="copy-email-btn" data-email="contato@alexiamelusine.com" aria-label="Copiar e-mail de contato">
+                        <span class="email-display">contato@alexiamelusine.com</span>
+                        <span class="copy-tooltip">Copiar e-mail</span>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -122,9 +125,15 @@
     </main>
 
     <footer class="footer scroll-animate active">
+        <div class="footer-email-container" style="margin-bottom: 15px;">
+            <button class="copy-email-btn" data-email="contato@alexiamelusine.com" aria-label="Copiar e-mail de contato">
+                <span class="email-display">contato@alexiamelusine.com</span>
+                <span class="copy-tooltip">Copiar e-mail</span>
+            </button>
+        </div>
         <p>© 2026 Alexia Melusine. Todos os direitos reservados.</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 10px 0; line-height: 1.4;">
-            Projeto mantido por <strong>Alexia Melusine</strong> (<a href="mailto:contato@alexiamelusine.com" style="color: var(--accent-primary); text-decoration: none;">contato@alexiamelusine.com</a>).<br>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 10px 0; line-height: 1.4; text-align: center;">
+            Projeto mantido por <strong>Alexia Melusine</strong>.<br>
             Pesquisadora independente, desenvolvedora e produtora de conteúdo digital.
         </p>
         <p class="tagline-footer">Codificação, Trânsito e Visceralidade.</p>
