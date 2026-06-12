@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: *.tmp
+Disallow: *.bak
+Disallow: *.sql
+Disallow: /supabase_setup.sql
+Disallow: /pride/supabase_setup.sql
 
 # AI Agent rules (coexist with LLMs)
 User-agent: GPTBot
@@ -17,5 +23,5 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# Link para o seu sitemap
+# Link para o seu sitemap index
 Sitemap: https://alexiamelusine.com/sitemap.xml

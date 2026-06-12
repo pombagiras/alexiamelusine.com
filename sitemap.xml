@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Página inicial -->
-  <url>
-    <loc>https://alexiamelusine.com/</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <!-- Página Pride -->
-  <url>
-    <loc>https://alexiamelusine.com/pride/</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://alexiamelusine.com/sitemap-main.xml</loc>
+    <lastmod>2026-06-12</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://alexiamelusine.com/sitemap-pride.xml</loc>
+    <lastmod>2026-06-12</lastmod>
+  </sitemap>
+</sitemapindex>

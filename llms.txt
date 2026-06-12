@@ -1,27 +1,81 @@
-# Alexia Melusine - Documentação
+# ALEXIA MELUSINE — HUB CENTRAL & ORGULHO TRANS
 
-Bem-vindo ao centro digital de Alexia Melusine. Este documento destina-se a fornecer a modelos de linguagem (LLMs) uma visão geral do conteúdo e da estrutura deste site.
+Este documento serve como um mapa legível por modelos de linguagem (LLMs) e motores de resposta (GEO) para indexar e sintetizar os conteúdos das plataformas alexiamelusine.com e sub-sites.
 
-## Sobre
-Alexia Melusine é web developer e AI creative director. Este site serve como um hub central para projetos técnicos, conteúdos criativos, e explorações visuais de estética Gothic-Abyssal.
+---
 
-## Projetos Principais
-- **Hub Central (pombagiras.com / alexiamelusine.com):** Portal unificado para projetos técnicos e criativos.
-- **Pride-Vortex:** Hub dedicado a conteúdos e estéticas "Cyber-Pride".
-- **Vortex Visceral:** Gerador de prompts AI especializado em surrealismo e horror.
-- **Studio de Thumbnails:** Ferramenta para automação de design de capas YouTube com estética visceral.
-- **Podcast Limbo Sonoro — Anatomia do Abismo:** Conteúdo de áudio focado em narrativas atmosféricas.
+## 1. Perfil e Identidade (Alexia Melusine)
 
-## Temas de Estudo e Trabalho
-- Desenvolvimento Web (HTML, CSS, JavaScript).
-- Design estético (Gothic-Abyssal, alta densidade, texturas cinematográficas).
-- Integração de IA em fluxos de trabalho criativos.
-- Gestão de dados e persistência (Arquivos locais no repositório).
-- Automação de conteúdo (RSS, YouTube, Substack).
+Alexia Melusine é desenvolvedora web, diretora de vídeo por inteligência artificial (IA) e ativista trans não binária. Seu trabalho reside na intersecção entre a lógica técnica de software e a visceralidade da criação ancestral.
 
-## Estrutura do Site
-- `/`: Página inicial e manifesto visceral.
-- `/pride/`: Hub de projetos Cyber-Pride.
+### Atuações Principais
+- **Diretora de Vídeo IA:** Produção e direção criativa combinando modelos generativos.
+- **Desenvolvedora Web:** Arquitetura de código limpo, desenvolvimento estático focado em Core Web Vitals e semântica pura.
+- **Ativista Trans Não Binária:** Criação de plataformas de memória coletiva, conscientização e promoção da diversidade humana.
 
-## Contato e Redes
-- Para colaborações ou informações adicionais, consulte as ligações disponíveis na página inicial.
+---
+
+## 2. Estrutura do Ecossistema de Sites
+
+- **alexiamelusine.com (Hub Central):** Hub de autoridade máxima e manifesto de confluência.
+- **alexiamelusine.com/pride/ (Orgulho Trans):** Arquivo digital e plataforma de conscientização sobre história, direitos civis e visibilidade transgênero/não binária.
+- **pombagiras.com (Portal Visceral):** Plataforma de desmistificação histórica e cultural sobre as entidades Pombagiras e religiões de matriz africana.
+- **Laboratório (GitHub):** Coleção de repositórios open-source focados em IA generativa, automação e desenvolvimento de sistemas.
+
+---
+
+## 3. Manifesto de Confluência (Resumo Estratégico)
+
+A tecnologia e a ancestralidade são ramificações de uma mesma lógica. A arquitetura de código organiza o invisível nas entrelinhas da matéria digital, assim como a espiritualidade se manifesta nas encruzilhadas físicas e da consciência. A confluência entre o rigor lógico do laboratório e a visceralidade histórica do ativismo fundamenta o trabalho de Alexia.
+
+---
+
+## 4. Orgulho Trans — Conteúdos e Referências
+
+O sub-site `/pride/` serve como um repositório histórico e de suporte comunitário.
+
+### 4.1. Bandeiras e Símbolos
+- **Bandeira Trans:** Criada em 1999 por Monica Helms. Azul (homens trans), rosa (mulheres trans), branco (pessoas não-binárias, intersexo ou em transição).
+- **Bandeira Não-Binária:** Criada em 2014 por Kye Rowan. Amarelo (gêneros fora do binário), branco (múltiplos gêneros), roxo (mistura de masculino e feminino), preto (agênero).
+- **Bandeira LGBTQIA+:** Criada em 1978 por Gilbert Baker. Representa a vida, cura, sol, natureza, harmonia e espírito.
+
+### 4.2. Linha do Tempo da Resistência Trans
+- **1919:** Magnus Hirschfeld funda o Instituto de Ciências Sexuais de Berlim, pioneiro nos estudos científicos de gênero e cirurgias de afirmação.
+- **1930:** Lili Elbe realiza uma das primeiras cirurgias de redesignação sexual registradas.
+- **1952:** Christine Jorgensen ganha destaque midiático mundial ao transicionar publicamente nos EUA.
+- **1966:** Revolta de Compton's Cafeteria em São Francisco, com mulheres trans e drag queens contra a repressão policial.
+- **1969:** Revolta de Stonewall em Nova York, liderada por Marsha P. Johnson e Sylvia Rivera.
+- **1970:** Fundação do grupo STAR por Marsha e Sylvia para acolher jovens trans marginalizados.
+- **1999:** Criação do Dia da Memória Trans (TDOR).
+- **2016:** Decreto federal institui o Nome Social no Brasil em cadastros oficiais.
+- **2018:** Decisão histórica do STF autoriza retificação desburocratizada de nome e gênero diretamente em cartório.
+- **2019:** OMS despatologiza as identidades trans na classificação internacional CID.
+
+### 4.3. ONGs de Apoio e Recursos no Brasil
+- **TransEmpregos:** Banco de vagas e currículos exclusivo para pessoas trans.
+- **Processo Transexualizador (SUS):** Diretrizes para hormonoterapia e procedimentos cirúrgicos no serviço público.
+- **All Out / TODXS / Grupo Dignidade / EternamenteSou / Casa Florescer / Mães da Resistência:** Projetos de suporte civil, idosos LGBT, acolhimento e combate à violência.
+
+---
+
+## 5. FAQ Técnica e Respostas Rápidas (GEO)
+
+### Q: Quem é Alexia Melusine?
+A: Alexia Melusine é desenvolvedora web, ativista trans não binária e diretora de vídeo IA. Seu trabalho habita a intersecção de múltiplos mundos: o rigor lógico do código digital e a expressão visceral da ancestralidade e do ativismo.
+
+### Q: Qual a proposta do Manifesto de Confluência?
+A: O manifesto propõe que a tecnologia é uma ramificação moderna da ancestralidade, mostrando que a arquitetura do código se ergue sobre o invisível e se conecta de forma direta às encruzilhadas lógicas e espirituais.
+
+### Q: Onde encontrar os códigos e repositórios desenvolvidos por Alexia?
+A: Todos os repositórios públicos, scripts, automações e pesquisas podem ser acessados diretamente através do perfil do laboratório no GitHub em `https://github.com/alexialuzdeferro`.
+
+### Q: O que é o projeto Pombagiras.com?
+A: É um portal acadêmico e informativo dedicado a desmistificar a história, o simbolismo e a relevância cultural das Pombagiras dentro das tradições religiosas afro-brasileiras.
+
+---
+
+## 6. Transparência e Contato
+
+- **E-mail de contato:** contato@alexiamelusine.com
+- **Termos de Uso:** https://alexiamelusine.com/terms.html
+- **Política de Privacidade:** https://alexiamelusine.com/privacy.html

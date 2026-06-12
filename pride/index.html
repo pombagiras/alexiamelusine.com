@@ -35,6 +35,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css?v=1.2">
+
+    <!-- Schema.org JSON-LD (Structured Data) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://alexiamelusine.com/#person",
+          "name": "Alexia Melusine",
+          "url": "https://alexiamelusine.com",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://alexiamelusine.com/assets/ale-perfil.png",
+            "caption": "Alexia Melusine"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://alexiamelusine.com/pride/#webpage",
+          "url": "https://alexiamelusine.com/pride/",
+          "name": "Orgulho Trans 🏳️‍⚧️ | Ativismo & Visibilidade",
+          "description": "Celebrando a diversidade, a coragem e a beleza da comunidade transgênero, não-binária e crossdresser. Linha do tempo, história, símbolos e referências da militância.",
+          "author": {
+            "@id": "https://alexiamelusine.com/#person"
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-subtitle", ".creator-standalone p"]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://alexiamelusine.com/pride/#faq",
+          "isPartOf": {
+            "@id": "https://alexiamelusine.com/pride/#webpage"
+          },
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qual o significado das cores da bandeira do orgulho trans?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A bandeira trans foi criada em 1999 por Monica Helms. O azul representa homens trans, o rosa representa mulheres trans, e o branco representa pessoas não-binárias, intersexo ou em transição."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que foi a Revolta de Compton's Cafeteria?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ocorrida em 1966 em São Francisco, a revolta de Compton's Cafeteria foi um marco pioneiro na luta pelos direitos civis trans, onde mulheres trans e drag queens revoltaram-se contra a repressão policial sistemática."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quais são as principais conquistas de direitos civis trans no Brasil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Entre as principais conquistas estão o direito ao uso do Nome Social formalizado em 2016 e a retificação de nome e gênero diretamente em cartório sem necessidade de cirurgias ou laudos médicos em 2018."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que significa ser uma pessoa Não-Binária?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não-binário é um termo guarda-chuva para identidades de gênero que não se delimitam estritamente às categorias homem ou mulher."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen text-slate-100 selection:bg-[#F5A9B8]/30 selection:text-white">
 
@@ -1196,6 +1271,11 @@
                     <span class="email-display">contato@alexiamelusine.com</span>
                     <span class="copy-tooltip">Copiar e-mail</span>
                 </button>
+            </div>
+            
+            <div style="margin-top: 10px; margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; font-size: 0.8rem;">
+                <a href="../privacy.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#F5A9B8'" onmouseout="this.style.color='#94a3b8'">Política de Privacidade</a>
+                <a href="../terms.html" style="color: #94a3b8; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#F5A9B8'" onmouseout="this.style.color='#94a3b8'">Termos de Uso</a>
             </div>
             
             <div class="text-[10px] text-gray-500 mt-4 tracking-wide">
