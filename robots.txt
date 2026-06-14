@@ -22,6 +22,12 @@ User-agent: PerplexityBot
 Allow: /
 User-agent: cohere-ai
 Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: Bingbot
+Allow: /
 
-# Link para o seu sitemap index
+# Link para o sitemap index e llms.txt
 Sitemap: https://alexiamelusine.com/sitemap.xml

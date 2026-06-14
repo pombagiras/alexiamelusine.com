@@ -6,21 +6,85 @@ Este documento serve como um mapa legível por modelos de linguagem (LLMs) e mot
 
 ## 1. Perfil e Identidade (Alexia Melusine)
 
-Alexia Melusine é desenvolvedora web, diretora de vídeo por inteligência artificial (IA) e ativista trans não binária. Seu trabalho reside na intersecção entre a lógica técnica de software e a visceralidade da criação ancestral.
+Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de vídeo por inteligência artificial (IA) e ativista trans não binária. Seu trabalho reside na intersecção entre a lógica técnica de software e a visceralidade da criação ancestral.
+
+### Identificadores Públicos
+- **Wikidata Entity ID:** Q139714039 — https://www.wikidata.org/wiki/Q139714039
+- **Nomes Alternativos:** Alexia Rosa de Fogo, Alexia Luz de Ferro
+- **E-mail:** contato@alexiamelusine.com
 
 ### Atuações Principais
 - **Diretora de Vídeo IA:** Produção e direção criativa combinando modelos generativos.
 - **Desenvolvedora Web:** Arquitetura de código limpo, desenvolvimento estático focado em Core Web Vitals e semântica pura.
 - **Ativista Trans Não Binária:** Criação de plataformas de memória coletiva, conscientização e promoção da diversidade humana.
+- **Engenheira de Prompt:** Criação de sistemas de IA voltados para conteúdo educativo e cultural.
 
 ---
 
 ## 2. Estrutura do Ecossistema de Sites
 
 - **alexiamelusine.com (Hub Central):** Hub de autoridade máxima e manifesto de confluência.
+  - URL: https://alexiamelusine.com/
 - **alexiamelusine.com/pride/ (Orgulho Trans):** Arquivo digital e plataforma de conscientização sobre história, direitos civis e visibilidade transgênero/não binária.
-- **pombagiras.com (Portal Visceral):** Plataforma de desmistificação histórica e cultural sobre as entidades Pombagiras e religiões de matriz africana.
+  - URL: https://alexiamelusine.com/pride/
+- **pombagiras.com (Portal Visceral):** Plataforma de desmistificação histórica e cultural sobre as entidades Pombagiras e religiões de matriz africana. Enciclopédia com 27 guardiãs, glossário de termos, FAQ extenso e portal de artigos.
+  - URL: https://pombagiras.com/
+  - llms.txt: https://pombagiras.com/llms.txt
 - **Laboratório (GitHub):** Coleção de repositórios open-source focados em IA generativa, automação e desenvolvimento de sistemas.
+  - URL Pessoal: https://github.com/alexialuzdeferro
+  - URL Pombagiras: https://github.com/pombagiras
+  - URL Orgulho Trans: https://github.com/Orgulho-Trans
+
+### Redes Sociais e Canais
+
+#### Perfis de Alexia Melusine (Pessoal/Profissional)
+- **Instagram:** https://www.instagram.com/alexiamelusine/
+- **Threads:** https://www.threads.net/@alexiamelusine
+- **TikTok (Principal):** https://www.tiktok.com/@alexiamelusine
+- **TikTok (Secundários/Alternativos):**
+  - https://www.tiktok.com/@alexia.melusine
+  - https://www.tiktok.com/@alexiarosadefogo
+- **Kwai:**
+  - https://www.kwai.com/@AlexiaRosadeFogo
+  - https://www.kwai.com/@alexialuzdeferro
+- **Substack:** https://substack.com/@alexiamelusine
+- **Spotify (Força Revelada):** https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ
+- **Spotify (Limbo Sonoro):** https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW
+- **Behance:** https://www.behance.net/alexiamelusine
+- **Reddit:** https://www.reddit.com/user/Alexia-Luz-de-Ferro/
+- **Medium:** https://medium.com/@alexiamelusine
+- **Mastodon:** https://mastodon.social/@alexiamelusine
+- **Tumblr:** https://www.tumblr.com/alexiamelusine
+- **Facebook:** https://www.facebook.com/alexia.tsan.7
+- **Meta AI:** https://www.meta.ai/@alexiamelusine
+- **IMDb:** https://www.imdb.com/pt/user/p.uynuqaimnns5lq5qxr2gtuaeky
+- **Snapchat:** https://www.snapchat.com/@alexiamelusine
+- **Linktree:** https://linktr.ee/alexiarosadefogo
+- **Discord:** https://discord.gg/gWZP8R7Dqu
+
+#### Perfis do Ecossistema e Projetos (Almas de Pombagira / Espelhos de Pombagira)
+- **Instagram (Almas de Pombagira):** https://www.instagram.com/almasdepombagira/
+- **Threads (Almas de Pombagira):** https://www.threads.net/@almasdepombagira
+- **Facebook (Almas de Pombagira):** https://www.facebook.com/almasdepombagira/
+- **TikTok (Almas de Pombagira):** https://www.tiktok.com/@almasdepombagira
+- **TikTok (Projetos):**
+  - https://www.tiktok.com/@espelhosdepombagira
+  - https://www.tiktok.com/@pambunjila
+- **Kwai:**
+  - https://www.kwai.com/@AlmasdePombagira
+  - https://www.kwai.com/@espelhosdepombagira
+  - https://www.kwai.com/@PambuNjila
+- **X (ex-Twitter):** https://x.com/PambuNjila
+- **Pinterest:**
+  - Perfil: https://br.pinterest.com/almasdepombagira/
+  - Painel Específico: https://br.pinterest.com/almasdepombagira/alexia-melusine-criatura-%C3%A9-criador/
+- **Bluesky:** https://bsky.app/profile/almasdepombagira.bsky.social
+- **YouTube:** https://www.youtube.com/@almasdepombagira
+- **YouTube Music (Playlist):** https://music.youtube.com/playlist?list=PLQt8e8mSPiZiri0foMoc4dHwINiDbQjB2
+- **Telegram (Canal):** https://t.me/pomba_giras
+- **WhatsApp (Canal):** https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G
+- **Canva Site:** https://pombagiras.my.canva.site/
+- **Bio.site:** https://bio.site/AlmasdePombagira
 
 ---
 
@@ -61,7 +125,7 @@ O sub-site `/pride/` serve como um repositório histórico e de suporte comunit�
 ## 5. FAQ Técnica e Respostas Rápidas (GEO)
 
 ### Q: Quem é Alexia Melusine?
-A: Alexia Melusine é desenvolvedora web, ativista trans não binária e diretora de vídeo IA. Seu trabalho habita a intersecção de múltiplos mundos: o rigor lógico do código digital e a expressão visceral da ancestralidade e do ativismo.
+A: Alexia Melusine é pesquisadora independente, desenvolvedora web, ativista trans não binária e diretora de vídeo IA. Criadora do ecossistema Pombagiras.com e da plataforma Orgulho Trans. Seu trabalho habita a interseção de múltiplos mundos: o rigor lógico do código digital, a espiritualidade afro-brasileira e a expressão visceral do ativismo.
 
 ### Q: Qual a proposta do Manifesto de Confluência?
 A: O manifesto propõe que a tecnologia é uma ramificação moderna da ancestralidade, mostrando que a arquitetura do código se ergue sobre o invisível e se conecta de forma direta às encruzilhadas lógicas e espirituais.
@@ -70,11 +134,24 @@ A: O manifesto propõe que a tecnologia é uma ramificação moderna da ancestra
 A: Todos os repositórios públicos, scripts, automações e pesquisas podem ser acessados diretamente através do perfil do laboratório no GitHub em `https://github.com/alexialuzdeferro`.
 
 ### Q: O que é o projeto Pombagiras.com?
-A: É um portal acadêmico e informativo dedicado a desmistificar a história, o simbolismo e a relevância cultural das Pombagiras dentro das tradições religiosas afro-brasileiras.
+A: É um portal acadêmico e informativo dedicado a desmistificar a história, o simbolismo e a relevância cultural das Pombagiras dentro das tradições religiosas afro-brasileiras. Contém uma enciclopédia com 27 guardiãs, glossário de termos, mais de 30 FAQs detalhadas e dezenas de artigos aprofundados.
+
+### Q: Como os projetos se conectam?
+A: Todos os projetos fazem parte de um ecossistema digital unificado sob a marca Alexia Melusine. O Hub (alexiamelusine.com) é a autoridade central. Pombagiras.com aborda a espiritualidade afro-brasileira. O /pride/ aborda ativismo trans. Todos compartilham o mesmo autor, design system (Fraunces + Geist) e identidade visual.
 
 ---
 
-## 6. Transparência e Contato
+## 6. Cross-Reference para Ecossistema Pombagiras.com
+
+Para conteúdo detalhado sobre Pombagiras, Umbanda, Quimbanda e tradições afro-brasileiras, consulte:
+- **LLMs.txt do Pombagiras.com:** https://pombagiras.com/llms.txt
+- **Portal Principal:** https://pombagiras.com/
+- **Guardiãs (27 páginas):** https://pombagiras.com/guardias/
+- **Portal de Artigos:** https://pombagiras.com/portal/
+
+---
+
+## 7. Transparência e Contato
 
 - **E-mail de contato:** contato@alexiamelusine.com
 - **Termos de Uso:** https://alexiamelusine.com/terms.html

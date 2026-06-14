@@ -63,7 +63,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 24px;
+    padding: 100px 24px 60px 24px;
     position: relative;
     overflow-x: hidden;
     line-height: 1.6;
@@ -517,11 +517,184 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(46, 204, 113, 0.25);
 }
 
+/* Ecosystem Navigation Bar */
+.eco-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(2, 2, 2, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 10px 0;
+}
+
+.eco-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.eco-link {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.eco-link:hover {
+    color: var(--accent-hover);
+    border-color: rgba(178, 34, 34, 0.3);
+    background: rgba(178, 34, 34, 0.06);
+}
+
+.eco-separator {
+    color: rgba(255, 255, 255, 0.12);
+    font-size: 0.6rem;
+    user-select: none;
+}
+
+/* Footer Social Grid */
+.footer-social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.footer-social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    border: 1px solid var(--glass-border);
+}
+
+.footer-social-btn:hover {
+    color: var(--accent-hover);
+    border-color: rgba(178, 34, 34, 0.4);
+    background: rgba(178, 34, 34, 0.08);
+    transform: scale(1.12) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(178, 34, 34, 0.2);
+}
+
+/* Footer Legal Links */
+.footer-legal-links {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.85rem;
+}
+
+.footer-legal-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-legal-link:hover {
+    color: var(--accent-hover);
+}
+
+/* Ecosystem Cross-Link Section */
+.eco-crosslink {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    text-align: center;
+}
+
+.eco-crosslink-title {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.eco-crosslink-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+}
+
+.eco-crosslink-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.eco-crosslink-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.eco-crosslink-item:hover {
+    border-color: var(--glass-border-hover);
+    background: rgba(178, 34, 34, 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+}
+
+.eco-crosslink-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 8px rgba(178, 34, 34, 0.3));
+}
+
+.eco-crosslink-name {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.eco-crosslink-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 992px) {
     .pillars-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .eco-crosslink-grid {
+        grid-template-columns: 1fr;
     }
     
     .hero {
@@ -531,7 +704,21 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding: 32px 16px;
+        padding: 80px 16px 32px 16px;
+    }
+
+    .eco-navbar-inner {
+        gap: 4px;
+    }
+
+    .eco-link {
+        font-size: 0.62rem;
+        padding: 3px 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .eco-separator {
+        display: none;
     }
     
     .hero {
