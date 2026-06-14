@@ -554,17 +554,6 @@ body {
     border-radius: 50px;
     transition: var(--transition-smooth);
     border: 1px solid transparent;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.eco-nav-icon {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    flex-shrink: 0;
-    transition: stroke 0.3s ease;
 }
 
 .eco-link:hover {
