@@ -554,6 +554,17 @@ body {
     border-radius: 50px;
     transition: var(--transition-smooth);
     border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.eco-nav-icon {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    flex-shrink: 0;
+    transition: stroke 0.3s ease;
 }
 
 .eco-link:hover {
@@ -671,6 +682,20 @@ body {
 .eco-crosslink-icon {
     font-size: 2rem;
     filter: drop-shadow(0 0 8px rgba(178, 34, 34, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.eco-crosslink-icon svg {
+    transition: var(--transition-smooth);
+}
+
+.eco-crosslink-item:hover .eco-crosslink-icon svg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px rgba(197, 155, 39, 0.45));
 }
 
 .eco-crosslink-name {
