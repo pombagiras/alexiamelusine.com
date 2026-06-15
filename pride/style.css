@@ -514,6 +514,13 @@ body {
     border-color: transparent;
 }
 
+.social-btn-midjourney:hover {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+    border-color: transparent;
+}
+
 /* Mobile-First Custom Styles */
 @media (max-width: 768px) {
     .mobile-hidden-decor {
