@@ -192,6 +192,14 @@ function initEvolutionSlideshow() {
     const progressBar = slideshow.querySelector('.evolution-progress-bar');
     const dotsContainer = slideshow.querySelector('.evolution-dots-container');
 
+    // If there is no dots container or less than 2 slides, disable slideshow controls/autoplay
+    if (slides.length <= 1 || !dotsContainer) {
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+        }
+        return;
+    }
+
     let currentIndex = 0;
     let progressInterval = null;
     const slideDuration = 4000; // 4 seconds per slide
