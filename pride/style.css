@@ -283,6 +283,25 @@ body {
     overflow: hidden;
 }
 
+.hero-slideshow-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
 .main-cover-img {
     width: 100%;
     height: 100%;

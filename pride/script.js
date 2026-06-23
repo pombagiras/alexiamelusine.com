@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize evolution slideshow
     initEvolutionSlideshow();
 
+    // Initialize hero cover slideshow
+    initHeroSlideshow();
+
     // Click to Copy Email functionality
     const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
     copyEmailBtns.forEach(btn => {
@@ -360,4 +363,33 @@ function showToast(message) {
             }
         }, 400);
     }, 3500);
+}
+
+/* ==========================================================================
+   5. Hero Cover Slideshow (Autoplay)
+   ========================================================================== */
+
+function initHeroSlideshow() {
+    const container = document.querySelector('.hero-slideshow-container');
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.hero-slide');
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    const intervalTime = 5000; // Transition every 5 seconds
+
+    function nextSlide() {
+        // Remove active class from the current slide
+        slides[currentIndex].classList.remove('active');
+        
+        // Move to the next slide
+        currentIndex = (currentIndex + 1) % slides.length;
+        
+        // Add active class to the new slide
+        slides[currentIndex].classList.add('active');
+    }
+
+    // Start autoplay interval
+    setInterval(nextSlide, intervalTime);
 }
