@@ -306,22 +306,22 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.2) contrast(1.1) grayscale(0.85);
+    filter: brightness(0.85) contrast(1.05) saturate(1.1);
     transition: filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-cover:hover .main-cover-img {
-    filter: brightness(0.55) contrast(1) grayscale(0);
+    filter: brightness(1.0) contrast(1.1) saturate(1.2);
     transform: scale(1.03);
 }
 
 .hover-overlay {
-    background-color: rgba(9, 9, 11, 0.65);
+    background-color: rgba(9, 9, 11, 0.2);
     transition: background-color 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-cover:hover .hover-overlay {
-    background-color: rgba(9, 9, 11, 0.35);
+    background-color: rgba(9, 9, 11, 0.05);
 }
 
 /* Accordion Layout & Transitions */
