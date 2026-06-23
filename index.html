@@ -57,15 +57,24 @@
     <link rel="stylesheet" href="style.css?v=2.0">
 
     <!-- Schema.org JSON-LD — Unified Knowledge Graph (Ecosystem-Aware) -->
+    <!-- NOTE: The names/aliases Alexia Melusine, Alexia Rosa de Fogo, and Alexia Luz de Ferro represent the same single entity (Person), not different individuals. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://alexiamelusine.com/#person",
+          "@id": "https://pombagiras.com/#author",
           "name": "Alexia Melusine",
-          "alternateName": ["Alexia Rosa de Fogo", "Alexia Luz de Ferro"],
+          "alternateName": [
+            "Alexia Melusine",
+            "Alexia Rosa de Fogo",
+            "Alexia Luz de Ferro"
+          ],
+          "additionalName": [
+            "Alexia Rosa de Fogo",
+            "Alexia Luz de Ferro"
+          ],
           "url": "https://alexiamelusine.com",
           "image": {
             "@type": "ImageObject",
@@ -80,12 +89,14 @@
           ],
           "sameAs": [
             "https://www.wikidata.org/wiki/Q139714039",
+            "https://pombagiras.com",
+            "https://alexiamelusine.substack.com",
+            "https://medium.com/@alexiamelusine",
             "https://github.com/alexialuzdeferro",
             "https://github.com/pombagiras",
             "https://github.com/Orgulho-Trans",
             "https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ",
             "https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW",
-            "https://alexiamelusine.substack.com/",
             "https://substack.com/@alexiamelusine",
             "https://www.instagram.com/alexiamelusine/",
             "https://www.midjourney.com/@alexiamelusine",
@@ -97,7 +108,6 @@
             "https://www.kwai.com/@alexialuzdeferro",
             "https://www.behance.net/alexiamelusine",
             "https://www.reddit.com/user/Alexia-Luz-de-Ferro/",
-            "https://medium.com/@alexiamelusine",
             "https://mastodon.social/@alexiamelusine",
             "https://www.tumblr.com/alexiamelusine",
             "https://www.facebook.com/alexia.tsan.7",
@@ -106,30 +116,50 @@
             "https://www.snapchat.com/@alexiamelusine",
             "https://linktr.ee/alexiarosadefogo",
             "https://discord.gg/gWZP8R7Dqu",
-            "https://pombagiras.com/",
             "https://alexiamelusine.com/pride/"
           ],
           "description": "Pesquisadora independente, desenvolvedora web, diretora de vídeo IA e ativista trans não binária. Criadora do ecossistema Pombagiras.com e da plataforma Orgulho Trans. A confluência precisa entre a lógica técnica e a visceralidade da criação.",
           "knowsAbout": [
-            "Artificial Intelligence",
-            "AI Video Production",
-            "Web Development",
-            "Software Architecture",
-            "SEO Técnico",
-            "Pombagira",
+            "Pombagiras",
             "Umbanda",
             "Quimbanda",
             "Candomblé",
             "Orixás",
             "Exu",
-            "Afro-Brazilian Religion & Culture",
+            "Antropologia das religiões afro-brasileiras",
+            "SEO semântico",
+            "Arquitetura de conhecimento",
+            "Narrativas espirituais digitais",
+            "Artificial Intelligence",
+            "AI Video Production",
+            "Web Development",
+            "Software Architecture",
+            "SEO Técnico",
             "Transgender Activism",
             "LGBTQIA+ Rights"
+          ],
+          "hasCredential": [
+            "Criadora do Pombagiras.com",
+            "Pesquisadora independente de narrativas afro-espirituais digitais"
+          ],
+          "subjectOf": [
+            {
+              "@type": "Thing",
+              "name": "Pombagiras como arquétipos espirituais"
+            },
+            {
+              "@type": "Thing",
+              "name": "Linhas espirituais na Umbanda e Quimbanda"
+            },
+            {
+              "@type": "Thing",
+              "name": "História oral afro-brasileira"
+            }
           ]
         },
         {
           "@type": "Organization",
-          "@id": "https://alexiamelusine.com/#organization",
+          "@id": "https://pombagiras.com/#organization",
           "name": "Ecossistema Alexia Melusine",
           "url": "https://alexiamelusine.com",
           "logo": {
@@ -137,8 +167,10 @@
             "url": "https://alexiamelusine.com/assets/favicon.png"
           },
           "founder": {
-            "@id": "https://alexiamelusine.com/#person"
+            "@id": "https://pombagiras.com/#author"
           },
+          "email": "contato@pombagiras.com",
+          "foundingDate": "2024-01-01",
           "sameAs": [
             "https://pombagiras.com/",
             "https://alexiamelusine.com/pride/",
@@ -169,7 +201,7 @@
           "url": "https://alexiamelusine.com",
           "name": "Alexia Melusine",
           "publisher": {
-            "@id": "https://alexiamelusine.com/#organization"
+            "@id": "https://pombagiras.com/#organization"
           },
           "description": "Hub de autoridade máxima de Alexia Melusine. Ecossistema digital unificando tecnologia, espiritualidade afro-brasileira e ativismo trans.",
           "inLanguage": "pt-BR",
@@ -190,20 +222,54 @@
           "isPartOf": {
             "@id": "https://alexiamelusine.com/#website"
           },
-          "about": {
-            "@id": "https://alexiamelusine.com/#person"
-          },
+          "about": [
+            {
+              "@id": "https://pombagiras.com/#author"
+            },
+            {
+              "@type": "Thing",
+              "name": "Arquétipos espirituais femininos"
+            },
+            {
+              "@type": "Thing",
+              "name": "Cosmologia afro-brasileira"
+            }
+          ],
           "author": {
-            "@id": "https://alexiamelusine.com/#person"
+            "@id": "https://pombagiras.com/#author"
           },
           "breadcrumb": {
             "@id": "https://alexiamelusine.com/#breadcrumb"
           },
           "description": "A confluência precisa entre a lógica técnica e a visceralidade da criação. Construindo o futuro a partir das raízes do subconsciente digital.",
+          "abstract": "Este site funciona como uma enciclopédia digital estruturada sobre Pombagiras e Exus, combinando tradição oral, pesquisa antropológica e organização semântica de entidades espirituais afro-brasileiras.",
           "inLanguage": "pt-BR",
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".philosophy", ".manifesto-content"]
+          }
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://pombagiras.com/#knowledge-graph",
+          "name": "Pombagiras Knowledge Graph",
+          "description": "Base estruturada de entidades, arquétipos e narrativas sobre Pombagiras e Exus na tradição afro-brasileira.",
+          "about": {
+            "@id": "https://pombagiras.com/#organization"
+          },
+          "keywords": [
+            "Pombagira",
+            "Exu",
+            "Umbanda",
+            "Quimbanda",
+            "arquétipos espirituais",
+            "antropologia afro-brasileira"
+          ],
+          "creator": {
+            "@id": "https://pombagiras.com/#author"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://pombagiras.com/#webpage"
           }
         },
         {

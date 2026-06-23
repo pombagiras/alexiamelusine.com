@@ -55,16 +55,24 @@
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css?v=2.0">
 
-    <!-- Schema.org JSON-LD — Unified Knowledge Graph (Ecosystem-Aware) -->
+    <!-- Schema.org JSON-LD — Unified Knowledge Gr    <!-- NOTE: The names/aliases Alexia Melusine, Alexia Rosa de Fogo, and Alexia Luz de Ferro represent the same single entity (Person), not different individuals. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://alexiamelusine.com/#person",
+          "@id": "https://pombagiras.com/#author",
           "name": "Alexia Melusine",
-          "alternateName": ["Alexia Rosa de Fogo", "Alexia Luz de Ferro"],
+          "alternateName": [
+            "Alexia Melusine",
+            "Alexia Rosa de Fogo",
+            "Alexia Luz de Ferro"
+          ],
+          "additionalName": [
+            "Alexia Rosa de Fogo",
+            "Alexia Luz de Ferro"
+          ],
           "url": "https://alexiamelusine.com",
           "image": {
             "@type": "ImageObject",
@@ -79,12 +87,14 @@
           ],
           "sameAs": [
             "https://www.wikidata.org/wiki/Q139714039",
+            "https://pombagiras.com",
+            "https://alexiamelusine.substack.com",
+            "https://medium.com/@alexiamelusine",
             "https://github.com/alexialuzdeferro",
             "https://github.com/pombagiras",
             "https://github.com/Orgulho-Trans",
             "https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ",
             "https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW",
-            "https://alexiamelusine.substack.com/",
             "https://substack.com/@alexiamelusine",
             "https://www.instagram.com/alexiamelusine/",
             "https://www.midjourney.com/@alexiamelusine",
@@ -96,7 +106,6 @@
             "https://www.kwai.com/@alexialuzdeferro",
             "https://www.behance.net/alexiamelusine",
             "https://www.reddit.com/user/Alexia-Luz-de-Ferro/",
-            "https://medium.com/@alexiamelusine",
             "https://mastodon.social/@alexiamelusine",
             "https://www.tumblr.com/alexiamelusine",
             "https://www.facebook.com/alexia.tsan.7",
@@ -105,17 +114,83 @@
             "https://www.snapchat.com/@alexiamelusine",
             "https://linktr.ee/alexiarosadefogo",
             "https://discord.gg/gWZP8R7Dqu",
-            "https://pombagiras.com/",
             "https://alexiamelusine.com/pride/"
           ],
+          "description": "Pesquisadora independente, desenvolvedora web, diretora de vídeo IA e ativista trans não binária. Criadora do ecossistema Pombagiras.com e da plataforma Orgulho Trans. A confluência precisa entre a lógica técnica e a visceralidade da criação.",
           "knowsAbout": [
-            "Transgender Activism",
-            "LGBTQIA+ Rights",
-            "Pombagira",
+            "Pombagiras",
             "Umbanda",
             "Quimbanda",
+            "Candomblé",
+            "Orixás",
+            "Exu",
+            "Antropologia das religiões afro-brasileiras",
+            "SEO semântico",
+            "Arquitetura de conhecimento",
+            "Narrativas espirituais digitais",
+            "Artificial Intelligence",
             "AI Video Production",
-            "Web Development"
+            "Web Development",
+            "Software Architecture",
+            "SEO Técnico",
+            "Transgender Activism",
+            "LGBTQIA+ Rights"
+          ],
+          "hasCredential": [
+            "Criadora do Pombagiras.com",
+            "Pesquisadora independente de narrativas afro-espirituais digitais"
+          ],
+          "subjectOf": [
+            {
+              "@type": "Thing",
+              "name": "Pombagiras como arquétipos espirituais"
+            },
+            {
+              "@type": "Thing",
+              "name": "Linhas espirituais na Umbanda e Quimbanda"
+            },
+            {
+              "@type": "Thing",
+              "name": "História oral afro-brasileira"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pombagiras.com/#organization",
+          "name": "Ecossistema Alexia Melusine",
+          "url": "https://alexiamelusine.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://alexiamelusine.com/assets/favicon.png"
+          },
+          "founder": {
+            "@id": "https://pombagiras.com/#author"
+          },
+          "email": "contato@pombagiras.com",
+          "foundingDate": "2024-01-01",
+          "sameAs": [
+            "https://pombagiras.com/",
+            "https://alexiamelusine.com/pride/",
+            "https://pombagiras.my.canva.site/",
+            "https://bio.site/AlmasdePombagira",
+            "https://www.instagram.com/almasdepombagira/",
+            "https://www.threads.net/@almasdepombagira",
+            "https://www.facebook.com/almasdepombagira/",
+            "https://www.tiktok.com/@almasdepombagira",
+            "https://www.tiktok.com/@espelhosdepombagira",
+            "https://www.tiktok.com/@pambunjila",
+            "https://www.kwai.com/@AlmasdePombagira",
+            "https://www.kwai.com/@espelhosdepombagira",
+            "https://www.kwai.com/@PambuNjila",
+            "https://x.com/PambuNjila",
+            "https://br.pinterest.com/almasdepombagira/",
+            "https://br.pinterest.com/almasdepombagira/alexia-melusine-criatura-%C3%A9-criador/",
+            "https://bsky.app/profile/almasdepombagira.bsky.social",
+            "https://www.youtube.com/@almasdepombagira",
+            "https://music.youtube.com/playlist?list=PLQt8e8mSPiZiri0foMoc4dHwINiDbQjB2",
+            "https://t.me/pomba_giras",
+            "https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G"
           ]
         },
         {
@@ -123,6 +198,9 @@
           "@id": "https://alexiamelusine.com/#website",
           "url": "https://alexiamelusine.com",
           "name": "Alexia Melusine",
+          "publisher": {
+            "@id": "https://pombagiras.com/#organization"
+          },
           "inLanguage": "pt-BR"
         },
         {
@@ -134,16 +212,54 @@
           "isPartOf": {
             "@id": "https://alexiamelusine.com/#website"
           },
+          "about": [
+            {
+              "@id": "https://pombagiras.com/#author"
+            },
+            {
+              "@type": "Thing",
+              "name": "Arquétipos espirituais femininos"
+            },
+            {
+              "@type": "Thing",
+              "name": "Cosmologia afro-brasileira"
+            }
+          ],
           "author": {
-            "@id": "https://alexiamelusine.com/#person"
+            "@id": "https://pombagiras.com/#author"
           },
           "breadcrumb": {
             "@id": "https://alexiamelusine.com/pride/#breadcrumb"
           },
+          "description": "Celebrando a diversidade, a coragem e a beleza da comunidade transgênero, não-binária e crossdresser. Linha do tempo, história, símbolos e referências da militância.",
+          "abstract": "Este site funciona como uma enciclopédia digital estruturada sobre Pombagiras e Exus, combinando tradição oral, pesquisa antropológica e organização semântica de entidades espirituais afro-brasileiras.",
           "inLanguage": "pt-BR",
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": [".hero-subtitle", ".creator-standalone p"]
+          }
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://pombagiras.com/#knowledge-graph",
+          "name": "Pombagiras Knowledge Graph",
+          "description": "Base estruturada de entidades, arquétipos e narrativas sobre Pombagiras e Exus na tradição afro-brasileira.",
+          "about": {
+            "@id": "https://pombagiras.com/#organization"
+          },
+          "keywords": [
+            "Pombagira",
+            "Exu",
+            "Umbanda",
+            "Quimbanda",
+            "arquétipos espirituais",
+            "antropologia afro-brasileira"
+          ],
+          "creator": {
+            "@id": "https://pombagiras.com/#author"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://alexiamelusine.com/pride/#webpage"
           }
         },
         {
@@ -184,7 +300,7 @@
               "name": "O que foi a Revolta de Compton's Cafeteria?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ocorrida em 1966 em São Francisco, a revolta de Compton's Cafeteria foi um marco pioneiro na luta pelos direitos civis trans, onde mulheres trans e drag queens revoltaram-se contra a repressão policial sistemática."
+                "text": "Ocorrida em 1966 em São Francisco, a revolta de Compton's Cafeteria foi um marco pioneiro na luta pelos direitos civis trans, onde mulheres trans e drag queens revoltaram-se contra a reflexão policial sistemática."
               }
             },
             {
