@@ -446,4 +446,3 @@ function initHeroSlideshow() {
     window.addEventListener('mousemove', handleMovement, { passive: true });
     window.addEventListener('touchmove', handleMovement, { passive: true });
 }
-
