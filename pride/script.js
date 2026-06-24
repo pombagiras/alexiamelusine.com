@@ -371,13 +371,18 @@ function showToast(message) {
 
 function initHeroSlideshow() {
     const container = document.querySelector('.hero-slideshow-container');
+    const heroContent = document.getElementById('heroContent');
     if (!container) return;
 
     const slides = container.querySelectorAll('.hero-slide');
     if (slides.length <= 1) return;
 
     let currentIndex = 0;
-    const intervalTime = 5000; // Transition every 5 seconds
+    let slideshowInterval = null;
+    let isMoving = false;
+    let stopTimeout = null;
+    const slowSpeed = 5000;
+    const fastSpeed = 1500;
 
     function nextSlide() {
         // Remove active class from the current slide
@@ -390,6 +395,54 @@ function initHeroSlideshow() {
         slides[currentIndex].classList.add('active');
     }
 
-    // Start autoplay interval
-    setInterval(nextSlide, intervalTime);
+    function startInterval(time) {
+        if (slideshowInterval) {
+            clearInterval(slideshowInterval);
+        }
+        slideshowInterval = setInterval(nextSlide, time);
+    }
+
+    // Start default slow slideshow
+    startInterval(slowSpeed);
+
+    // Track mouse and touch movement
+    function handleMovement() {
+        // Stop execution if page is scrolled past the hero section (full viewport height)
+        if (window.scrollY >= window.innerHeight) {
+            if (isMoving) {
+                stopMovement();
+            }
+            return;
+        }
+
+        if (!isMoving) {
+            isMoving = true;
+            if (heroContent) {
+                heroContent.classList.add('hero-fade-out');
+            }
+            // Transition slide immediately on start of movement
+            nextSlide();
+            // Accelerate slide transitions while moving
+            startInterval(fastSpeed);
+        }
+
+        // Clear existing stop detection timeout
+        clearTimeout(stopTimeout);
+        
+        // Detect when user stops moving the pointer
+        stopTimeout = setTimeout(stopMovement, 1500);
+    }
+
+    function stopMovement() {
+        isMoving = false;
+        if (heroContent) {
+            heroContent.classList.remove('hero-fade-out');
+        }
+        // Restore default slow transition speed
+        startInterval(slowSpeed);
+    }
+
+    // Listen to mousemove and touchmove events
+    window.addEventListener('mousemove', handleMovement, { passive: true });
+    window.addEventListener('touchmove', handleMovement, { passive: true });
 }
