@@ -21,9 +21,10 @@ h1, h2, h3, h4, .font-display {
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 100%;
 }
 
@@ -282,6 +283,8 @@ body {
 /* Hero Section & Cover Color Reveal */
 .hero-cover {
     position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -292,13 +295,25 @@ body {
 
 .hero-slideshow-container {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
     z-index: 0;
+}
+
+.hero-slides-track {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .hero-slide {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
     opacity: 0;
     z-index: 0;
     transition: opacity 1.5s ease-in-out;
@@ -310,8 +325,8 @@ body {
 }
 
 .main-cover-img {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
     filter: brightness(0.85) contrast(1.05) saturate(1.1);
     transition: filter 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
