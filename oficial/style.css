@@ -756,26 +756,73 @@ body {
 
 .main-footer {
     border-top: 1px solid rgba(250, 246, 238, 0.05);
-    padding: 3rem 0;
+    padding: 4rem 1.5rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 1.25rem;
+    text-align: center;
     color: var(--clr-slate);
+    font-size: 0.875rem;
+}
+
+.main-footer .footer-email-container {
+    margin-bottom: 0.25rem;
+}
+
+.main-footer .copy-email-btn {
+    background: rgba(250, 246, 238, 0.02);
+    border: 1px dashed rgba(250, 246, 238, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem 1.5rem;
+    color: var(--clr-slate);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    position: relative;
+}
+
+.main-footer .copy-email-btn:hover {
+    border-color: var(--clr-brass);
+    color: var(--clr-cream);
+    background: rgba(197, 155, 39, 0.05);
+    box-shadow: 0 0 15px rgba(197, 155, 39, 0.1);
+}
+
+.main-footer .footer-copyright {
+    color: var(--clr-slate);
+    font-family: var(--font-body);
     font-size: 0.85rem;
 }
 
-.footer-credits a {
-    color: var(--clr-brass);
+.main-footer .footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.main-footer .footer-legal-link {
+    color: var(--clr-slate);
     text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
     transition: var(--transition-premium);
 }
 
-.footer-credits a:hover {
+.main-footer .footer-legal-link:hover {
     color: var(--clr-cream);
+    text-shadow: 0 0 8px rgba(250, 246, 238, 0.2);
 }
 
-.footer-info {
-    text-align: right;
+.main-footer .tagline-footer {
+    color: var(--clr-red);
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(168, 12, 30, 0.15);
 }
 /* ==========================================================================
    Galeria de Transição (Transition Gallery)
