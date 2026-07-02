@@ -1,0 +1,1078 @@
+/* ==========================================================================
+   🥀 OFICIAL - STYLE.CSS
+   Estética Luxury Visceral Dark.
+   Design responsivo otimizado, cursor interativo e efeito Color Reveal.
+   ========================================================================== */
+
+/* Importação das Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:wght@100..900&display=swap');
+
+:root {
+    /* Paleta Oficial de Cores */
+    --clr-black: #030303;
+    --clr-oxblood: #4A0710;
+    --clr-brass: #C59B27;
+    --clr-slate: #2D3139;
+    --clr-cream: #FAF6EE;
+    --clr-purple: #2B0F54;
+    --clr-red: #A80C1E;
+    
+    /* Variações Suaves para Efeitos */
+    --clr-dark-card: rgba(13, 13, 15, 0.75);
+    --clr-glow-purple: rgba(43, 15, 84, 0.35);
+    --clr-glow-red: rgba(168, 12, 30, 0.25);
+    --clr-glow-brass: rgba(197, 155, 39, 0.2);
+    --glass-border: rgba(250, 246, 238, 0.05);
+    --glass-border-hover: rgba(197, 155, 39, 0.35);
+    
+    /* Tipografia */
+    --font-title: 'Fraunces', serif;
+    --font-body: 'Geist', sans-serif;
+    
+    /* Transições e Bordas */
+    --radius-full: 9999px;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 6px;
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Global & Acessibilidade */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--clr-black);
+    color: var(--clr-cream);
+    font-family: var(--font-body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 0%, var(--clr-oxblood) 0%, var(--clr-purple) 35%, var(--clr-black) 80%);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Cursor Customizado (Somente Desktop) */
+.custom-cursor {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--clr-brass);
+    border-radius: var(--radius-full);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+    mix-blend-mode: difference;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+    display: none;
+}
+
+.custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--clr-red);
+    border-radius: var(--radius-full);
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+    display: none;
+}
+
+@media (pointer: fine) {
+    .custom-cursor, .custom-cursor-dot {
+        display: block;
+    }
+    body, a, button, [role="button"] {
+        cursor: none !important;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--clr-black);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--clr-slate);
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--clr-black);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-brass);
+}
+
+/* ==========================================================================
+   Layout Principal e Grid
+   ========================================================================== */
+
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 6rem 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Header Minimalista */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.header-logo {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--clr-cream);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-premium);
+}
+
+.header-logo span {
+    color: var(--clr-brass);
+}
+
+.header-logo:hover {
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 10px rgba(197, 155, 39, 0.4);
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--clr-slate);
+    text-decoration: none;
+    transition: var(--transition-premium);
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--clr-brass);
+    transition: var(--transition-premium);
+}
+
+.nav-link:hover {
+    color: var(--clr-cream);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active-link {
+    color: var(--clr-brass);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Moldura de Retrato Premium */
+.portrait-container {
+    width: 320px;
+    height: 420px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background-color: var(--clr-black);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    transition: var(--transition-premium);
+}
+
+/* Color Reveal Effect no Retrato */
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.7) contrast(1.1);
+    transition: var(--transition-premium);
+}
+
+.portrait-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(3, 3, 3, 0.9) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.portrait-container:hover {
+    border-color: var(--clr-brass);
+    box-shadow: 0 30px 60px -15px rgba(197, 155, 39, 0.15), 0 0 40px var(--clr-glow-purple);
+    transform: translateY(-5px);
+}
+
+.portrait-container:hover .portrait-image {
+    filter: grayscale(0%) brightness(0.95) saturate(1.1) contrast(1.05);
+    transform: scale(1.03);
+}
+
+/* Anel de Pulsação de Luz no Fundo */
+.visual-bg-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--clr-glow-red) 0%, transparent 70%);
+    border-radius: var(--radius-full);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+    animation: slow-pulse 8s infinite alternate ease-in-out;
+}
+
+@keyframes slow-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; }
+}
+
+/* Informações do Hero */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--clr-brass);
+}
+
+.hero-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero-title span {
+    display: block;
+    color: var(--clr-cream);
+}
+
+.hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(135deg, var(--clr-cream), var(--clr-brass));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-bio {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    color: var(--clr-slate);
+    max-width: 600px;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.hero-badge {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    background: rgba(45, 49, 57, 0.4);
+    border: 1px solid rgba(250, 246, 238, 0.08);
+    color: var(--clr-cream);
+}
+
+.hero-badge.highlight {
+    background: rgba(168, 12, 30, 0.15);
+    border-color: rgba(168, 12, 30, 0.4);
+    color: var(--clr-cream);
+}
+
+/* ==========================================================================
+   Seção Dossiê & Alma
+   ========================================================================== */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-bottom: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.section-intro-col h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.section-intro-col h2 span {
+    color: var(--clr-brass);
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-family: var(--font-body);
+    margin-bottom: 0.5rem;
+}
+
+.manifesto-box {
+    background: linear-gradient(135deg, rgba(74, 7, 16, 0.15), rgba(43, 15, 84, 0.15));
+    border: 1px solid rgba(197, 155, 39, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.manifesto-box::before {
+    content: '“';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: var(--font-title);
+    font-size: 8rem;
+    color: rgba(197, 155, 39, 0.08);
+    line-height: 1;
+}
+
+.manifesto-text {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--clr-cream);
+    position: relative;
+    z-index: 5;
+    font-style: italic;
+}
+
+.dossier-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.detail-item h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--clr-brass);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.detail-item p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--clr-slate);
+}
+
+.detail-item p strong {
+    color: var(--clr-cream);
+}
+
+/* ==========================================================================
+   Frases de Poder (Quotes Grid)
+   ========================================================================== */
+
+.quotes-section {
+    margin-bottom: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.quotes-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.quotes-header h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+}
+
+.quotes-header p {
+    color: var(--clr-brass);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-top: 0.5rem;
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.quote-card {
+    background: var(--clr-dark-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 2.25rem;
+    position: relative;
+    transition: var(--transition-premium);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito Color Reveal nos cards de frases */
+.quote-card p {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--clr-cream);
+    filter: grayscale(100%) brightness(0.85);
+    transition: var(--transition-premium);
+}
+
+.quote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background-color: var(--clr-red);
+    transition: var(--transition-premium);
+}
+
+.quote-card:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 25px var(--clr-glow-red);
+    transform: translateY(-3px);
+}
+
+.quote-card:hover p {
+    filter: grayscale(0%) brightness(1.0);
+    text-shadow: 0 0 8px rgba(250, 246, 238, 0.15);
+}
+
+.quote-card:hover::before {
+    height: 100%;
+}
+
+.quote-author {
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-brass);
+}
+
+/* ==========================================================================
+   Ecossistema e Links (Tabs & Color Reveal Cards)
+   ========================================================================== */
+
+.ecosystem-section {
+    margin-bottom: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.ecosystem-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.ecosystem-header h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+}
+
+.ecosystem-header p {
+    color: var(--clr-brass);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-top: 0.5rem;
+}
+
+/* Tab Bar */
+.tab-bar-container {
+    overflow-x: auto;
+    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.tab-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    min-width: max-content;
+    margin: 0 auto;
+}
+
+.tab-btn {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--clr-slate);
+    background: transparent;
+    border: 1px solid rgba(250, 246, 238, 0.05);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-premium);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.tab-btn:hover {
+    color: var(--clr-cream);
+    border-color: rgba(197, 155, 39, 0.4);
+    background: rgba(197, 155, 39, 0.03);
+}
+
+.tab-btn.active-tab {
+    color: var(--clr-black);
+    background: var(--clr-brass);
+    border-color: var(--clr-brass);
+    box-shadow: 0 0 20px var(--clr-glow-brass);
+}
+
+/* Content Panels */
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tab-panel.active-panel {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Links Cards Grid */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.link-card {
+    background: var(--clr-dark-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition-premium);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Filter Effect - Color Reveal */
+.link-card .card-icon {
+    font-size: 1.75rem;
+    color: var(--clr-slate);
+    transition: var(--transition-premium);
+    filter: grayscale(100%) brightness(0.8);
+    margin-bottom: 1rem;
+}
+
+.link-card .card-title {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--clr-cream);
+    margin-bottom: 0.25rem;
+    filter: grayscale(100%) brightness(0.85);
+    transition: var(--transition-premium);
+}
+
+.link-card .card-desc {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--clr-slate);
+    transition: var(--transition-premium);
+}
+
+.link-card .card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--clr-slate);
+    transform: translateX(-5px);
+    opacity: 0;
+    transition: var(--transition-premium);
+}
+
+/* HOVER STATES - COLOR REVEAL ACTIVATION */
+.link-card:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--clr-glow-purple);
+    transform: translateY(-3px);
+}
+
+.link-card:hover .card-title {
+    filter: grayscale(0%) brightness(1);
+    color: var(--clr-cream);
+}
+
+.link-card:hover .card-icon {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.1);
+}
+
+/* Icon custom colors on hover activation */
+.link-card:hover .fa-tiktok { color: #ff0050; }
+.link-card:hover .fa-instagram { color: #e1306c; }
+.link-card:hover .fa-spotify { color: #1ed760; }
+.link-card:hover .fa-github { color: var(--clr-cream); }
+.link-card:hover .fa-youtube { color: #ff0000; }
+.link-card:hover .fa-facebook { color: #1877f2; }
+.link-card:hover .fa-threads { color: var(--clr-cream); }
+.link-card:hover .fa-reddit { color: #ff4500; }
+.link-card:hover .fa-pinterest { color: #bd081c; }
+.link-card:hover .fa-discord { color: #5865f2; }
+.link-card:hover .fa-telegram { color: #2497d4; }
+.link-card:hover .fa-whatsapp { color: #25d366; }
+.link-card:hover .fa-medium { color: var(--clr-cream); }
+.link-card:hover .fa-tumblr { color: #35465c; }
+.link-card:hover .fa-behance { color: #0057ff; }
+.link-card:hover .fa-snapchat { color: #fffc00; }
+.link-card:hover .fa-link { color: var(--clr-brass); }
+.link-card:hover .fa-globe { color: var(--clr-brass); }
+.link-card:hover .fa-envelope { color: var(--clr-red); }
+
+.link-card:hover .card-desc {
+    color: var(--clr-cream);
+}
+
+.link-card:hover .card-arrow {
+    transform: translateX(0);
+    opacity: 1;
+    color: var(--clr-brass);
+}
+
+/* E-mail Copiável Card Específico */
+.copy-email-btn {
+    cursor: pointer;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 0.7rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--clr-brass);
+    background: rgba(197, 155, 39, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(197, 155, 39, 0.25);
+    opacity: 0;
+    transition: var(--transition-premium);
+    pointer-events: none;
+}
+
+.copy-email-btn:hover .copy-tooltip {
+    opacity: 1;
+}
+
+.copy-tooltip.copied {
+    color: var(--clr-cream);
+    background: rgba(37, 211, 102, 0.15);
+    border-color: rgba(37, 211, 102, 0.4);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.main-footer {
+    border-top: 1px solid rgba(250, 246, 238, 0.05);
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--clr-slate);
+    font-size: 0.85rem;
+}
+
+.footer-credits a {
+    color: var(--clr-brass);
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.footer-credits a:hover {
+    color: var(--clr-cream);
+}
+
+.footer-info {
+    text-align: right;
+}
+/* ==========================================================================
+   Galeria de Transição (Transition Gallery)
+   ========================================================================== */
+
+.gallery-section {
+    margin-bottom: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.05);
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.gallery-header h2 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+}
+
+.gallery-header p {
+    color: var(--clr-brass);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-top: 0.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-card {
+    background: rgba(250, 246, 238, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    transition: var(--transition-premium);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gallery-image-wrapper {
+    width: 100%;
+    height: 280px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Color Reveal nos cards da galeria */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.65) contrast(1.1);
+    transition: var(--transition-premium);
+}
+
+.gallery-card-info {
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-card-title {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--clr-cream);
+}
+
+.gallery-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--clr-slate);
+}
+
+/* Hover States (Revelando as cores e saltando levemente) */
+.gallery-card:hover {
+    border-color: var(--glass-border-hover);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px var(--clr-glow-purple);
+    transform: translateY(-5px);
+    background: rgba(250, 246, 238, 0.05);
+}
+
+.gallery-card:hover .gallery-img {
+    filter: grayscale(0%) brightness(0.95) saturate(1.1) contrast(1.05);
+    transform: scale(1.04);
+}
+
+.gallery-card:hover .gallery-card-desc {
+    color: var(--clr-brass);
+}
+
+/* ==========================================================================
+   Modal Lightbox (Efeito Vidro e Foto Saltando)
+   ========================================================================== */
+
+.lightbox-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(3, 3, 3, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--clr-cream);
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition-premium);
+    z-index: 10;
+}
+
+.lightbox-close:hover {
+    color: var(--clr-red);
+    transform: rotate(90deg);
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    transform: scale(0.85);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação elástica de salto */
+}
+
+.lightbox-modal.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(250, 246, 238, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(168, 12, 30, 0.25);
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    color: var(--clr-cream);
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================================
+   MOBILE DEDICATED OVERRIDES
+   Focado em ocultar excesso, compactar fontes e redefinir alinhamento
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .hero-bio {
+        margin: 0 auto;
+    }
+
+    .hero-badges {
+        justify-content: center;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 1. Redução de Margens e Padding Geral */
+    .site-container {
+        padding: 1rem 1rem 4rem 1rem;
+    }
+
+    .main-header {
+        margin-bottom: 2.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* 2. Ocultar o Desnecessário / Compactar Layout */
+    .visual-bg-glow {
+        display: none; /* Remove elementos pesados/decorativos de fundo no mobile */
+    }
+
+    .portrait-container {
+        width: 250px;
+        height: 330px; /* Redimensiona a foto de perfil */
+    }
+
+    .hero-section {
+        margin-bottom: 3.5rem;
+    }
+
+    /* 3. Redimensionamento de Tipografia */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-intro-col h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .manifesto-box {
+        padding: 1.75rem;
+    }
+
+    /* 4. Tab Bar Mobile-Friendly: Rolagem suave horizontal */
+    .tab-bar-container {
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .tab-bar {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    /* 5. Ajuste nas Grelhas para Coluna Única Confortável */
+    .quotes-grid, .links-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-image-wrapper {
+        height: 240px;
+    }
+
+    .lightbox-content img {
+        max-height: 65vh;
+    }
+
+    .quote-card {
+        padding: 1.5rem;
+    }
+
+    .link-card {
+        padding: 1.25rem;
+        min-height: 120px;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+}
