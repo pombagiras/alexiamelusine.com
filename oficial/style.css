@@ -1045,22 +1045,31 @@ body {
     }
 
     .header-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem 0.75rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem 0.6rem;
         width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
         padding: 0 0.5rem;
     }
 
     .header-nav .nav-link {
+        display: block;
         font-size: 0.75rem;
-        padding: 0.35rem 0.75rem;
+        padding: 0.5rem 0.5rem;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.06);
         border-radius: 50px;
         text-align: center;
         transition: var(--transition-premium);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .header-nav .nav-link:last-child {
+        grid-column: span 2;
     }
 
     .header-nav .nav-link::after {
