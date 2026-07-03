@@ -852,6 +852,10 @@
       .card-scene {
         width: 100vw;
         height: 100dvh;
+        perspective: 800px;
+      }
+      .flip-card-inner {
+        transition-duration: .55s;
       }
 
       /* Ocultar label desktop */
@@ -877,7 +881,11 @@
           max(18px, env(safe-area-inset-bottom))
           max(18px, env(safe-area-inset-left));
       }
-      .back-header { padding: 14px 15px; border-radius: 16px; margin-bottom: 16px; }
+      .back-header {
+        padding: 14px 15px; border-radius: 16px; margin-bottom: 16px;
+        backdrop-filter: blur(12px) saturate(120%);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
+      }
       .back-name { font-size: 16px; }
       .photo-back { width: 48px; height: 48px; }
 
@@ -886,14 +894,26 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 7px;
       }
-      .social-btn { padding: 12px 6px; font-size: 10px; border-radius: 12px; gap: 4px; }
+      .social-btn {
+        padding: 12px 6px; font-size: 10px; border-radius: 12px; gap: 4px;
+        backdrop-filter: blur(8px) saturate(120%);
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+      }
       .social-icon { font-size: 10px; }
 
-      .highlight-phrase { padding: 13px 15px; }
+      .highlight-phrase {
+        padding: 13px 15px;
+        backdrop-filter: blur(8px) saturate(120%);
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+      }
       .phrase-text { font-size: 12px; }
       .phrase-text strong { font-size: 13px; }
 
-      .site-button { padding: 16px; font-size: 10.5px; letter-spacing: 2px; border-radius: 14px; }
+      .site-button {
+        padding: 16px; font-size: 10.5px; letter-spacing: 2px; border-radius: 14px;
+        backdrop-filter: blur(8px) saturate(120%);
+        -webkit-backdrop-filter: blur(8px) saturate(120%);
+      }
       .section-label { font-size: 8px; margin-bottom: 9px; }
       .divider { margin-bottom: 16px; }
       .back-content { gap: 12px; }
