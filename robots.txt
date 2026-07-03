@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/
 Disallow: *.tmp
 Disallow: *.bak
 Disallow: *.sql
