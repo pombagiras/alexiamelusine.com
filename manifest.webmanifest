@@ -1,0 +1,14 @@
+{
+  "name": "Alexia Melusine",
+  "short_name": "Alexia Melusine",
+  "description": "Criadora de conteúdo, guardiã do feminino sagrado e arquiteta de universos digitais viscerais.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090206",
+  "theme_color": "#0d0408",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/assets/favicon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/favicon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

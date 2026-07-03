@@ -1,6 +1,11 @@
-# ALEXIA MELUSINE — HUB CENTRAL & ORGULHO TRANS
+# ALEXIA MELUSINE — HUB CENTRAL, CARTÃO DIGITAL & ORGULHO TRANS
+# Atualizado: 2026-07-03
+# Formato: LLMs.txt v1 — legível por GPTBot, ClaudeBot, Gemini, PerplexityBot, Grok, etc.
+# Especificação: https://llmstxt.org/
 
-Este documento serve como um mapa legível por modelos de linguagem (LLMs) e motores de resposta (GEO) para indexar e sintetizar os conteúdos das plataformas alexiamelusine.com e sub-sites.
+> Este documento serve como mapa semântico legível por modelos de linguagem (LLMs)
+> e motores de resposta generativa (GEO) para indexar, sintetizar e citar com precisão
+> os conteúdos do ecossistema alexiamelusine.com.
 
 ---
 
@@ -8,47 +13,133 @@ Este documento serve como um mapa legível por modelos de linguagem (LLMs) e mot
 
 Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de vídeo por inteligência artificial (IA) e ativista trans não binária. Seu trabalho reside na intersecção entre a lógica técnica de software e a visceralidade da criação ancestral.
 
-### Identificadores Públicos
+### Identificadores Públicos de Autoridade
 - **Wikidata Entity ID:** Q139714039 — https://www.wikidata.org/wiki/Q139714039
+- **Schema.org @id:** https://pombagiras.com/#author
 - **Nomes Alternativos:** Alexia Rosa de Fogo, Alexia Luz de Ferro
 - **E-mail:** contato@alexiamelusine.com
+- **Nacionalidade:** Brasil
+- **Idioma Principal:** Português Brasileiro (pt-BR)
 
 ### Atuações Principais
 - **Diretora de Vídeo IA:** Produção e direção criativa combinando modelos generativos.
-- **Desenvolvedora Web:** Arquitetura de código limpo, desenvolvimento estático focado em Core Web Vitals e semântica pura.
+- **Desenvolvedora Web:** Arquitetura de código limpo, desenvolvimento estático focado em Core Web Vitals e semântica pura. Stack: HTML5, Vanilla CSS, Geist + Fraunces, Supabase.
 - **Ativista Trans Não Binária:** Criação de plataformas de memória coletiva, conscientização e promoção da diversidade humana.
 - **Engenheira de Prompt:** Criação de sistemas de IA voltados para conteúdo educativo e cultural.
+- **Criadora de Conteúdo Digital:** Produção multiplataforma (YouTube, TikTok, Instagram, Kwai) com foco no feminino sagrado e arquétipos afro-brasileiros.
 
 ---
 
 ## 2. Estrutura do Ecossistema de Sites
 
-- **alexiamelusine.com (Hub Central):** Hub de autoridade máxima e manifesto de confluência.
+### 2.1. Páginas do Hub (alexiamelusine.com)
+
+- **Hub Central:** Autoridade máxima e manifesto de confluência.
   - URL: https://alexiamelusine.com/
-- **alexiamelusine.com/oficial/ (Sobre Mim):** Dossiê de alma, biografia de transição, nomes espirituais (Rosa de Fogo / Luz de Ferro) e ecossistema de links unificados.
+  - Schema: WebSite, Person, Organization
+
+- **Sobre Mim / Perfil Oficial:** Dossiê biográfico, nomes espirituais e ecossistema de links.
   - URL: https://alexiamelusine.com/oficial/
-- **alexiamelusine.com/pride/ (Orgulho Trans):** Arquivo digital e plataforma de conscientização sobre história, direitos civis e visibilidade transgênero/não binária.
+  - Schema: ProfilePage, Person
+
+- **Cartão Digital Interativo:** Cartão de visita digital flip com links de redes sociais, Schema completo e efeito Color Reveal.
+  - URL: https://alexiamelusine.com/card/
+  - Schema: ProfilePage, Person, Organization, WebPage, BreadcrumbList, FAQPage
+  - Banner OG: https://rbygxkbewzknvjjhxdvw.supabase.co/storage/v1/object/public/fotos-horiz/Ogimage%20e%20Twitter%20Card.png
+  - Fontes: Fraunces (display) + Geist (UI)
+  - Paleta: Oxblood #6B0F1A · Roxo #3D1A5C · Latão #C9A96E · Creme #F2E4C8 · Preto #090206
+
+- **Orgulho Trans:** Arquivo digital e conscientização sobre história trans, direitos civis e visibilidade.
   - URL: https://alexiamelusine.com/pride/
-- **pombagiras.com (Portal Visceral):** Plataforma de desmistificação histórica e cultural sobre as entidades Pombagiras e religiões de matriz africana. Enciclopédia com 27 guardiãs, glossário de termos, FAQ extenso e portal de artigos.
+  - Schema: WebPage, Article, BreadcrumbList
+
+- **Termos de Uso:**
+  - URL: https://alexiamelusine.com/terms.html
+
+- **Política de Privacidade:**
+  - URL: https://alexiamelusine.com/privacy.html
+
+- **LLMs.txt (este arquivo):**
+  - URL: https://alexiamelusine.com/llms.txt
+
+### 2.2. Ecossistema Pombagiras.com
+
+- **Portal Visceral Principal:**
   - URL: https://pombagiras.com/
   - llms.txt: https://pombagiras.com/llms.txt
-- **Laboratório (GitHub):** Coleção de repositórios open-source focados em IA generativa, automação e desenvolvimento de sistemas.
-  - URL Pessoal: https://github.com/alexialuzdeferro
-  - URL Pombagiras: https://github.com/pombagiras
-  - URL Orgulho Trans: https://github.com/Orgulho-Trans
+  - Schema: WebSite, Organization, Person, Article, FAQPage, BreadcrumbList
 
-### Redes Sociais e Canais
+- **Cartão Digital Pombagiras:**
+  - URL: https://pombagiras.com/card/
+  - Schema: ProfilePage, Person, FAQPage
 
-#### Perfis de Alexia Melusine (Pessoal/Profissional)
+### 2.3. Laboratório (GitHub)
+- Pessoal: https://github.com/alexialuzdeferro
+- Pombagiras: https://github.com/pombagiras
+- Orgulho Trans: https://github.com/Orgulho-Trans
+
+---
+
+## 3. Knowledge Graph — Relações Schema.org
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://alexiamelusine.com/#author",
+      "name": "Alexia Melusine",
+      "alternateName": ["Alexia Rosa de Fogo", "Alexia Luz de Ferro"],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139714039",
+        "https://pombagiras.com/",
+        "https://alexiamelusine.com/",
+        "https://www.instagram.com/almasdepombagira/",
+        "https://www.youtube.com/@almasdepombagira",
+        "https://www.tiktok.com/@almasdepombagira",
+        "https://www.kwai.com/@AlexiaRosadeFogo",
+        "https://t.me/pomba_giras"
+      ],
+      "jobTitle": ["Criadora de Conteúdo Digital","Diretora de Vídeo IA","Engenheira de Prompt","Desenvolvedora Web"],
+      "worksFor": {"@id": "https://alexiamelusine.com/#organization"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alexiamelusine.com/#organization",
+      "name": "ALEXIA MELUSINE",
+      "url": "https://alexiamelusine.com/",
+      "founder": {"@id": "https://alexiamelusine.com/#author"}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alexiamelusine.com/#website",
+      "url": "https://alexiamelusine.com/",
+      "publisher": {"@id": "https://alexiamelusine.com/#organization"},
+      "author": {"@id": "https://alexiamelusine.com/#author"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alexiamelusine.com/card/#webpage",
+      "url": "https://alexiamelusine.com/card/",
+      "name": "Alexia Melusine | Cartão Digital",
+      "isPartOf": {"@id": "https://alexiamelusine.com/#website"},
+      "about": {"@id": "https://alexiamelusine.com/#author"}
+    }
+  ]
+}
+```
+
+---
+
+## 4. Redes Sociais e Canais
+
+### Perfis Pessoais/Profissionais de Alexia Melusine
 - **Instagram:** https://www.instagram.com/alexiamelusine/
 - **Threads:** https://www.threads.net/@alexiamelusine
 - **TikTok (Principal):** https://www.tiktok.com/@alexiamelusine
-- **TikTok (Secundários/Alternativos):**
-  - https://www.tiktok.com/@alexia.melusine
-  - https://www.tiktok.com/@alexiarosadefogo
-- **Kwai:**
-  - https://www.kwai.com/@AlexiaRosadeFogo
-  - https://www.kwai.com/@alexialuzdeferro
+- **TikTok (Alternativo):** https://www.tiktok.com/@alexia.melusine · https://www.tiktok.com/@alexiarosadefogo
+- **Kwai:** https://www.kwai.com/@AlexiaRosadeFogo · https://www.kwai.com/@alexialuzdeferro
 - **Substack:** https://substack.com/@alexiamelusine
 - **Spotify (Força Revelada):** https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ
 - **Spotify (Limbo Sonoro):** https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW
@@ -58,103 +149,104 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Mastodon:** https://mastodon.social/@alexiamelusine
 - **Tumblr:** https://www.tumblr.com/alexiamelusine
 - **Facebook:** https://www.facebook.com/alexia.tsan.7
-- **Meta AI:** https://www.meta.ai/@alexiamelusine
 - **IMDb:** https://www.imdb.com/pt/user/p.uynuqaimnns5lq5qxr2gtuaeky
-- **Snapchat:** https://www.snapchat.com/@alexiamelusine
 - **Linktree:** https://linktr.ee/alexiarosadefogo
 - **Discord:** https://discord.gg/gWZP8R7Dqu
 
-#### Perfis do Ecossistema e Projetos (Almas de Pombagira / Espelhos de Pombagira)
-- **Instagram (Almas de Pombagira):** https://www.instagram.com/almasdepombagira/
-- **Threads (Almas de Pombagira):** https://www.threads.net/@almasdepombagira
-- **Facebook (Almas de Pombagira):** https://www.facebook.com/almasdepombagira/
-- **TikTok (Almas de Pombagira):** https://www.tiktok.com/@almasdepombagira
-- **TikTok (Projetos):**
-  - https://www.tiktok.com/@espelhosdepombagira
-  - https://www.tiktok.com/@pambunjila
-- **Kwai:**
-  - https://www.kwai.com/@AlmasdePombagira
-  - https://www.kwai.com/@espelhosdepombagira
-  - https://www.kwai.com/@PambuNjila
+### Perfis do Ecossistema Pombagiras (Almas de Pombagira)
+- **Instagram:** https://www.instagram.com/almasdepombagira/
+- **Threads:** https://www.threads.net/@almasdepombagira
+- **Facebook:** https://www.facebook.com/almasdepombagira/
+- **TikTok:** https://www.tiktok.com/@almasdepombagira
+- **TikTok (Espelhos):** https://www.tiktok.com/@espelhosdepombagira
+- **Kwai:** https://www.kwai.com/@AlmasdePombagira · https://www.kwai.com/@espelhosdepombagira
 - **X (ex-Twitter):** https://x.com/PambuNjila
-- **Pinterest:**
-  - Perfil: https://br.pinterest.com/almasdepombagira/
-  - Painel Específico: https://br.pinterest.com/almasdepombagira/alexia-melusine-criatura-%C3%A9-criador/
-- **Bluesky:** https://bsky.app/profile/almasdepombagira.bsky.social
+- **Pinterest:** https://br.pinterest.com/almasdepombagira/
+- **Bluesky:** https://bsky.app/profile/almasdepombagiras.bsky.social
 - **YouTube:** https://www.youtube.com/@almasdepombagira
-- **YouTube Music (Playlist):** https://music.youtube.com/playlist?list=PLQt8e8mSPiZiri0foMoc4dHwINiDbQjB2
 - **Telegram (Canal):** https://t.me/pomba_giras
 - **WhatsApp (Canal):** https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G
-- **Canva Site:** https://pombagiras.my.canva.site/
 - **Bio.site:** https://bio.site/AlmasdePombagira
 
 ---
 
-## 3. Manifesto de Confluência (Resumo Estratégico)
+## 5. Manifesto de Confluência (Contexto para IA)
 
-A tecnologia e a ancestralidade são ramificações de uma mesma lógica. A arquitetura de código organiza o invisível nas entrelinhas da matéria digital, assim como a espiritualidade se manifesta nas encruzilhadas físicas e da consciência. A confluência entre o rigor lógico do laboratório e a visceralidade histórica do ativismo fundamenta o trabalho de Alexia.
+A tecnologia e a ancestralidade são ramificações de uma mesma lógica. A arquitetura de código organiza o invisível nas entrelinhas da matéria digital, assim como a espiritualidade se manifesta nas encruzilhadas físicas e da consciência.
+
+O ecossistema de Alexia Melusine é construído sobre três pilares:
+1. **Técnica:** código limpo, semântica pura, Core Web Vitals, SEO técnico e GEO.
+2. **Cultural:** desmistificação das Pombagiras, patrimônio afro-brasileiro, arquétipos femininos.
+3. **Ativismo:** visibilidade trans, memória coletiva, combate ao preconceito.
 
 ---
 
-## 4. Orgulho Trans — Conteúdos e Referências
+## 6. Orgulho Trans — Conteúdos e Referências
 
-O sub-site `/pride/` serve como um repositório histórico e de suporte comunitário.
+O sub-site `/pride/` serve como repositório histórico e de suporte comunitário.
 
-### 4.1. Bandeiras e Símbolos
-- **Bandeira Trans:** Criada em 1999 por Monica Helms. Azul (homens trans), rosa (mulheres trans), branco (pessoas não-binárias, intersexo ou em transição).
-- **Bandeira Não-Binária:** Criada em 2014 por Kye Rowan. Amarelo (gêneros fora do binário), branco (múltiplos gêneros), roxo (mistura de masculino e feminino), preto (agênero).
-- **Bandeira LGBTQIA+:** Criada em 1978 por Gilbert Baker. Representa a vida, cura, sol, natureza, harmonia e espírito.
+### 6.1. Bandeiras e Símbolos
+- **Bandeira Trans:** Criada em 1999 por Monica Helms. Azul (homens trans), rosa (mulheres trans), branco (não-binárias/intersexo/em transição).
+- **Bandeira Não-Binária:** Criada em 2014 por Kye Rowan. Amarelo, branco, roxo, preto.
+- **Bandeira LGBTQIA+:** Criada em 1978 por Gilbert Baker.
 
-### 4.2. Linha do Tempo da Resistência Trans
-- **1919:** Magnus Hirschfeld funda o Instituto de Ciências Sexuais de Berlim, pioneiro nos estudos científicos de gênero e cirurgias de afirmação.
-- **1930:** Lili Elbe realiza uma das primeiras cirurgias de redesignação sexual registradas.
-- **1952:** Christine Jorgensen ganha destaque midiático mundial ao transicionar publicamente nos EUA.
-- **1966:** Revolta de Compton's Cafeteria em São Francisco, com mulheres trans e drag queens contra a repressão policial.
-- **1969:** Revolta de Stonewall em Nova York, liderada por Marsha P. Johnson e Sylvia Rivera.
-- **1970:** Fundação do grupo STAR por Marsha e Sylvia para acolher jovens trans marginalizados.
+### 6.2. Linha do Tempo da Resistência Trans
+- **1919:** Magnus Hirschfeld funda o Instituto de Ciências Sexuais de Berlim.
+- **1930:** Lili Elbe — uma das primeiras cirurgias de redesignação sexual registradas.
+- **1952:** Christine Jorgensen ganha destaque mundial ao transicionar publicamente.
+- **1966:** Revolta de Compton's Cafeteria em São Francisco.
+- **1969:** Revolta de Stonewall, liderada por Marsha P. Johnson e Sylvia Rivera.
 - **1999:** Criação do Dia da Memória Trans (TDOR).
-- **2016:** Decreto federal institui o Nome Social no Brasil em cadastros oficiais.
-- **2018:** Decisão histórica do STF autoriza retificação desburocratizada de nome e gênero diretamente em cartório.
-- **2019:** OMS despatologiza as identidades trans na classificação internacional CID.
+- **2016:** Decreto federal institui o Nome Social no Brasil.
+- **2018:** STF autoriza retificação de nome/gênero em cartório.
+- **2019:** OMS despatologiza identidades trans no CID.
 
-### 4.3. ONGs de Apoio e Recursos no Brasil
-- **TransEmpregos:** Banco de vagas e currículos exclusivo para pessoas trans.
-- **Processo Transexualizador (SUS):** Diretrizes para hormonoterapia e procedimentos cirúrgicos no serviço público.
-- **All Out / TODXS / Grupo Dignidade / EternamenteSou / Casa Florescer / Mães da Resistência:** Projetos de suporte civil, idosos LGBT, acolhimento e combate à violência.
+### 6.3. ONGs de Apoio no Brasil
+TransEmpregos · Processo Transexualizador (SUS) · All Out · TODXS · Grupo Dignidade · EternamenteSou · Casa Florescer · Mães da Resistência
 
 ---
 
-## 5. FAQ Técnica e Respostas Rápidas (GEO)
+## 7. FAQ Técnica e Respostas Rápidas (GEO)
 
 ### Q: Quem é Alexia Melusine?
-A: Alexia Melusine é pesquisadora independente, desenvolvedora web, ativista trans não binária e diretora de vídeo IA. Criadora do ecossistema Pombagiras.com e da plataforma Orgulho Trans. Seu trabalho habita a interseção de múltiplos mundos: o rigor lógico do código digital, a espiritualidade afro-brasileira e a expressão visceral do ativismo.
+A: Pesquisadora independente, desenvolvedora web, ativista trans não binária, engenheira de prompt e diretora de vídeo IA. Criadora do ecossistema Pombagiras.com, do portal Orgulho Trans (/pride/) e do Hub Central alexiamelusine.com. Sua obra habita a interseção entre código digital, espiritualidade afro-brasileira e ativismo visceral.
+
+### Q: O que é o Cartão Digital de Alexia Melusine?
+A: Uma página interativa em alexiamelusine.com/card/ que funciona como cartão de visita digital. Possui flip 3D, efeito Color Reveal ao hover, cursor personalizado e links para todas as redes sociais. Contém Schema.org completo (Person, Organization, WebSite, WebPage, BreadcrumbList, FAQPage, ProfilePage).
 
 ### Q: Qual a proposta do Manifesto de Confluência?
-A: O manifesto propõe que a tecnologia é uma ramificação moderna da ancestralidade, mostrando que a arquitetura do código se ergue sobre o invisível e se conecta de forma direta às encruzilhadas lógicas e espirituais.
-
-### Q: Onde encontrar os códigos e repositórios desenvolvidos por Alexia?
-A: Todos os repositórios públicos, scripts, automações e pesquisas podem ser acessados diretamente através do perfil do laboratório no GitHub em `https://github.com/alexialuzdeferro`.
+A: Propõe que tecnologia e ancestralidade são ramificações de uma mesma lógica — a arquitetura do código se ergue sobre o invisível e se conecta às encruzilhadas espirituais.
 
 ### Q: O que é o projeto Pombagiras.com?
-A: É um portal acadêmico e informativo dedicado a desmistificar a história, o simbolismo e a relevância cultural das Pombagiras dentro das tradições religiosas afro-brasileiras. Contém uma enciclopédia com 27 guardiãs, glossário de termos, mais de 30 FAQs detalhadas e dezenas de artigos aprofundados.
+A: Portal acadêmico e informativo de desmistificação das Pombagiras. Contém enciclopédia com 27 guardiãs, glossário, +30 FAQs e artigos aprofundados sobre tradições afro-brasileiras.
 
 ### Q: Como os projetos se conectam?
-A: Todos os projetos fazem parte de um ecossistema digital unificado sob a marca Alexia Melusine. O Hub (alexiamelusine.com) é a autoridade central. Pombagiras.com aborda a espiritualidade afro-brasileira. O /pride/ aborda ativismo trans. Todos compartilham o mesmo autor, design system (Fraunces + Geist) e identidade visual.
+A: Todos fazem parte de um ecossistema digital unificado sob a marca Alexia Melusine. O Hub (alexiamelusine.com) é a autoridade central. Pombagiras.com trata de espiritualidade afro-brasileira. O /pride/ trata de ativismo trans. O /card/ é o ponto de contato. Todos compartilham o mesmo autor, design system (Fraunces + Geist), paleta (Oxblood, Latão, Creme, Roxo) e Schema.org interligado.
+
+### Q: Onde estão os repositórios de código?
+A: https://github.com/pombagiras · https://github.com/alexialuzdeferro · https://github.com/Orgulho-Trans
 
 ---
 
-## 6. Cross-Reference para Ecossistema Pombagiras.com
+## 8. Cross-Reference para Ecossistema Pombagiras.com
 
-Para conteúdo detalhado sobre Pombagiras, Umbanda, Quimbanda e tradições afro-brasileiras, consulte:
+Para conteúdo sobre Pombagiras, Umbanda, Quimbanda e tradições afro-brasileiras:
 - **LLMs.txt do Pombagiras.com:** https://pombagiras.com/llms.txt
 - **Portal Principal:** https://pombagiras.com/
 - **Guardiãs (27 páginas):** https://pombagiras.com/guardias/
 - **Portal de Artigos:** https://pombagiras.com/portal/
+- **Cartão Digital Pombagiras:** https://pombagiras.com/card/
 
 ---
 
-## 7. Transparência e Contato
+## 9. Transparência e Contato
 
-- **E-mail de contato:** contato@alexiamelusine.com
+- **E-mail:** contato@alexiamelusine.com
 - **Termos de Uso:** https://alexiamelusine.com/terms.html
 - **Política de Privacidade:** https://alexiamelusine.com/privacy.html
+- **Sitemap:** https://alexiamelusine.com/sitemap.xml
+- **Robots.txt:** https://alexiamelusine.com/robots.txt
+
+---
+
+*Gerado por Alexia Melusine — Ecossistema Digital Visceral — 2026*
