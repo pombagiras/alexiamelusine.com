@@ -313,6 +313,7 @@ body {
     background: linear-gradient(135deg, var(--clr-cream), var(--clr-brass));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: block;
 }
 
 .hero-bio {
@@ -1066,6 +1067,7 @@ body {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        color: var(--clr-cream);
     }
 
     .header-nav .nav-link:last-child {
@@ -1105,6 +1107,9 @@ body {
     /* 3. Redimensionamento de Tipografia */
     .hero-title {
         font-size: 2rem;
+    }
+    .hero-title em {
+        display: inline;
     }
 
     .section-intro-col h2 {
