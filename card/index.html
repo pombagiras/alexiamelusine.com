@@ -835,27 +835,34 @@
     ═══════════════════════════════════════ */
     @media (max-width: 600px) {
       :root {
-        --card-w: 100vw;
-        --card-h: 100dvh;
-        --radius: 0px; /* sem bordas arredondadas — toma a tela toda */
+        --radius: 24px;
       }
 
-      /* Body sem padding — card enche a tela */
+      /* Body centraliza o card como uma carta na mesa */
       body {
         padding: 0;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
       }
 
-      /* Card-scene também sem gaps */
       .card-scene {
         width: 100vw;
         height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         perspective: 800px;
       }
+
+      .flip-card {
+        width: min(calc(100vw - 48px), 340px);
+        height: auto;
+        aspect-ratio: 360 / 620;
+      }
+
       .flip-card-inner {
-        transition-duration: .55s;
+        transition-duration: .5s;
       }
 
       /* Ocultar label desktop */
@@ -864,22 +871,16 @@
       /* Frente: foto ocupa tela toda */
       .name-overlay { font-size: 32px; }
       .front-overlay {
-        padding: max(28px, env(safe-area-inset-bottom)) 24px
-                 max(28px, env(safe-area-inset-bottom)) 24px;
-        padding-top: 32px;
+        padding: 28px 24px;
       }
       .top-pill {
-        top: max(16px, env(safe-area-inset-top));
+        top: 16px;
         font-size: 8px; letter-spacing: 2px; padding: 5px 14px;
       }
 
-      /* Verso: inner padding com safe areas */
+      /* Verso: padding fixo (card está centralizado) */
       .back-inner {
-        padding:
-          max(20px, env(safe-area-inset-top))
-          max(18px, env(safe-area-inset-right))
-          max(18px, env(safe-area-inset-bottom))
-          max(18px, env(safe-area-inset-left));
+        padding: 20px 18px;
       }
       .back-header {
         padding: 14px 15px; border-radius: 16px; margin-bottom: 16px;
@@ -919,14 +920,14 @@
       .back-content { gap: 12px; }
 
       .copy-btn {
-        top: max(14px, env(safe-area-inset-top));
-        right: max(14px, env(safe-area-inset-right));
+        top: 14px;
+        right: 14px;
         width: 30px; height: 30px; font-size: 12px; border-radius: 8px;
       }
 
       .status-bar {
         padding-top: 12px;
-        padding-bottom: max(4px, env(safe-area-inset-bottom));
+        padding-bottom: 4px;
       }
     }
 
@@ -944,9 +945,9 @@
 
     /* Landscape mobile */
     @media (max-height: 500px) and (orientation: landscape) {
-      :root { --card-w: min(45vw, 320px); --card-h: 100dvh; }
-      body { padding: 0; overflow: hidden; }
-      .card-scene { height: 100dvh; }
+      body { padding: 0; overflow: hidden; justify-content: center; align-items: center; }
+      .card-scene { width: 100vw; height: 100dvh; display: flex; justify-content: center; align-items: center; }
+      .flip-card { width: min(45vw, 320px); height: auto; aspect-ratio: 360 / 620; }
       .back-inner { padding: 12px 14px 10px; }
       .divider { margin-bottom: 9px; }
       .back-content { gap: 8px; }
