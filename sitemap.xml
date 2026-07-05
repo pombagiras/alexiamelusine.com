@@ -4,19 +4,19 @@
   <!-- Sitemap principal (Home, privacidade, termos, llms) -->
   <sitemap>
     <loc>https://alexiamelusine.com/sitemap-main.xml</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-05</lastmod>
   </sitemap>
 
   <!-- Sitemap do cartão digital -->
   <sitemap>
     <loc>https://alexiamelusine.com/sitemap-card.xml</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-05</lastmod>
   </sitemap>
 
   <!-- Sitemap do Orgulho Trans -->
   <sitemap>
     <loc>https://alexiamelusine.com/sitemap-pride.xml</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-07-05</lastmod>
   </sitemap>
 
 </sitemapindex>

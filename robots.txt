@@ -1,6 +1,6 @@
 # =============================================================
 # ROBOTS.TXT — ALEXIA MELUSINE  (alexiamelusine.com)
-# Atualizado: 2026-07-03
+# Atualizado: 2026-07-05
 # Ecossistema: alexiamelusine.com · pombagiras.com
 # =============================================================
 
@@ -12,6 +12,8 @@ Disallow: *.bak
 Disallow: *.sql
 Disallow: /supabase_setup.sql
 Disallow: /pride/supabase_setup.sql
+Disallow: /gallery/
+Disallow: /tech/
 
 # ── Google (Search + AI Overview + Gemini) ──────────────────
 User-agent: Googlebot
