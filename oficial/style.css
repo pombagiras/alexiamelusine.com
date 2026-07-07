@@ -1059,8 +1059,8 @@ body {
         display: block;
         font-size: 0.75rem;
         padding: 0.5rem 0.5rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(197, 155, 39, 0.04);
+        border: 1px solid rgba(197, 155, 39, 0.35); /* Círculo/borda fino ouro elegante */
         border-radius: 50px;
         text-align: center;
         transition: var(--transition-premium);
@@ -1079,15 +1079,17 @@ body {
     }
 
     .header-nav .nav-link:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(197, 155, 39, 0.1);
+        border-color: var(--clr-brass);
         color: var(--clr-cream);
+        box-shadow: 0 0 10px rgba(197, 155, 39, 0.25);
     }
 
     .header-nav .nav-link.active-link {
-        color: var(--clr-brass) !important;
-        border-color: rgba(201, 169, 110, 0.35);
-        background: rgba(201, 169, 110, 0.08);
+        color: var(--clr-cream) !important;
+        border-color: var(--clr-brass) !important;
+        background: rgba(197, 155, 39, 0.18) !important;
+        box-shadow: 0 0 12px rgba(197, 155, 39, 0.4);
     }
 
     /* 2. Ocultar o Desnecessário / Compactar Layout */
@@ -1096,8 +1098,8 @@ body {
     }
 
     .portrait-container {
-        width: 250px;
-        height: 330px; /* Redimensiona a foto de perfil */
+        width: 320px;
+        height: 200px; /* Redimensiona a foto de perfil na horizontal para celular */
     }
 
     .hero-section {
