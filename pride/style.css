@@ -642,6 +642,11 @@ body {
         filter: brightness(1) contrast(1) grayscale(0) !important;
         transform: none !important;
     }
+
+    .evolution-img {
+        filter: none !important;
+        transform: none !important;
+    }
 }
 
 /* Footer Email Contact (Click to Copy) */
