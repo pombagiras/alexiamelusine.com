@@ -1,0 +1,25 @@
+{
+  "name": "alexia-melusine.com",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <img src=\"assets/ale-perfil.png\" alt=\"Alexia Melusine\" width=\"280\">\r </p>",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pombagiras/alexiamelusine.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/pombagiras/alexiamelusine.com/issues"
+  },
+  "homepage": "https://github.com/pombagiras/alexiamelusine.com#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1085.0",
+    "mime-types": "^3.0.2"
+  }
+}

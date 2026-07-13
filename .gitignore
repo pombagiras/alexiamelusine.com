@@ -18,3 +18,11 @@ desktop.ini
 
 # Local logs
 *.log
+
+# Cloudflare R2 Migration Ignores
+.env
+migrate_r2/backup_html/
+migrate_r2/inventory.json
+migrate_r2/upload_log.json
+migrate_r2/validation_report.json
+
