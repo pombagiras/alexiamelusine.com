@@ -1,6 +1,6 @@
 # =============================================================
 # ROBOTS.TXT — ALEXIA MELUSINE  (alexiamelusine.com)
-# Atualizado: 2026-07-05
+# Atualizado: 2026-07-12
 # Ecossistema: alexiamelusine.com · pombagiras.com
 # =============================================================
 
@@ -14,6 +14,37 @@ Disallow: /supabase_setup.sql
 Disallow: /pride/supabase_setup.sql
 Disallow: /gallery/
 Disallow: /tech/
+
+# ── Bloqueio de Bots de SEO Pesados / Agressivos ──────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+User-agent: SerpstatBot
+Disallow: /
+
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
 
 # ── Google (Search + AI Overview + Gemini) ──────────────────
 User-agent: Googlebot
@@ -113,6 +144,3 @@ Allow: /
 # SITEMAPS
 # =============================================================
 Sitemap: https://alexiamelusine.com/sitemap.xml
-
-# LLM-readable context
-# LLMs-txt: https://alexiamelusine.com/llms.txt

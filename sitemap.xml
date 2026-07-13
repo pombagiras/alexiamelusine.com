@@ -1,22 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Sitemap principal (Home, privacidade, termos, llms) -->
-  <sitemap>
-    <loc>https://alexiamelusine.com/sitemap-main.xml</loc>
-    <lastmod>2026-07-05</lastmod>
-  </sitemap>
+  <!-- Home Hub Central -->
+  <url>
+    <loc>https://alexiamelusine.com/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  <!-- Sitemap do cartão digital -->
-  <sitemap>
-    <loc>https://alexiamelusine.com/sitemap-card.xml</loc>
-    <lastmod>2026-07-05</lastmod>
-  </sitemap>
+  <!-- Sobre Mim / Perfil Oficial -->
+  <url>
+    <loc>https://alexiamelusine.com/oficial/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- Sitemap do Orgulho Trans -->
-  <sitemap>
-    <loc>https://alexiamelusine.com/sitemap-pride.xml</loc>
-    <lastmod>2026-07-05</lastmod>
-  </sitemap>
+  <!-- Orgulho Trans -->
+  <url>
+    <loc>https://alexiamelusine.com/pride/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-</sitemapindex>
+  <!-- Cartão Digital -->
+  <url>
+    <loc>https://alexiamelusine.com/card/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Termos de Uso -->
+  <url>
+    <loc>https://alexiamelusine.com/terms.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Política de Privacidade -->
+  <url>
+    <loc>https://alexiamelusine.com/privacy.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Orgulho Trans - Termos de Uso -->
+  <url>
+    <loc>https://alexiamelusine.com/pride/terms.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Orgulho Trans - Política de Privacidade -->
+  <url>
+    <loc>https://alexiamelusine.com/pride/privacy.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- LLMs.txt (para indexação por IA) -->
+  <url>
+    <loc>https://alexiamelusine.com/llms.txt</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
