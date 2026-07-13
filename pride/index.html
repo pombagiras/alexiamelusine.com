@@ -168,7 +168,7 @@
           "url": "https://alexiamelusine.com",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://cdn.pombagiras.com/assets/favicon.png"
+            "url": "https://cdn.pombagiras.com/assets/favicon-192x192.png?v=3.0"
           },
           "founder": {
             "@id": "https://pombagiras.com/#author"
@@ -207,14 +207,22 @@
           "publisher": {
             "@id": "https://pombagiras.com/#organization"
           },
-          "inLanguage": "pt-BR"
+          "description": "Hub de autoridade máxima de Alexia Melusine. Ecossistema digital unificando tecnologia, espiritualidade afro-brasileira e ativismo trans.",
+          "inLanguage": "pt-BR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://alexiamelusine.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
         {
           "@type": "WebPage",
           "@id": "https://alexiamelusine.com/pride/#webpage",
           "url": "https://alexiamelusine.com/pride/",
           "name": "Orgulho Trans | Ativismo & Visibilidade",
-          "description": "Celebrando a diversidade, a coragem e a beleza da comunidade transgênero, não-binária e crossdresser. Linha do tempo, história, símbolos e referências da militância.",
           "isPartOf": {
             "@id": "https://alexiamelusine.com/#website"
           },
@@ -246,29 +254,6 @@
           }
         },
         {
-          "@type": "Dataset",
-          "@id": "https://pombagiras.com/#knowledge-graph",
-          "name": "Pombagiras Knowledge Graph",
-          "description": "Base estruturada de entidades, arquétipos e narrativas sobre Pombagiras e Exus na tradição afro-brasileira.",
-          "about": {
-            "@id": "https://pombagiras.com/#organization"
-          },
-          "keywords": [
-            "Pombagira",
-            "Exu",
-            "Umbanda",
-            "Quimbanda",
-            "arquétipos espirituais",
-            "antropologia afro-brasileira"
-          ],
-          "creator": {
-            "@id": "https://pombagiras.com/#author"
-          },
-          "mainEntityOfPage": {
-            "@id": "https://alexiamelusine.com/pride/#webpage"
-          }
-        },
-        {
           "@type": "BreadcrumbList",
           "@id": "https://alexiamelusine.com/pride/#breadcrumb",
           "itemListElement": [
@@ -285,6 +270,24 @@
               "item": "https://alexiamelusine.com/pride/"
             }
           ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://alexiamelusine.com/pride/#article",
+          "isPartOf": {
+            "@id": "https://alexiamelusine.com/pride/#webpage"
+          },
+          "headline": "Orgulho Trans | Ativismo & Visibilidade — Alexia Melusine",
+          "description": "Celebrando a diversidade, a coragem e a beleza da comunidade transgênero, não-binária e crossdresser. Linha do tempo, história, símbolos e referências da militância.",
+          "image": "https://cdn.pombagiras.com/PRIDE.png",
+          "author": {
+            "@id": "https://pombagiras.com/#author"
+          },
+          "publisher": {
+            "@id": "https://pombagiras.com/#organization"
+          },
+          "datePublished": "2026-06-14",
+          "mainEntityOfPage": "https://alexiamelusine.com/pride/"
         },
         {
           "@type": "FAQPage",
