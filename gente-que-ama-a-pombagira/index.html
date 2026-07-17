@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded',function(){
             entries.forEach(function(entry){
                 if(entry.isIntersecting){entry.target.classList.add('active');obs.unobserve(entry.target);}
             });
-        },{threshold:0.1});
+        },{threshold:0.01,rootMargin:'0px 0px 200px 0px'});
         animElements.forEach(function(el){observer.observe(el);});
     }else{animElements.forEach(function(el){el.classList.add('active');});}
     var cards=document.querySelectorAll('.card');

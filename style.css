@@ -766,6 +766,15 @@ body {
     cursor: pointer;
 }
 
+.gqap-card,
+.gqap-card *,
+.gqap-title,
+.gqap-eyebrow,
+.gqap-excerpt,
+.gqap-author {
+    text-decoration: none !important;
+}
+
 .gqap-inner {
     display: flex;
     align-items: center;
