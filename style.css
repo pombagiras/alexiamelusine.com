@@ -759,6 +759,103 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Gente que Ama a Pombagira — Essay Card */
+.gqap-card {
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.gqap-inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.gqap-icon-wrap {
+    flex-shrink: 0;
+}
+
+.gqap-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: var(--accent-subtle);
+    border: 1px solid rgba(178, 34, 34, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-hover);
+    transition: var(--transition-smooth);
+    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.1);
+}
+
+.gqap-card:hover .gqap-icon {
+    background: var(--accent-primary);
+    color: var(--text-primary);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: rotate(-3deg) scale(1.05);
+}
+
+.gqap-content {
+    flex: 1;
+}
+
+.gqap-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-hover);
+    background: var(--accent-subtle);
+    border: 1px solid rgba(178, 34, 34, 0.3);
+    padding: 3px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.gqap-title {
+    font-family: var(--font-title);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #ffffff 40%, #e2e8f0 70%, var(--accent-hover) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition-smooth);
+}
+
+.gqap-excerpt {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.gqap-author {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.gqap-arrow {
+    flex-shrink: 0;
+    color: var(--accent-primary);
+    opacity: 0.6;
+    transition: var(--transition-smooth);
+}
+
+.gqap-card:hover .gqap-arrow {
+    opacity: 1;
+    color: var(--accent-hover);
+    transform: translateX(6px);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 992px) {
     .pillars-grid {
@@ -845,9 +942,23 @@ body {
         padding: 30px 20px;
         border-radius: var(--radius-md);
     }
-    
+
     .manifesto h2 {
         font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .gqap-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .gqap-arrow {
+        display: none;
+    }
+
+    .gqap-title {
+        font-size: 1.4rem;
     }
 }
 
