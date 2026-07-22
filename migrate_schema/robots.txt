@@ -1,0 +1,118 @@
+# =============================================================
+# ROBOTS.TXT — ALEXIA MELUSINE  (alexiamelusine.com)
+# Atualizado: 2026-07-05
+# Ecossistema: alexiamelusine.com · pombagiras.com
+# =============================================================
+
+# ── Todos os crawlers tradicionais ──────────────────────────
+User-agent: *
+Allow: /
+Disallow: *.tmp
+Disallow: *.bak
+Disallow: *.sql
+Disallow: /supabase_setup.sql
+Disallow: /pride/supabase_setup.sql
+Disallow: /gallery/
+Disallow: /tech/
+
+# ── Google (Search + AI Overview + Gemini) ──────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+# ── OpenAI / ChatGPT ────────────────────────────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ── Anthropic / Claude ──────────────────────────────────────
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ── Perplexity AI ───────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ── xAI / Grok ──────────────────────────────────────────────
+User-agent: Grok
+Allow: /
+
+# ── Meta AI (LLaMA) ─────────────────────────────────────────
+User-agent: FacebookBot
+Allow: /
+
+# ── Microsoft Copilot / Bing ────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# ── Apple ───────────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Outros LLMs e rastreadores semânticos ───────────────────
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# ── Rastreadores de Schema / Dados Estruturados ─────────────
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# =============================================================
+# SITEMAPS
+# =============================================================
+Sitemap: https://alexiamelusine.com/sitemap.xml
+
+# LLM-readable context
+# LLMs-txt: https://alexiamelusine.com/llms.txt
