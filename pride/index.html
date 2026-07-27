@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <!-- Custom CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=2.5">
+    <link rel="stylesheet" href="style.css?v=2.6">
 
     <!-- Schema.org JSON-LD — Unified Knowledge Graph (Ecosystem-Aware) -->
     <!-- NOTE: The names/aliases Alexia Melusine, Alexia Rosa de Fogo, and Alexia Luz de Ferro represent the same single entity (Person), not different individuals. -->
@@ -340,17 +340,17 @@
     <canvas id="glitterCanvas"></canvas>
 
     <!-- Mobile Hamburger Trigger Button (Visible only on mobile) -->
-    <button id="hamburger-btn" class="fixed top-4 left-4 z-50 p-3 rounded-full glass-panel border border-white/20 text-[#5BCEFA] hover:text-[#F5A9B8] transition-all duration-300 md:hidden flex items-center justify-center focus:outline-none" aria-label="Abrir menu de navegação">
+    <button id="hamburger-btn" onclick="toggleMobileMenuDrawer(true)" class="fixed top-4 left-4 z-50 p-3 rounded-full glass-panel border border-white/20 text-[#5BCEFA] hover:text-[#F5A9B8] transition-all duration-300 flex items-center justify-center focus:outline-none" aria-label="Abrir menu de navegação">
         <i class="fa-solid fa-bars text-xl"></i>
     </button>
 
     <!-- Mobile Hamburger Drawer Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 pointer-events-none opacity-0 flex md:hidden">
+    <div id="mobile-menu" class="mobile-menu-drawer">
         <!-- Overlay backdrop blur click-away target -->
-        <div id="menu-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"></div>
+        <div id="menu-backdrop" onclick="toggleMobileMenuDrawer(false)" class="mobile-menu-backdrop"></div>
         
         <!-- Drawer content panel -->
-        <div class="absolute top-0 left-0 bottom-0 w-4/5 max-w-xs bg-slate-950/95 backdrop-blur-md border-r border-[#F5A9B8]/20 p-6 flex flex-col gap-6 transform -translate-x-full transition-transform duration-500 ease-out pointer-events-auto shadow-2xl">
+        <div class="mobile-menu-panel">
             
             <!-- Drawer Header -->
             <div class="flex items-center justify-between pb-4 border-b border-white/10">
@@ -360,69 +360,85 @@
                         Orgulho Trans
                     </span>
                 </div>
-                <button id="close-menu-btn" class="text-gray-400 hover:text-[#F5A9B8] transition-colors p-1" aria-label="Fechar menu">
+                <button id="close-menu-btn" onclick="toggleMobileMenuDrawer(false)" class="text-gray-400 hover:text-[#F5A9B8] transition-colors p-1" aria-label="Fechar menu">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
             
             <!-- Navigation Links -->
-            <nav class="flex flex-col gap-1 overflow-y-auto pr-1">
-                <!-- Main Navigation Links with smooth scroll IDs -->
-                <a href="#heroContent" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
+            <nav class="flex flex-col gap-1 pr-1">
+                <span class="text-[10px] text-gray-400 uppercase tracking-wider px-3 mb-1 font-semibold">Navegação do Site</span>
+                
+                <a href="#heroContent" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
                     <i class="fa-solid fa-house text-[#5BCEFA] w-5 text-center"></i> Início
                 </a>
-                <a href="#section-lgbt" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-rainbow text-[#F5A9B8] w-5 text-center"></i> Gira & LGBT+ (Destaque)
+                <a href="#section-lgbt" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-rainbow text-[#F5A9B8] w-5 text-center"></i> Pombagira & LGBT+
                 </a>
-                <a href="#section-hijras" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-star text-[#5BCEFA] w-5 text-center"></i> Hijras da Índia
+                <a href="#section-hijras" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-star text-[#5BCEFA] w-5 text-center"></i> ✨ Destaque Global (Hijras)
                 </a>
-                <a href="#section-inspiradoras" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-wand-magic-sparkles text-white w-5 text-center"></i> Inspiradoras
+                <a href="#section-inspiradoras" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white w-5 text-center"></i> Pessoas Trans Inspiradoras
                 </a>
-                <a href="#section-history" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-book-open text-[#F5A9B8] w-5 text-center"></i> Nossa História
+                <a href="#section-creator" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-user-astronaut text-[#F5A9B8] w-5 text-center"></i> Quem Sou Eu (Alexia)
                 </a>
-                <a href="#section-timeline" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-scroll text-[#5BCEFA] w-5 text-center"></i> Linha do Tempo
+                <a href="#section-history" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-book-open text-[#5BCEFA] w-5 text-center"></i> Nossa História
                 </a>
-                <a href="#section-support" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-heart text-[#F5A9B8] w-5 text-center"></i> Apoio & Emprego
+                <a href="#section-timeline" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-scroll text-[#F5A9B8] w-5 text-center"></i> Linha do Tempo
                 </a>
-                <a href="#section-dates" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
-                    <i class="fa-solid fa-calendar text-[#5BCEFA] w-5 text-center"></i> Datas Importantes
+                <a href="#section-support" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-heart text-[#5BCEFA] w-5 text-center"></i> Organizações de Apoio
+                </a>
+                <a href="#section-jobs" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-briefcase text-[#F5A9B8] w-5 text-center"></i> Emprego & Saúde
+                </a>
+                <a href="#section-victories" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-trophy text-[#5BCEFA] w-5 text-center"></i> Vitórias Conquistadas
+                </a>
+                <a href="#section-dates" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
+                    <i class="fa-solid fa-calendar text-[#F5A9B8] w-5 text-center"></i> Datas Comemorativas
                 </a>
                 
-                <div class="h-px bg-white/10 my-2"></div>
+                <div class="h-px bg-white/10 my-3"></div>
                 
                 <!-- Social Links -->
-                <span class="text-[10px] text-gray-500 uppercase tracking-wider px-3 mb-1">Redes Sociais</span>
-                <div class="grid grid-cols-3 gap-2 px-2">
-                    <a href="https://www.instagram.com/alexiamelusine/" target="_blank" class="p-2 bg-white/5 rounded-lg flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#fdf497] hover:to-[#d6249f] hover:text-white transition-all text-gray-400">
+                <span class="text-[10px] text-gray-400 uppercase tracking-wider px-3 mb-1 font-semibold">Redes Sociais</span>
+                <div class="grid grid-cols-5 gap-1.5 px-1 mb-2">
+                    <a href="https://www.instagram.com/alexiamelusine/" target="_blank" class="p-2.5 bg-white/5 rounded-xl flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#fdf497] hover:to-[#d6249f] hover:text-white transition-all text-gray-300" aria-label="Instagram">
                         <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
-                    <a href="https://www.threads.net/@alexiamelusine" target="_blank" class="p-2 bg-white/5 rounded-lg flex items-center justify-center hover:bg-white/10 hover:text-white transition-all text-gray-400">
+                    <a href="https://www.threads.net/@alexiamelusine" target="_blank" class="p-2.5 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 hover:text-white transition-all text-gray-300" aria-label="Threads">
                         <i class="fa-brands fa-threads text-lg"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@alexiamelusine" target="_blank" class="p-2 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#010101] hover:text-white transition-all text-gray-400">
+                    <a href="https://www.tiktok.com/@alexiamelusine" target="_blank" class="p-2.5 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#010101] hover:text-white transition-all text-gray-300" aria-label="TikTok">
                         <i class="fa-brands fa-tiktok text-lg"></i>
+                    </a>
+                    <a href="https://www.kwai.com/@alexialuzdeferro" target="_blank" class="p-2.5 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#FF5500] hover:text-white transition-all text-gray-300" aria-label="Kwai">
+                        <i class="fa-solid fa-play text-sm"></i>
+                    </a>
+                    <a href="https://www.midjourney.com/@alexiamelusine" target="_blank" class="p-2.5 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white hover:text-black transition-all text-gray-300" aria-label="Midjourney">
+                        <i class="fa-solid fa-palette text-sm"></i>
                     </a>
                 </div>
                 
                 <div class="h-px bg-white/10 my-2"></div>
                 
-                <a href="https://alexiamelusine.com/" target="_blank" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
+                <a href="https://alexiamelusine.com/" target="_blank" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
                     <i class="fa-solid fa-globe text-gray-400 w-5 text-center"></i> alexiamelusine.com
                 </a>
-                <a href="https://pombagiras.com/" target="_blank" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 text-gray-200 transition-all">
+                <a href="https://pombagiras.com/" target="_blank" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl text-gray-200">
                     <i class="fa-solid fa-hands-praying text-[#F5A9B8] w-5 text-center"></i> Pombagiras.com
                 </a>
             </nav>
             
             <!-- Drawer Footer -->
-            <div class="mt-auto text-center text-[10px] text-gray-500 flex flex-col gap-1">
+            <div class="mt-auto pt-3 border-t border-white/10 text-center text-[10px] text-gray-400 flex flex-col gap-1">
                 <span>Trans Pride &copy; 2026</span>
-                <span class="text-[#F5A9B8]">Alexia Melusine</span>
+                <span class="text-[#F5A9B8] font-medium">Alexia Melusine</span>
             </div>
         </div>
     </div>
@@ -430,14 +446,14 @@
     <!-- Viewport-height Hero Cover with Color Reveal Effect -->
     <header class="hero-cover">
         <!-- Mobile Static Background (Visible only on mobile) -->
-        <div class="absolute inset-0 z-0 block md:hidden">
+        <div class="absolute inset-0 z-0 mobile-hero-bg">
             <img src="https://cdn.pombagiras.com/Amoled%20(8).png" alt="Orgulho Trans Mobile" class="main-cover-img w-full h-full object-cover">
             <!-- Glass Overlay -->
             <div class="absolute inset-0 hover-overlay pointer-events-none z-10"></div>
         </div>
 
         <!-- Background Image Container (Slideshow) (Visible only on desktop/tablet) -->
-        <div class="absolute inset-0 z-0 hero-slideshow-container hidden md:block">
+        <div class="absolute inset-0 z-0 hero-slideshow-container">
             <div class="hero-slides-track h-full w-full relative">
                 <div class="hero-slide active">
                     <img src="https://cdn.pombagiras.com/pride/vida_pride_8.webp" alt="Vida Pride - Orgulho Trans" class="main-cover-img">
@@ -1398,7 +1414,7 @@
             </div>
 
             <!-- SECTION 7: Emprego & Saúde -->
-            <div class="glass-panel rounded-3xl overflow-hidden shadow-xl">
+            <div id="section-jobs" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
                 <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">💼</span>
@@ -1751,6 +1767,6 @@
     </footer>
 
     <!-- JavaScript script bundle link -->
-    <script src="script.js?v=1.6"></script>
+    <script src="script.js?v=1.7"></script>
 </body>
 </html>

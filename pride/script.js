@@ -454,52 +454,57 @@ function initHeroSlideshow() {
    6. Mobile Hamburger Drawer Menu Toggle and Navigation
    ========================================================================== */
 
+function toggleMobileMenuDrawer(isOpen) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    if (!mobileMenu) return;
+    
+    if (isOpen === true || (isOpen === undefined && !mobileMenu.classList.contains('menu-open'))) {
+        mobileMenu.classList.add('menu-open');
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+    } else {
+        mobileMenu.classList.remove('menu-open');
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+    }
+}
+
 function initMobileMenu() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const closeBtn = document.getElementById('close-menu-btn');
     const backdrop = document.getElementById('menu-backdrop');
-    const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelectorAll('.mobile-nav-link');
 
-    if (!mobileMenu) return;
-
-    function openMenu() {
-        mobileMenu.classList.add('menu-open');
-        if (hamburgerBtn) {
-            hamburgerBtn.setAttribute('aria-expanded', 'true');
-        }
-    }
-
-    function closeMenu() {
-        mobileMenu.classList.remove('menu-open');
-        if (hamburgerBtn) {
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        }
-    }
-
     if (hamburgerBtn) {
-        hamburgerBtn.addEventListener('click', openMenu);
+        hamburgerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenuDrawer(true);
+        });
     }
 
     if (closeBtn) {
-        closeBtn.addEventListener('click', closeMenu);
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenuDrawer(false);
+        });
     }
 
     if (backdrop) {
-        backdrop.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenuDrawer(false);
+        });
     }
 
     // Close menu on link click and scroll smoothly to target anchors
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            closeMenu();
+            toggleMobileMenuDrawer(false);
             
             const targetId = link.getAttribute('href');
             if (targetId && targetId.startsWith('#')) {
                 const targetEl = document.querySelector(targetId);
                 if (targetEl) {
                     e.preventDefault();
-                    // Scroll to target element
                     targetEl.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
