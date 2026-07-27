@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize hero cover slideshow
     initHeroSlideshow();
 
+    // Initialize mobile menu
+    initMobileMenu();
+
     // Click to Copy Email functionality
     const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
     copyEmailBtns.forEach(btn => {
@@ -445,4 +448,64 @@ function initHeroSlideshow() {
     // Listen to mousemove and touchmove events
     window.addEventListener('mousemove', handleMovement, { passive: true });
     window.addEventListener('touchmove', handleMovement, { passive: true });
+}
+
+/* ==========================================================================
+   6. Mobile Hamburger Drawer Menu Toggle and Navigation
+   ========================================================================== */
+
+function initMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const backdrop = document.getElementById('menu-backdrop');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (!mobileMenu) return;
+
+    function openMenu() {
+        mobileMenu.classList.add('menu-open');
+        if (hamburgerBtn) {
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('menu-open');
+        if (hamburgerBtn) {
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', openMenu);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeMenu);
+    }
+
+    // Close menu on link click and scroll smoothly to target anchors
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            closeMenu();
+            
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    // Scroll to target element
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
 }

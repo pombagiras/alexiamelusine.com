@@ -816,3 +816,101 @@ body {
         opacity: 0 !important;
     }
 }
+
+/* LGBT Special Highlight Section */
+.lgbt-highlight {
+    background: linear-gradient(135deg, rgba(156, 89, 209, 0.08) 0%, rgba(245, 169, 184, 0.08) 50%, rgba(91, 206, 250, 0.05) 100%);
+    border: 1px solid rgba(156, 89, 209, 0.20);
+    box-shadow: 0 10px 30px rgba(156, 89, 209, 0.05);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lgbt-highlight:hover {
+    border-color: rgba(245, 169, 184, 0.4);
+    box-shadow: 0 15px 35px rgba(245, 169, 184, 0.1);
+    transform: translateY(-2px);
+}
+
+.lgbt-image-container {
+    width: 320px;
+    height: 180px;
+    background: #000;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lgbt-highlight:hover .lgbt-image-container {
+    border-color: var(--trans-pink);
+    box-shadow: 0 0 25px rgba(245, 169, 184, 0.25);
+}
+
+.lgbt-img {
+    object-position: center 20%;
+    filter: grayscale(100%) contrast(1.1) brightness(0.95);
+    transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lgbt-highlight:hover .lgbt-img {
+    filter: grayscale(0%) saturate(1.25) brightness(1.05);
+    transform: scale(1.06);
+}
+
+.lgbt-color-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(156, 89, 209, 0.15) 0%, rgba(245, 169, 184, 0.15) 50%, rgba(255, 255, 255, 0.05) 100%);
+    mix-blend-mode: color;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.lgbt-highlight:hover .lgbt-color-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .lgbt-image-container {
+        width: 280px;
+        height: 158px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .lgbt-img {
+        filter: none !important;
+        transform: none !important;
+    }
+    
+    .lgbt-color-overlay {
+        opacity: 0 !important;
+    }
+}
+
+/* Mobile Hamburger Drawer Menu */
+#mobile-menu {
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    visibility: hidden;
+}
+
+#mobile-menu.menu-open {
+    visibility: visible;
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+
+#mobile-menu.menu-open .transform {
+    transform: translateX(0);
+}
+
+.mobile-nav-link {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.mobile-nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--trans-pink);
+    padding-left: 1.25rem !important;
+}
