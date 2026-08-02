@@ -6,6 +6,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Oficial Alexia Melusine Page initialized.');
 
+    // Alternância de Cores no Contorno da Foto de Perfil ao Clicar na Foto
+    const portraitCard = document.getElementById('portrait-interactive-card');
+    if (portraitCard) {
+        let currentThemeIndex = 0;
+        const colorThemes = ['', 'color-theme-1', 'color-theme-2', 'color-theme-3', 'color-theme-4'];
+
+        portraitCard.addEventListener('click', () => {
+            currentThemeIndex = (currentThemeIndex + 1) % colorThemes.length;
+            colorThemes.forEach(theme => {
+                if (theme) portraitCard.classList.remove(theme);
+            });
+
+            if (colorThemes[currentThemeIndex]) {
+                portraitCard.classList.add(colorThemes[currentThemeIndex]);
+            }
+
+            if ('vibrate' in navigator) navigator.vibrate(30);
+        });
+    }
+
     // Detectar Dispositivo Touch
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 

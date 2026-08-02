@@ -156,71 +156,164 @@ body {
     transition: var(--transition-premium);
 }
 
-.header-logo span {
-    color: var(--clr-brass);
+.header-logo-img {
+    height: clamp(38px, 5.5vw, 56px);
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.45)) drop-shadow(0 0 24px rgba(158, 12, 27, 0.6));
+    animation: logoLightRays 4s infinite linear;
+    transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-.header-logo:hover {
-    letter-spacing: 0.08em;
-    text-shadow: 0 0 10px rgba(197, 155, 39, 0.4);
+.header-logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9)) drop-shadow(0 0 35px rgba(226, 180, 189, 0.8)) drop-shadow(0 0 50px rgba(158, 12, 27, 0.9));
+}
+
+@keyframes logoLightRays {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)) drop-shadow(-4px -4px 18px rgba(158, 12, 27, 0.6)) drop-shadow(4px 4px 22px rgba(226, 180, 189, 0.3));
+    }
+    25% {
+        filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.7)) drop-shadow(4px -4px 24px rgba(226, 180, 189, 0.7)) drop-shadow(-4px 4px 20px rgba(158, 12, 27, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 22px rgba(226, 180, 189, 0.8)) drop-shadow(4px 4px 28px rgba(158, 12, 27, 0.8)) drop-shadow(-4px -4px 18px rgba(212, 175, 55, 0.6));
+    }
+    75% {
+        filter: drop-shadow(0 0 16px rgba(158, 12, 27, 0.7)) drop-shadow(-4px 4px 24px rgba(212, 175, 55, 0.7)) drop-shadow(4px -4px 20px rgba(226, 180, 189, 0.5));
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)) drop-shadow(-4px -4px 18px rgba(158, 12, 27, 0.6)) drop-shadow(4px 4px 22px rgba(226, 180, 189, 0.3));
+    }
+}
+
+/* Tridente Fêmea Conector Header — Linha Reta e Arco Envolvente */
+.trident-header-connector {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 68px;
+    margin-left: -58px;
+    margin-right: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.trident-arc-wrapper {
+    width: 68px;
+    height: 68px;
+    border: 2px solid var(--clr-brass);
+    border-right: 2px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: -4px 0 16px rgba(212, 175, 55, 0.5), inset 3px 0 12px rgba(158, 12, 27, 0.6);
+    flex-shrink: 0;
+}
+
+.trident-arc-wrapper::before,
+.trident-arc-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: var(--clr-brass);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--clr-brass), 0 0 15px #ff3b4e;
+}
+
+.trident-arc-wrapper::before {
+    top: 2px;
+    right: 8px;
+}
+
+.trident-arc-wrapper::after {
+    bottom: 2px;
+    right: 8px;
+}
+
+.trident-connecting-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--clr-brass) 0%, rgba(255, 59, 78, 0.9) 45%, var(--clr-brass) 100%);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(158, 12, 27, 0.7);
+    margin-left: -2px;
+}
+
+@media (max-width: 960px) {
+    .trident-header-connector {
+        display: none !important;
+    }
 }
 
 .header-nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.75rem;
     align-items: center;
+    background: rgba(36, 2, 6, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 180, 189, 0.2);
+    padding: 0.4rem 0.6rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .nav-link {
     font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--clr-cream-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #ffffff;
     text-decoration: none;
-    transition: var(--transition-premium);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    padding: 0.25rem 0;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--clr-brass);
-    transition: var(--transition-premium);
+    padding: 0.5rem 1.1rem;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
 }
 
 .nav-link:hover {
-    color: var(--clr-cream);
-}
-
-.nav-link:hover::after {
-    width: 100%;
+    color: var(--clr-brass);
+    background: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    transform: translateY(-1px);
 }
 
 .nav-link.active-link {
-    color: var(--clr-brass);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, rgba(158, 12, 27, 0.7) 0%, rgba(61, 5, 12, 0.9) 100%);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 4px 15px rgba(158, 12, 27, 0.5), 0 0 12px rgba(212, 175, 55, 0.3);
 }
 
 /* ==========================================================================
    Hero Section - Oxblood Luxury Editorial
+   =====================================================================/* ==========================================================================
+   Hero Section - Oxblood Luxury Editorial (Awwwards Edition)
    ========================================================================== */
 
 .hero-section {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 4rem;
+    grid-template-columns: 360px 1fr;
+    gap: 4.5rem;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
+    position: relative;
+    padding-top: 2rem;
 }
 
 .hero-visual {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #oxblood-hero-gradient-canvas {
@@ -231,22 +324,99 @@ body {
     height: 100vh;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.65;
+    opacity: 0.75;
     mix-blend-mode: screen;
-    filter: blur(14px);
+    filter: blur(12px);
 }
 
-/* Moldura de Retrato Premium */
+/* Anel Aurora Vibrante em Torno do Retrato */
+.hero-aurora-ring {
+    position: absolute;
+    width: 370px;
+    height: 470px;
+    border-radius: calc(var(--radius-lg) + 8px);
+    background: linear-gradient(135deg, #9e0c1b, #d4af37, #5c0a15, #ff3b4e, #9e0c1b);
+    background-size: 300% 300%;
+    animation: auroraRotate 8s ease infinite;
+    opacity: 0.55;
+    filter: blur(18px);
+    z-index: 0;
+}
+
+@keyframes auroraRotate {
+    0% { background-position: 0% 50%; transform: scale(0.98) rotate(0deg); }
+    50% { background-position: 100% 50%; transform: scale(1.04) rotate(2deg); }
+    100% { background-position: 0% 50%; transform: scale(0.98) rotate(0deg); }
+}
+
+/* Moldura de Retrato Premium com Alternância de Cores Dinâmicas */
 .portrait-container {
-    width: 320px;
-    height: 420px;
+    width: 340px;
+    height: 440px;
     border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+    z-index: 2;
+    border: 3px solid rgba(212, 175, 55, 0.5);
     background-color: var(--clr-oxblood-deep);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px var(--clr-glow-oxblood);
-    transition: var(--transition-premium);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 40px var(--clr-glow-oxblood);
+    animation: portraitLightRays 4s infinite linear;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+@keyframes portraitLightRays {
+    0% {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 175, 55, 0.5), -6px -6px 30px rgba(158, 12, 27, 0.7), 6px 6px 35px rgba(226, 180, 189, 0.4);
+    }
+    25% {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.8), 6px -6px 40px rgba(226, 180, 189, 0.8), -6px 6px 32px rgba(158, 12, 27, 0.6);
+    }
+    50% {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 40px rgba(226, 180, 189, 0.9), 6px 6px 45px rgba(158, 12, 27, 0.9), -6px -6px 30px rgba(212, 175, 55, 0.7);
+    }
+    75% {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 30px rgba(158, 12, 27, 0.8), -6px 6px 40px rgba(212, 175, 55, 0.8), 6px -6px 32px rgba(226, 180, 189, 0.6);
+    }
+    100% {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 175, 55, 0.5), -6px -6px 30px rgba(158, 12, 27, 0.7), 6px 6px 35px rgba(226, 180, 189, 0.4);
+    }
+}
+/* Paletas de Cores Dinâmicas acionadas pelo clique */
+.portrait-container.color-theme-1 {
+    border-color: #ff3b4e !important;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 59, 78, 0.8) !important;
+}
+
+.portrait-container.color-theme-2 {
+    border-color: #7dd3fc !important;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(125, 211, 252, 0.8) !important;
+}
+
+.portrait-container.color-theme-3 {
+    border-color: #a855f7 !important;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(168, 85, 247, 0.8) !important;
+}
+
+.portrait-container.color-theme-4 {
+    border-color: #10b981 !important;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(16, 185, 129, 0.8) !important;
+}
+
+/* Raio de luz rotativo ao passar o mouse */
+.portrait-light-ray {
+    position: absolute;
+    inset: -50%;
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(212, 175, 55, 0.25) 60deg, transparent 120deg);
+    animation: raySpin 10s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.6;
+}
+
+@keyframes raySpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Reflection overlay on luxury portrait */
@@ -254,46 +424,132 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--glass-reflection);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
     pointer-events: none;
-    z-index: 3;
+    z-index: 4;
 }
 
-/* Color Reveal Effect no Retrato */
+/* Exibição nítida e de alta definição da Foto de Perfil */
 .portrait-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(80%) brightness(0.85) contrast(1.15);
-    transition: var(--transition-premium);
+    display: block;
+    filter: brightness(1.02) contrast(1.08);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .portrait-container::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(5, 1, 3, 0.92) 100%);
-    z-index: 2;
+    background: linear-gradient(180deg, transparent 50%, rgba(15, 2, 5, 0.75) 100%);
+    z-index: 3;
     pointer-events: none;
+}
+
+/* Badge Flutuante Pulsante sobre o Retrato */
+.portrait-floating-badge {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: rgba(36, 2, 6, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.portrait-floating-badge .badge-link {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--clr-cream);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.portrait-floating-badge .badge-link:hover {
+    color: var(--clr-brass);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Botão Clicável de Link Abaixo da Bio */
+.hero-site-link-wrapper {
+    margin-top: 0.5rem;
+}
+
+.hero-site-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: rgba(36, 2, 6, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 0.55rem 1.2rem;
+    border-radius: var(--radius-full);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-site-link-btn:hover {
+    background: rgba(92, 10, 21, 0.9);
+    border-color: var(--clr-brass);
+    color: var(--clr-brass);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #25d366;
+    box-shadow: 0 0 10px #25d366;
+    animation: livePulse 2s infinite ease-in-out;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.1); opacity: 1; box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .portrait-container:hover {
     border-color: var(--clr-brass);
-    box-shadow: 0 30px 60px -15px rgba(212, 175, 55, 0.25), 0 0 45px var(--clr-glow-oxblood);
-    transform: translateY(-5px);
+    box-shadow: 0 35px 70px -15px rgba(212, 175, 55, 0.35), 0 0 50px var(--clr-glow-oxblood);
+    transform: translateY(-8px) scale(1.02);
 }
 
 .portrait-container:hover .portrait-image {
-    filter: grayscale(0%) brightness(1) saturate(1.1) contrast(1.08);
-    transform: scale(1.03);
+    filter: grayscale(0%) brightness(1.05) saturate(1.15) contrast(1.1);
+    transform: scale(1.06);
 }
 
 /* Anel de Pulsação de Luz no Fundo */
 .visual-bg-glow {
     position: absolute;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, var(--clr-glow-oxblood) 0%, rgba(61, 5, 12, 0.15) 50%, transparent 75%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(158, 12, 27, 0.45) 0%, rgba(61, 5, 12, 0.2) 50%, transparent 75%);
     border-radius: var(--radius-full);
     top: 50%;
     left: 50%;
@@ -303,139 +559,314 @@ body {
     animation: slow-pulse 8s infinite alternate ease-in-out;
 }
 
-@keyframes slow-pulse {
-    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.95; }
-}
-
-/* Informações do Hero */
+/* Conteúdo e Tipografia da Hero */
 .hero-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.hero-subtitle {
+.hero-top-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    width: fit-content;
+}
+
+.tag-sparkle {
+    color: var(--clr-brass);
+    font-size: 0.85rem;
+    animation: spinSparkle 4s linear infinite;
+}
+
+@keyframes spinSparkle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tag-text {
     font-family: var(--font-body);
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     color: var(--clr-brass);
 }
 
 .hero-title {
     font-family: var(--font-title);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1.1;
-    font-weight: 800;
+    font-size: clamp(3.5rem, 6.5vw, 5.5rem);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
 }
 
-.hero-title span {
+.hero-title .title-main {
     display: block;
-    color: var(--clr-cream);
+    color: #ffffff;
 }
 
-.hero-title em {
+.hero-title .title-sub {
     font-style: italic;
     font-weight: 400;
-    background: linear-gradient(135deg, var(--clr-cream) 20%, var(--clr-rose-dust) 60%, var(--clr-brass) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e2b4bd 60%, #d4af37 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
+    margin-top: 0.2rem;
+    animation: shimmerText 6s ease infinite;
+}
+
+@keyframes shimmerText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-bio {
     font-family: var(--font-body);
-    font-size: 1.125rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
     color: var(--clr-cream-muted);
-    max-width: 600px;
+    max-width: 640px;
+}
+
+.hero-bio strong {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .hero-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.85rem;
     margin-top: 0.5rem;
 }
 
 .hero-badge {
     font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
     border-radius: var(--radius-full);
-    background: rgba(61, 5, 12, 0.35);
+    background: rgba(61, 5, 12, 0.45);
+    backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     color: var(--clr-cream);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-premium);
+}
+
+.hero-badge i {
+    font-size: 0.85rem;
+    color: var(--clr-brass);
 }
 
 .hero-badge.highlight {
-    background: rgba(158, 12, 27, 0.25);
-    border-color: rgba(212, 175, 55, 0.4);
-    color: var(--clr-cream);
+    background: linear-gradient(135deg, rgba(158, 12, 27, 0.35) 0%, rgba(61, 5, 12, 0.6) 100%);
+    border-color: rgba(212, 175, 55, 0.45);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================================================================
-   Seção Dossiê & Alma
-   ========================================================================== */
-
-.section-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    margin-bottom: 6rem;
-    padding-top: 4rem;
-    border-top: 1px solid rgba(226, 180, 189, 0.1);
+.hero-badge:hover {
+    border-color: var(--clr-brass);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
 }
 
-.section-intro-col h2 {
-    font-family: var(--font-title);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    line-height: 1.2;
-    color: var(--clr-cream);
+/* Grupo de Botões CTA (Awwwards Style) */
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
-.section-intro-col h2 span {
-    color: var(--clr-brass);
-    display: block;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+.hero-btn {
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-full);
     font-family: var(--font-body);
-    margin-bottom: 0.5rem;
-}
-
-.manifesto-box {
-    background: linear-gradient(135deg, rgba(61, 5, 12, 0.45) 0%, rgba(36, 2, 6, 0.65) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--clr-glow-oxblood);
+}
+
+.hero-btn.primary-btn {
+    background: linear-gradient(135deg, #9e0c1b 0%, #5c0a15 50%, #3d050c 100%);
+    color: #ffffff;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    box-shadow: 0 10px 30px rgba(158, 12, 27, 0.45), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.hero-btn.primary-btn:hover {
+    background: linear-gradient(135deg, #c21327 0%, #7a0016 100%);
+    border-color: var(--clr-brass);
+    box-shadow: 0 15px 40px rgba(158, 12, 27, 0.7), 0 0 30px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.hero-btn.primary-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.4s ease;
+}
+
+.hero-btn.primary-btn:hover i {
+    transform: translateY(3px);
+}
+
+.hero-btn.secondary-btn {
+    background: rgba(250, 246, 238, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(226, 180, 189, 0.25);
     backdrop-filter: blur(12px);
 }
 
-.manifesto-box::before {
-    content: '“';
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    font-family: var(--font-title);
-    font-size: 8rem;
-    color: rgba(212, 175, 55, 0.12);
-    line-height: 1;
+.hero-btn.secondary-btn:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--clr-brass);
+    color: var(--clr-brass);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}-clr-cream);
 }
 
+/* ==========================================================================
+   Seção Dossiê & Alma (Full Width Vertical Flow)
+   ========================================================================== */
+
+.dossier-full-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin-bottom: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(226, 180, 189, 0.1);
+    width: 100%;
+}
+
+/* Moldura Ornamental Oxblood Glassmorphism com Aros Espirituais */
+.who-am-i-framed-card {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(61, 5, 12, 0.75) 0%, rgba(20, 2, 5, 0.9) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(226, 180, 189, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 3.2rem 4.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 30px rgba(92, 10, 21, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.framed-card-content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.framed-card-content h2 {
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.25;
+    color: var(--clr-cream);
+    letter-spacing: -0.01em;
+}
+
+.framed-card-content h2 span {
+    color: var(--clr-brass);
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-family: var(--font-body);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+/* Aros Orbitais Geométricos Posicionados nas Extremidades */
+.orbital-rings {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -20px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.85;
+}
+
+.orbital-rings.left-rings {
+    left: -55px;
+}
+
+.orbital-rings.right-rings {
+    right: -55px;
+}
+
+.ring-circle {
+    border-radius: 50%;
+    border: 3px solid #ff3b4e;
+    box-shadow: 0 0 15px rgba(255, 59, 78, 0.5), inset 0 0 10px rgba(255, 59, 78, 0.3);
+    transition: all 0.5s ease;
+}
+
+.ring-1 {
+    width: 90px;
+    height: 90px;
+}
+
+.ring-2 {
+    width: 120px;
+    height: 120px;
+    margin-top: -40px;
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+.ring-3 {
+    width: 90px;
+    height: 90px;
+    margin-top: -40px;
+}
+
+.who-am-i-framed-card:hover .ring-circle {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 59, 78, 0.8);
+}
+
+/* Estilo do Manifesto Direto (Sem caixa retangular interna) */
 .manifesto-text {
     font-family: var(--font-body);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
     color: var(--clr-cream);
     position: relative;
     z-index: 5;
     font-style: italic;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--clr-brass);
 }
 
 .dossier-details {
@@ -468,6 +899,10 @@ body {
    Frases de Poder (Quotes Grid)
    ========================================================================== */
 
+/* ==========================================================================
+   Frases de Poder (Glowing Feature Card Grid - High Performance)
+   ========================================================================== */
+
 .quotes-section {
     margin-bottom: 6rem;
     padding-top: 4rem;
@@ -492,79 +927,99 @@ body {
     margin-top: 0.5rem;
 }
 
+/* Grid de Cards Glow com Tamanho Máximo e Responsividade */
 .quotes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.quote-card {
-    background: var(--clr-dark-card);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-md);
-    padding: 2.25rem;
+/* Componente Glowing Feature Card */
+.glowing-feature-card {
     position: relative;
-    transition: var(--transition-premium);
-    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glowing-feature-card:hover {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Glow Background com Opacidade e Filtro Blur de 45px */
+.card-glow-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.45;
+    border-radius: 32px;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.glowing-feature-card:hover .card-glow-bg {
+    opacity: 0.8;
+}
+
+/* Foreground Container com Borda Gradiente via Background-Clip */
+.card-foreground {
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    min-height: 280px;
+    border-radius: 32px;
+    z-index: 10;
+    overflow: hidden;
+    border: 3px solid transparent;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Layout Interno do Conteúdo */
+.card-inner-content {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden;
+    gap: 1.25rem;
 }
 
-.quote-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--glass-reflection);
-    pointer-events: none;
+.card-icon-wrap {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-/* Efeito Color Reveal nos cards de frases */
-.quote-card p {
+.quote-text {
     font-family: var(--font-title);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    color: var(--clr-cream);
-    filter: grayscale(60%) brightness(0.9);
-    transition: var(--transition-premium);
-}
-
-.quote-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 0;
-    background-color: var(--clr-brass);
-    transition: var(--transition-premium);
-}
-
-.quote-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--clr-glow-oxblood);
-    transform: translateY(-4px);
-    background: var(--clr-dark-card-hover);
-}
-
-.quote-card:hover p {
-    filter: grayscale(0%) brightness(1.0);
-    text-shadow: 0 0 10px rgba(250, 246, 238, 0.2);
-}
-
-.quote-card:hover::before {
-    height: 100%;
+    font-size: 1.12rem;
+    line-height: 1.55;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 .quote-author {
-    margin-top: 1.5rem;
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--clr-brass);
+    margin-top: auto;
 }
 
 /* ==========================================================================
@@ -655,67 +1110,79 @@ body {
     transform: translateY(0);
 }
 
-/* Links Cards Grid */
+/* Links Cards Grid com Glowing Feature Style */
 .links-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
+    width: 100%;
 }
 
 .link-card {
-    background: var(--clr-dark-card);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
+    position: relative;
+    background: linear-gradient(135deg, rgba(61, 5, 12, 0.45) 0%, rgba(20, 2, 5, 0.75) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 3px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(rgba(28, 4, 9, 0.8), rgba(28, 4, 9, 0.8)), linear-gradient(137deg, rgba(226, 180, 189, 0.25) 0%, rgba(212, 175, 55, 0.25) 100%);
+    border-radius: 28px;
+    padding: 1.75rem;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 150px;
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    transition: var(--transition-premium);
-    position: relative;
+    min-height: 165px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
 }
 
-.link-card::after {
+/* Aura Glow Posterior com filtro blur de 45px */
+.link-card::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: var(--glass-reflection);
+    inset: -10px;
+    background: linear-gradient(137deg, #9e0c1b 0%, #ff3b4e 50%, #d4af37 100%);
+    opacity: 0;
+    filter: blur(40px);
+    border-radius: 36px;
     pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.link-card:hover::before {
+    opacity: 0.65;
 }
 
 .link-card:hover {
-    border-color: var(--glass-border-hover);
-    background: var(--clr-dark-card-hover);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--clr-glow-oxblood);
-    transform: translateY(-4px);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(92, 10, 21, 0.6);
+    background-image: linear-gradient(rgba(45, 6, 14, 0.9), rgba(45, 6, 14, 0.9)), linear-gradient(137deg, #ff3b4e 0%, #d4af37 100%);
 }
 
-/* Hover Filter Effect - Color Reveal */
 .link-card .card-icon {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     color: var(--clr-brass);
     transition: var(--transition-premium);
-    filter: grayscale(60%) brightness(0.9);
     margin-bottom: 1rem;
 }
 
 .link-card .card-title {
     font-family: var(--font-title);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--clr-cream);
-    margin-bottom: 0.25rem;
-    filter: grayscale(100%) brightness(0.85);
+    color: #ffffff;
+    margin-bottom: 0.35rem;
     transition: var(--transition-premium);
 }
 
 .link-card .card-desc {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--clr-slate);
+    color: var(--clr-cream-muted);
+    line-height: 1.5;
     transition: var(--transition-premium);
 }
 
@@ -723,11 +1190,17 @@ body {
     position: absolute;
     bottom: 1.5rem;
     right: 1.5rem;
-    font-size: 0.875rem;
-    color: var(--clr-slate);
+    font-size: 0.9rem;
+    color: var(--clr-brass);
     transform: translateX(-5px);
-    opacity: 0;
+    opacity: 0.5;
     transition: var(--transition-premium);
+}
+
+.link-card:hover .card-arrow {
+    transform: translateX(0);
+    opacity: 1;
+    color: #ffffff;
 }
 
 /* HOVER STATES - COLOR REVEAL ACTIVATION */
@@ -815,75 +1288,309 @@ body {
    Footer
    ========================================================================== */
 
+/* ==========================================================================
+   Footer Luxury Editorial (Oxblood Glassmorphism Responsivo)
+   ========================================================================== */
+
 .main-footer {
-    border-top: 1px solid rgba(250, 246, 238, 0.05);
-    padding: 4rem 1.5rem;
+    position: relative;
+    border-top: 1px solid rgba(226, 180, 189, 0.15);
+    padding: 5rem 1.5rem 3rem 1.5rem;
+    margin-top: 4rem;
+    background: radial-gradient(circle at 50% 0%, rgba(92, 10, 21, 0.3) 0%, rgba(5, 1, 3, 0.95) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
-    text-align: center;
-    color: var(--clr-slate);
-    font-size: 0.875rem;
+    gap: 3rem;
 }
 
-.main-footer .footer-email-container {
-    margin-bottom: 0.25rem;
+.footer-glass-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    background: linear-gradient(135deg, rgba(61, 5, 12, 0.45) 0%, rgba(20, 2, 5, 0.65) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(226, 180, 189, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+    gap: 3rem;
+}
+
+/* Colunas do Rodapé */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.footer-logo .logo-title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+}
+
+.footer-logo .logo-badge {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--clr-brass);
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+}
+
+.footer-bio-summary {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--clr-cream-muted);
+}
+
+.footer-social-mini {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.footer-social-mini a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(250, 246, 238, 0.06);
+    border: 1px solid rgba(226, 180, 189, 0.2);
+    color: var(--clr-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: var(--transition-premium);
+}
+
+.footer-social-mini a:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--clr-brass);
+    color: var(--clr-brass);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Coluna de Links */
+.footer-col-title {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: var(--clr-brass);
+    border-radius: 2px;
+}
+
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links-list a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--clr-cream-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-premium);
+}
+
+.footer-links-list a i {
+    font-size: 0.7rem;
+    color: var(--clr-brass);
+    transition: var(--transition-premium);
+}
+
+.footer-links-list a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.footer-links-list a:hover i {
+    color: #ff3b4e;
+}
+
+/* Coluna de Contato Copiável */
+.footer-contact-desc {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: var(--clr-cream-muted);
+    line-height: 1.5;
 }
 
 .main-footer .copy-email-btn {
-    background: rgba(250, 246, 238, 0.02);
-    border: 1px dashed rgba(250, 246, 238, 0.15);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 1.5rem;
-    color: var(--clr-slate);
+    width: 100%;
+    background: linear-gradient(135deg, rgba(92, 10, 21, 0.6) 0%, rgba(36, 2, 6, 0.8) 100%);
+    border: 1px dashed rgba(212, 175, 55, 0.5);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.2rem;
+    color: #ffffff;
     font-family: var(--font-body);
-    font-size: 0.875rem;
+    font-size: 0.92rem;
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition-premium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     position: relative;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.main-footer .copy-email-btn i {
+    color: var(--clr-brass);
+    font-size: 1.1rem;
 }
 
 .main-footer .copy-email-btn:hover {
     border-color: var(--clr-brass);
-    color: var(--clr-cream);
-    background: rgba(197, 155, 39, 0.05);
-    box-shadow: 0 0 15px rgba(197, 155, 39, 0.1);
+    background: linear-gradient(135deg, rgba(158, 12, 27, 0.7) 0%, rgba(61, 5, 12, 0.9) 100%);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
 }
 
-.main-footer .footer-copyright {
-    color: var(--clr-slate);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-}
-
-.main-footer .footer-legal-links {
+/* Barra Inferior */
+.footer-bottom-bar {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.main-footer .footer-legal-link {
-    color: var(--clr-slate);
-    text-decoration: none;
+.footer-copyright {
+    color: #f0e9df;
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: 0.88rem;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legal-separator {
+    color: rgba(212, 175, 55, 0.4);
+    font-size: 0.8rem;
+}
+
+.footer-legal-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 500;
     transition: var(--transition-premium);
 }
 
-.main-footer .footer-legal-link:hover {
-    color: var(--clr-cream);
-    text-shadow: 0 0 8px rgba(250, 246, 238, 0.2);
+.footer-legal-link:hover {
+    color: var(--clr-brass);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.footer-tagline-wrap {
+    text-align: center;
 }
 
 .main-footer .tagline-footer {
-    color: var(--clr-red);
+    color: #ff3b4e;
     font-family: var(--font-title);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-shadow: 0 0 15px rgba(255, 59, 78, 0.4), 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top-btn {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(61, 5, 12, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--clr-brass);
     font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    margin-top: 0.5rem;
-    text-shadow: 0 0 10px rgba(168, 12, 30, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-premium);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.back-to-top-btn:hover {
+    background: var(--clr-red);
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(255, 59, 78, 0.5);
+}
+
+/* Media Queries Responsivas (Móvel & Telas Pequenas) */
+@media (max-width: 900px) {
+    .footer-glass-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .back-to-top-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 1rem;
+    }
 }
 /* ==========================================================================
    Galeria de Transição (Transition Gallery)
@@ -1186,21 +1893,36 @@ body {
 
     /* 2. Ocultar o Desnecessário / Compactar Layout */
     .visual-bg-glow {
-        display: none; /* Remove elementos pesados/decorativos de fundo no mobile */
+        display: block;
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-aurora-ring {
+        width: 270px;
+        height: 330px;
     }
 
     .portrait-container {
-        width: 320px;
-        height: 200px; /* Redimensiona a foto de perfil na horizontal para celular */
+        width: 260px;
+        height: 320px;
+        margin: 0 auto;
     }
 
     .hero-section {
-        margin-bottom: 3.5rem;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+    .hero-top-tag, .hero-badges, .hero-cta-group {
+        justify-content: center;
     }
 
     /* 3. Redimensionamento de Tipografia */
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .hero-title em {
         display: inline;
