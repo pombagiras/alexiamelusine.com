@@ -236,7 +236,7 @@
 
     /* ─── BODY ─── */
     body {
-      background: radial-gradient(ellipse at 30% 15%,#1a0505 0%,var(--bg-abs) 75%);
+      background: #06020c;
       color: var(--txt-hi); font-family: var(--fb);
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; padding: 76px 18px 56px;
@@ -245,16 +245,34 @@
     }
     body::before {
       content: ''; position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       pointer-events: none; z-index: 0; mix-blend-mode: overlay;
     }
 
-    /* ─── GLOW BG ─── */
+    /* ─── LUXURY PURPLE GLASSMORPHISM & SCROLLING TRIDENT BG ─── */
     #glow-container { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     #cursor-glow {
-      position: absolute; width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle,rgba(168,12,30,.07) 0%,rgba(74,7,16,.03) 45%,transparent 70%);
-      transform: translate(-50%,-50%); opacity: 0; transition: opacity .6s; pointer-events: none;
+      position: absolute; width: 750px; height: 750px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(157, 78, 221, 0.15) 0%, rgba(90, 24, 154, 0.06) 45%, transparent 70%);
+      transform: translate(-50%,-50%); opacity: 0; transition: opacity .6s; pointer-events: none; filter: blur(30px);
+    }
+
+    /* Dynamic Purple Satin Ribbon BG Curves (Matching reference image) */
+    .bg-satin-ribbon {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .bg-satin-ribbon::before {
+      content: ''; position: absolute; top: -20%; left: -30%; width: 160%; height: 140%;
+      background: radial-gradient(ellipse at 20% 20%, rgba(123, 44, 191, 0.28) 0%, rgba(60, 9, 108, 0.18) 35%, rgba(10, 4, 18, 0) 70%),
+                  radial-gradient(ellipse at 80% 80%, rgba(157, 78, 221, 0.22) 0%, rgba(36, 0, 70, 0.15) 40%, rgba(6, 2, 12, 0) 75%);
+      filter: blur(40px);
+    }
+
+    /* Trident Canvas overlay taking full page height, smoothly revealing on scroll */
+    #trident-bg-canvas {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 0; opacity: 0.85;
+      mix-blend-mode: screen;
     }
 
     /* ─── BREADCRUMB NAV — ROXO LUXO ─── */
@@ -289,18 +307,18 @@
       display: flex; flex-direction: column; gap: 26px;
     }
 
-    /* ─── CARD — ROXO LUXO ─── */
+    /* ─── CARD — ROXO LUXO GLASS ─── */
     .card {
-      background: var(--g-bg);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(157, 78, 221, 0.3); border-radius: var(--rLg);
+      background: rgba(15, 6, 28, 0.45);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(157, 78, 221, 0.35); border-radius: var(--rLg);
       padding: 42px; transition: var(--tr);
-      box-shadow: 0 15px 40px rgba(0,0,0,.6), 0 0 20px rgba(157, 78, 221, 0.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,.4), 0 0 20px rgba(157, 78, 221, 0.15);
       position: relative; overflow: hidden;
     }
     .card::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg,rgba(157, 78, 221,.08),rgba(75, 32, 103,.08));
+      background: linear-gradient(135deg,rgba(157, 78, 221,.05),rgba(75, 32, 103,.05));
       opacity: 0; transition: var(--tr); pointer-events: none;
     }
     .card:hover { border-color: rgba(197, 123, 255, 0.55); transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,.7),0 0 35px rgba(157, 78, 221, 0.28); }
@@ -434,11 +452,11 @@
     .warn-text { font-size: .93rem; color: #dfd0ec; line-height: 1.65; }
     .warn-text strong { color: #f3e8ff; text-shadow: 0 0 8px rgba(199, 125, 255, 0.3); }
 
-    /* ══ EMBED CARD — ROXO NEON GLOW ══ */
+    /* ══ EMBED CARD — ROXO NEON GLASS ══ */
     .card-embed {
-      background: linear-gradient(135deg, rgba(26, 8, 38, 0.75) 0%, rgba(10, 4, 16, 0.85) 100%);
-      border: 1px solid rgba(157, 78, 221, 0.35);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.7), 0 0 30px rgba(157, 78, 221, 0.18);
+      background: linear-gradient(135deg, rgba(26, 8, 38, 0.35) 0%, rgba(10, 4, 16, 0.45) 100%);
+      border: 1px solid rgba(197, 123, 255, 0.4);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.5), 0 0 30px rgba(157, 78, 221, 0.25);
     }
     .card-embed:hover {
       border-color: rgba(197, 123, 255, 0.55);
@@ -453,13 +471,22 @@
     .embed-dot { width: 9px; height: 9px; background: #c77dff; border-radius: 50%; box-shadow: 0 0 12px #9d4edd; animation: pdot 2s infinite; }
     @keyframes pdot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
     .sf {
+      position: relative;
       border-radius: var(--rMd); overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,.85), 0 0 25px rgba(157, 78, 221, 0.2);
-      border: 1px solid rgba(157, 78, 221, 0.35); transition: var(--tr);
-      background: #121212;
+      box-shadow: 0 15px 35px rgba(0,0,0,.3), 0 0 25px rgba(157, 78, 221, 0.3);
+      border: 1px solid rgba(197, 123, 255, 0.45); transition: var(--tr);
+      background: rgba(15, 6, 28, 0.15) !important;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
-    .sf:hover { box-shadow: 0 24px 60px rgba(0,0,0,.9), 0 0 35px rgba(197, 123, 255, 0.4); border-color: rgba(197, 123, 255, 0.6); }
-    .sf iframe { display: block; width: 100%; height: 352px; border: none; }
+    .sf:hover { box-shadow: 0 20px 45px rgba(0,0,0,.4), 0 0 35px rgba(197, 123, 255, 0.6); border-color: rgba(197, 123, 255, 0.85); }
+    .sf iframe {
+      display: block; width: 100%; height: 352px; border: none;
+      background: transparent !important;
+      opacity: 0.82;
+      mix-blend-mode: lighten;
+      transition: opacity 0.3s ease;
+    }
+    .sf:hover iframe { opacity: 0.95; }
 
     /* ══ NARRATIVE CARDS — ROXO REVELATION ══ */
     .narrative-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -687,6 +714,10 @@
   </style>
 </head>
 <body>
+
+  <!-- DYNAMIC SATIN RIBBON & TRIDENT BACKGROUND CANVAS -->
+  <div class="bg-satin-ribbon" aria-hidden="true"></div>
+  <canvas id="trident-bg-canvas" aria-hidden="true"></canvas>
 
   <!-- CUSTOM CURSOR -->
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -954,6 +985,117 @@
 
     /* 7. STAGGER delays */
     document.querySelectorAll('.narrative-grid .nc').forEach((el,i)=>el.style.transitionDelay=(i*.12)+'s');
+
+    /* 8. DYNAMIC TRIDENT CANVAS WITH SCROLL ANIMATION */
+    const canvas = document.getElementById('trident-bg-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w = 0, h = 0;
+
+      function resizeCanvas() {
+        w = canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+        h = canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+      }
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+
+      // Trident SVG Path Generator normalized to 0-1 coordinate space
+      function drawTrident(progress) {
+        ctx.save();
+        ctx.clearRect(0, 0, w, h);
+
+        const dpr = window.devicePixelRatio || 1;
+        const widthCSS = w / dpr;
+        const heightCSS = h / dpr;
+        ctx.scale(dpr, dpr);
+
+        // Center position and scale taking up page height background
+        const centerX = widthCSS / 2;
+        const centerY = heightCSS / 2;
+        const maxScale = Math.min(widthCSS * 0.85, heightCSS * 0.95);
+
+        // Calculate scroll rotation and pulse offset
+        const scrollPercent = window.scrollY / Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const floatOffset = Math.sin(Date.now() * 0.0015) * 12;
+        const pulseGlow = (Math.sin(Date.now() * 0.0025) + 1) / 2; // 0 to 1
+
+        ctx.translate(centerX, centerY + floatOffset + (scrollPercent * 30 - 15));
+        ctx.scale(maxScale / 400, maxScale / 400);
+
+        // Dynamic purple glowing stroke gradient matching palette
+        const strokeGradient = ctx.createLinearGradient(0, -200, 0, 220);
+        strokeGradient.addColorStop(0, '#e0aaff');
+        strokeGradient.addColorStop(0.35, '#c77dff');
+        strokeGradient.addColorStop(0.7, '#9d4edd');
+        strokeGradient.addColorStop(1, '#5a189a');
+
+        // Outer glow
+        ctx.shadowColor = `rgba(197, 123, 255, ${0.4 + pulseGlow * 0.35})`;
+        ctx.shadowBlur = 35 + pulseGlow * 25;
+
+        // Draw Majestic Trident Structure
+        ctx.lineWidth = 10;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = strokeGradient;
+
+        ctx.beginPath();
+        
+        // Center Shaft
+        ctx.moveTo(0, 210);
+        ctx.lineTo(0, -170);
+
+        // Center Spear Head
+        ctx.lineTo(-14, -135);
+        ctx.moveTo(0, -170);
+        ctx.lineTo(14, -135);
+
+        // Left Prongs curve
+        ctx.moveTo(0, 60);
+        ctx.bezierCurveTo(-90, 60, -110, -50, -110, -120);
+        // Left Flame Spearhead tip
+        ctx.lineTo(-110, -165);
+        ctx.lineTo(-124, -130);
+        ctx.moveTo(-110, -165);
+        ctx.lineTo(-96, -130);
+
+        // Right Prongs curve
+        ctx.moveTo(0, 60);
+        ctx.bezierCurveTo(90, 60, 110, -50, 110, -120);
+        // Right Flame Spearhead tip
+        ctx.lineTo(110, -165);
+        ctx.lineTo(96, -130);
+        ctx.moveTo(110, -165);
+        ctx.lineTo(124, -130);
+
+        // Base Trident Ring / Crossbar Ornaments
+        ctx.moveTo(-35, 60);
+        ctx.lineTo(35, 60);
+
+        ctx.moveTo(-20, 140);
+        ctx.lineTo(20, 140);
+
+        // Base Spear Spike
+        ctx.moveTo(0, 210);
+        ctx.lineTo(-10, 190);
+        ctx.moveTo(0, 210);
+        ctx.lineTo(10, 190);
+
+        ctx.stroke();
+
+        // Inner glowing core line
+        ctx.lineWidth = 3.5;
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.6 + pulseGlow * 0.3})`;
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+        ctx.shadowBlur = 15;
+        ctx.stroke();
+
+        ctx.restore();
+        requestAnimationFrame(drawTrident);
+      }
+
+      requestAnimationFrame(drawTrident);
+    }
 
   })();
   </script>
