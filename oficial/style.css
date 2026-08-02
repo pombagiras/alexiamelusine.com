@@ -8,32 +8,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:wght@100..900&display=swap');
 
 :root {
-    /* Paleta Oficial de Cores */
-    --clr-black: #030303;
-    --clr-oxblood: #4A0710;
-    --clr-brass: #C59B27;
-    --clr-slate: #2D3139;
-    --clr-cream: #FAF6EE;
-    --clr-purple: #2B0F54;
-    --clr-red: #A80C1E;
+    /* Paleta Oficial Oxblood Luxury Editorial */
+    --clr-black: #050103;
+    --clr-oxblood: #3d050c;
+    --clr-oxblood-deep: #240206;
+    --clr-oxblood-rich: #5c0a15;
+    --clr-brass: #d4af37;
+    --clr-brass-subtle: rgba(212, 175, 55, 0.35);
+    --clr-slate: #1f1b24;
+    --clr-cream: #faf6ee;
+    --clr-cream-muted: #d9cfc1;
+    --clr-rose-dust: #e2b4bd;
+    --clr-red: #9e0c1b;
     
-    /* Variações Suaves para Efeitos */
-    --clr-dark-card: rgba(13, 13, 15, 0.75);
-    --clr-glow-purple: rgba(43, 15, 84, 0.35);
-    --clr-glow-red: rgba(168, 12, 30, 0.25);
-    --clr-glow-brass: rgba(197, 155, 39, 0.2);
-    --glass-border: rgba(250, 246, 238, 0.05);
-    --glass-border-hover: rgba(197, 155, 39, 0.35);
+    /* Reflexos, Vidro e Efeitos Oxblood */
+    --clr-dark-card: rgba(28, 4, 9, 0.55);
+    --clr-dark-card-hover: rgba(45, 6, 14, 0.75);
+    --clr-glow-oxblood: rgba(92, 10, 21, 0.45);
+    --clr-glow-brass: rgba(212, 175, 55, 0.25);
+    --glass-border: rgba(226, 180, 189, 0.12);
+    --glass-border-hover: rgba(212, 175, 55, 0.55);
+    --glass-reflection: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
     
-    /* Tipografia */
+    /* Tipografia — Fraunces (Headings) & Geist (Body) */
     --font-title: 'Fraunces', serif;
     --font-body: 'Geist', sans-serif;
     
-    /* Transições e Bordas */
+    /* Transições e Bordas Fluidas */
     --radius-full: 9999px;
-    --radius-lg: 20px;
-    --radius-md: 12px;
-    --radius-sm: 6px;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
     --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -56,11 +61,12 @@ html {
 
 body {
     min-height: 100vh;
-    background: radial-gradient(circle at 50% 0%, var(--clr-oxblood) 0%, var(--clr-purple) 35%, var(--clr-black) 80%);
+    background: radial-gradient(ellipse at 50% 0%, var(--clr-oxblood-rich) 0%, var(--clr-oxblood-deep) 40%, var(--clr-black) 85%);
     background-attachment: fixed;
     position: relative;
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: var(--clr-cream-muted);
 }
 
 /* Cursor Customizado (Somente Desktop) */
@@ -169,7 +175,7 @@ body {
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--clr-slate);
+    color: var(--clr-cream-muted);
     text-decoration: none;
     transition: var(--transition-premium);
     position: relative;
@@ -200,7 +206,7 @@ body {
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section - Oxblood Luxury Editorial
    ========================================================================== */
 
 .hero-section {
@@ -217,6 +223,19 @@ body {
     justify-content: center;
 }
 
+#oxblood-hero-gradient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.65;
+    mix-blend-mode: screen;
+    filter: blur(14px);
+}
+
 /* Moldura de Retrato Premium */
 .portrait-container {
     width: 320px;
@@ -225,9 +244,19 @@ body {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    background-color: var(--clr-black);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    background-color: var(--clr-oxblood-deep);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px var(--clr-glow-oxblood);
     transition: var(--transition-premium);
+}
+
+/* Reflection overlay on luxury portrait */
+.portrait-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-reflection);
+    pointer-events: none;
+    z-index: 3;
 }
 
 /* Color Reveal Effect no Retrato */
@@ -235,7 +264,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(0.7) contrast(1.1);
+    filter: grayscale(80%) brightness(0.85) contrast(1.15);
     transition: var(--transition-premium);
 }
 
@@ -243,28 +272,28 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 50%, rgba(3, 3, 3, 0.9) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(5, 1, 3, 0.92) 100%);
     z-index: 2;
     pointer-events: none;
 }
 
 .portrait-container:hover {
     border-color: var(--clr-brass);
-    box-shadow: 0 30px 60px -15px rgba(197, 155, 39, 0.15), 0 0 40px var(--clr-glow-purple);
+    box-shadow: 0 30px 60px -15px rgba(212, 175, 55, 0.25), 0 0 45px var(--clr-glow-oxblood);
     transform: translateY(-5px);
 }
 
 .portrait-container:hover .portrait-image {
-    filter: grayscale(0%) brightness(0.95) saturate(1.1) contrast(1.05);
+    filter: grayscale(0%) brightness(1) saturate(1.1) contrast(1.08);
     transform: scale(1.03);
 }
 
 /* Anel de Pulsação de Luz no Fundo */
 .visual-bg-glow {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--clr-glow-red) 0%, transparent 70%);
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, var(--clr-glow-oxblood) 0%, rgba(61, 5, 12, 0.15) 50%, transparent 75%);
     border-radius: var(--radius-full);
     top: 50%;
     left: 50%;
@@ -275,8 +304,8 @@ body {
 }
 
 @keyframes slow-pulse {
-    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; }
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.95; }
 }
 
 /* Informações do Hero */
@@ -310,7 +339,7 @@ body {
 .hero-title em {
     font-style: italic;
     font-weight: 400;
-    background: linear-gradient(135deg, var(--clr-cream), var(--clr-brass));
+    background: linear-gradient(135deg, var(--clr-cream) 20%, var(--clr-rose-dust) 60%, var(--clr-brass) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
@@ -319,7 +348,7 @@ body {
 .hero-bio {
     font-family: var(--font-body);
     font-size: 1.125rem;
-    color: var(--clr-slate);
+    color: var(--clr-cream-muted);
     max-width: 600px;
 }
 
@@ -336,14 +365,14 @@ body {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-full);
-    background: rgba(45, 49, 57, 0.4);
-    border: 1px solid rgba(250, 246, 238, 0.08);
+    background: rgba(61, 5, 12, 0.35);
+    border: 1px solid var(--glass-border);
     color: var(--clr-cream);
 }
 
 .hero-badge.highlight {
-    background: rgba(168, 12, 30, 0.15);
-    border-color: rgba(168, 12, 30, 0.4);
+    background: rgba(158, 12, 27, 0.25);
+    border-color: rgba(212, 175, 55, 0.4);
     color: var(--clr-cream);
 }
 
@@ -357,7 +386,7 @@ body {
     gap: 5rem;
     margin-bottom: 6rem;
     padding-top: 4rem;
-    border-top: 1px solid rgba(250, 246, 238, 0.05);
+    border-top: 1px solid rgba(226, 180, 189, 0.1);
 }
 
 .section-intro-col h2 {
@@ -365,6 +394,7 @@ body {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     line-height: 1.2;
+    color: var(--clr-cream);
 }
 
 .section-intro-col h2 span {
@@ -378,12 +408,14 @@ body {
 }
 
 .manifesto-box {
-    background: linear-gradient(135deg, rgba(74, 7, 16, 0.15), rgba(43, 15, 84, 0.15));
-    border: 1px solid rgba(197, 155, 39, 0.1);
+    background: linear-gradient(135deg, rgba(61, 5, 12, 0.45) 0%, rgba(36, 2, 6, 0.65) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
     border-radius: var(--radius-lg);
     padding: 2.5rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--clr-glow-oxblood);
+    backdrop-filter: blur(12px);
 }
 
 .manifesto-box::before {
@@ -393,7 +425,7 @@ body {
     left: 20px;
     font-family: var(--font-title);
     font-size: 8rem;
-    color: rgba(197, 155, 39, 0.08);
+    color: rgba(212, 175, 55, 0.12);
     line-height: 1;
 }
 
@@ -425,7 +457,7 @@ body {
 .detail-item p {
     font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--clr-slate);
+    color: var(--clr-cream-muted);
 }
 
 .detail-item p strong {
@@ -473,10 +505,20 @@ body {
     padding: 2.25rem;
     position: relative;
     transition: var(--transition-premium);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.quote-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-reflection);
+    pointer-events: none;
 }
 
 /* Efeito Color Reveal nos cards de frases */
@@ -485,7 +527,7 @@ body {
     font-size: 1.25rem;
     line-height: 1.5;
     color: var(--clr-cream);
-    filter: grayscale(100%) brightness(0.85);
+    filter: grayscale(60%) brightness(0.9);
     transition: var(--transition-premium);
 }
 
@@ -496,19 +538,20 @@ body {
     left: 0;
     width: 3px;
     height: 0;
-    background-color: var(--clr-red);
+    background-color: var(--clr-brass);
     transition: var(--transition-premium);
 }
 
 .quote-card:hover {
     border-color: var(--glass-border-hover);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 25px var(--clr-glow-red);
-    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--clr-glow-oxblood);
+    transform: translateY(-4px);
+    background: var(--clr-dark-card-hover);
 }
 
 .quote-card:hover p {
     filter: grayscale(0%) brightness(1.0);
-    text-shadow: 0 0 8px rgba(250, 246, 238, 0.15);
+    text-shadow: 0 0 10px rgba(250, 246, 238, 0.2);
 }
 
 .quote-card:hover::before {
@@ -531,7 +574,7 @@ body {
 .ecosystem-section {
     margin-bottom: 6rem;
     padding-top: 4rem;
-    border-top: 1px solid rgba(250, 246, 238, 0.05);
+    border-top: 1px solid rgba(226, 180, 189, 0.1);
 }
 
 .ecosystem-header {
@@ -542,6 +585,7 @@ body {
 .ecosystem-header h2 {
     font-family: var(--font-title);
     font-size: 2.5rem;
+    color: var(--clr-cream);
 }
 
 .ecosystem-header p {
@@ -557,7 +601,7 @@ body {
     overflow-x: auto;
     margin-bottom: 3rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(250, 246, 238, 0.05);
+    border-bottom: 1px solid rgba(226, 180, 189, 0.1);
 }
 
 .tab-bar {
@@ -572,9 +616,9 @@ body {
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--clr-slate);
-    background: transparent;
-    border: 1px solid rgba(250, 246, 238, 0.05);
+    color: var(--clr-cream-muted);
+    background: rgba(61, 5, 12, 0.25);
+    border: 1px solid var(--glass-border);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radius-full);
     cursor: pointer;
@@ -585,15 +629,16 @@ body {
 
 .tab-btn:hover {
     color: var(--clr-cream);
-    border-color: rgba(197, 155, 39, 0.4);
-    background: rgba(197, 155, 39, 0.03);
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(92, 10, 21, 0.4);
+    box-shadow: 0 0 15px var(--clr-glow-oxblood);
 }
 
 .tab-btn.active-tab {
-    color: var(--clr-black);
-    background: var(--clr-brass);
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--clr-oxblood-rich) 0%, var(--clr-red) 100%);
     border-color: var(--clr-brass);
-    box-shadow: 0 0 20px var(--clr-glow-brass);
+    box-shadow: 0 0 25px var(--clr-glow-oxblood), 0 0 12px var(--clr-glow-brass);
 }
 
 /* Content Panels */
@@ -627,18 +672,33 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 150px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     transition: var(--transition-premium);
     position: relative;
     overflow: hidden;
 }
 
+.link-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-reflection);
+    pointer-events: none;
+}
+
+.link-card:hover {
+    border-color: var(--glass-border-hover);
+    background: var(--clr-dark-card-hover);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px var(--clr-glow-oxblood);
+    transform: translateY(-4px);
+}
+
 /* Hover Filter Effect - Color Reveal */
 .link-card .card-icon {
     font-size: 1.75rem;
-    color: var(--clr-slate);
+    color: var(--clr-brass);
     transition: var(--transition-premium);
-    filter: grayscale(100%) brightness(0.8);
+    filter: grayscale(60%) brightness(0.9);
     margin-bottom: 1rem;
 }
 
@@ -860,35 +920,62 @@ body {
 }
 
 .gallery-card {
-    background: rgba(250, 246, 238, 0.02);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(28, 4, 9, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
-    padding: 0.75rem;
+    padding: 0.85rem;
     transition: var(--transition-premium);
     cursor: pointer;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtle running neon border overlay */
+.gallery-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius-md) + 2px);
+    padding: 2px;
+    background: linear-gradient(90deg, #9e0c1b, #d4af37, #5c0a15, #e2b4bd, #9e0c1b);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: runningNeon 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes runningNeon {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .gallery-image-wrapper {
     width: 100%;
-    height: 280px;
+    height: 290px;
     border-radius: var(--radius-sm);
     overflow: hidden;
     position: relative;
 }
 
-/* Color Reveal nos cards da galeria */
+/* Color Reveal e Zoom Suave nos cards da galeria ao passar o mouse */
 .gallery-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(0.65) contrast(1.1);
-    transition: var(--transition-premium);
+    filter: grayscale(75%) brightness(0.75) contrast(1.1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    will-change: transform, filter;
 }
 
 .gallery-card-info {
@@ -899,28 +986,33 @@ body {
 
 .gallery-card-title {
     font-family: var(--font-title);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--clr-cream);
 }
 
 .gallery-card-desc {
     font-family: var(--font-body);
-    font-size: 0.75rem;
-    color: var(--clr-slate);
+    font-size: 0.78rem;
+    color: var(--clr-cream-muted);
+    transition: var(--transition-premium);
 }
 
-/* Hover States (Revelando as cores e saltando levemente) */
+/* Hover States (Revelando as cores, zoom suave da imagem e contorno neon sutil rodando) */
 .gallery-card:hover {
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px var(--clr-glow-purple);
-    transform: translateY(-5px);
-    background: rgba(250, 246, 238, 0.05);
+    border-color: transparent;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px var(--clr-glow-oxblood), 0 0 15px var(--clr-glow-brass);
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(45, 6, 14, 0.7);
+}
+
+.gallery-card:hover::before {
+    opacity: 0.85;
 }
 
 .gallery-card:hover .gallery-img {
-    filter: grayscale(0%) brightness(0.95) saturate(1.1) contrast(1.05);
-    transform: scale(1.04);
+    filter: grayscale(0%) brightness(1) saturate(1.12) contrast(1.08);
+    transform: scale(1.08);
 }
 
 .gallery-card:hover .gallery-card-desc {

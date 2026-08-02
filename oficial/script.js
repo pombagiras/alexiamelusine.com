@@ -347,4 +347,122 @@ document.addEventListener('DOMContentLoaded', () => {
             navigator.vibrate(duration);
         }
     }
+    /* ==========================================================================
+       6. WebGL Oxblood Animated Gradient Component (Hero Section Exclusive)
+       ========================================================================== */
+    const heroCanvas = document.getElementById('oxblood-hero-gradient-canvas');
+    if (heroCanvas) {
+        try {
+            const gl = heroCanvas.getContext('webgl2', {
+                premultipliedAlpha: true,
+                alpha: true,
+                antialias: true
+            }) || heroCanvas.getContext('webgl');
+
+            if (gl) {
+                const vsSource = `attribute vec4 a_position; void main() { gl_Position = a_position; }`;
+                const fsSource = `precision highp float;
+                uniform float u_time;
+                uniform vec2 u_resolution;
+                out vec4 fragColor;
+
+                #define TWO_PI 6.28318530718
+
+                vec2 rotate(vec2 uv, float th) {
+                  return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
+                }
+
+                float random(vec2 st) {
+                  return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+                }
+
+                float noise(vec2 st) {
+                  vec2 i = floor(st);
+                  vec2 f = fract(st);
+                  float a = random(i);
+                  float b = random(i + vec2(1.0, 0.0));
+                  float c = random(i + vec2(0.0, 1.0));
+                  float d = random(i + vec2(1.0, 1.0));
+                  vec2 u = f * f * (3.0 - 2.0 * f);
+                  return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+                }
+
+                void main() {
+                    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+                    float t = u_time * 0.4;
+                    uv -= 0.5;
+                    uv = rotate(uv, -0.5);
+                    uv += 0.5;
+
+                    float n1 = noise(uv * 1.5 + t * 0.5);
+                    float n2 = noise(uv * 3.0 - t * 0.3);
+
+                    vec4 col1 = vec4(0.04, 0.0, 0.01, 1.0);  // #0a0002
+                    vec4 col2 = vec4(0.18, 0.01, 0.03, 1.0); // #2e0208
+                    vec4 col3 = vec4(0.48, 0.0, 0.09, 1.0);  // #7a0016
+
+                    float mix1 = smoothstep(0.1, 0.7, n1 + n2 * 0.3);
+                    float mix2 = smoothstep(0.4, 0.9, n2);
+
+                    vec4 finalColor = mix(col1, col2, mix1);
+                    finalColor = mix(finalColor, col3, mix2);
+
+                    fragColor = finalColor;
+                }`;
+
+                // Compile shaders
+                const createShader = (gl, type, source) => {
+                    const shader = gl.createShader(type);
+                    gl.shaderSource(shader, source);
+                    gl.compileShader(shader);
+                    return gl.getShaderParameter(shader, gl.COMPILE_STATUS) ? shader : null;
+                };
+
+                const vs = createShader(gl, gl.VERTEX_SHADER, vsSource);
+                const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource.replace('#version 300 es\n', '').replace('out vec4 fragColor;', '').replace('fragColor =', 'gl_FragColor ='));
+
+                if (vs && fs) {
+                    const program = gl.createProgram();
+                    gl.attachShader(program, vs);
+                    gl.attachShader(program, fs);
+                    gl.linkProgram(program);
+                    gl.useProgram(program);
+
+                    const positionBuffer = gl.createBuffer();
+                    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+                    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+
+                    const posLoc = gl.getAttribLocation(program, 'a_position');
+                    gl.enableVertexAttribArray(posLoc);
+                    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+                    const uTime = gl.getUniformLocation(program, 'u_time');
+                    const uRes = gl.getUniformLocation(program, 'u_resolution');
+
+                    const resize = () => {
+                        const width = heroCanvas.parentElement.clientWidth;
+                        const height = heroCanvas.parentElement.clientHeight;
+                        heroCanvas.width = width;
+                        heroCanvas.height = height;
+                        gl.viewport(0, 0, width, height);
+                    };
+
+                    resize();
+                    window.addEventListener('resize', resize);
+
+                    const startTime = performance.now();
+                    const render = () => {
+                        const elapsed = (performance.now() - startTime) / 1000;
+                        gl.uniform1f(uTime, elapsed);
+                        gl.uniform2f(uRes, heroCanvas.width, heroCanvas.height);
+                        gl.drawArrays(gl.TRIANGLES, 0, 6);
+                        requestAnimationFrame(render);
+                    };
+                    requestAnimationFrame(render);
+                }
+            }
+        } catch (e) {
+            console.warn('Hero Oxblood WebGL Gradient fallback triggered.');
+        }
+    }
 });
