@@ -121,3 +121,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// 6. Mobile Toggle Expandable Content Function
+function toggleExpand(btn) {
+    const parent = btn.parentElement;
+    const content = parent.querySelector('.expandable-content');
+    
+    if (!content) return;
+    
+    const isExpanded = content.classList.contains('expanded');
+    
+    if (isExpanded) {
+        content.classList.remove('expanded');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Continuar lendo';
+    } else {
+        content.classList.add('expanded');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Recolher texto';
+    }
+
+    if ('vibrate' in navigator) {
+        navigator.vibrate(30);
+    }
+}
