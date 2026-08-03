@@ -1128,7 +1128,7 @@ body {
 }
 
 .expandable-content {
-    max-height: none;
+    max-height: none !important;
     overflow: visible;
 }
 
@@ -1167,8 +1167,8 @@ body {
     }
 
     .expandable-content {
-        max-height: 4.8em;
-        overflow: hidden;
+        max-height: 4.8em !important;
+        overflow: hidden !important;
         position: relative;
         transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1186,10 +1186,10 @@ body {
     }
 
     .expandable-content.expanded {
-        max-height: 1200px;
+        max-height: 2000px !important;
     }
 
     .expandable-content.expanded::after {
-        opacity: 0;
+        opacity: 0 !important;
     }
 }
