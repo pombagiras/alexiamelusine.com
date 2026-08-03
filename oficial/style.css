@@ -1302,6 +1302,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    border-radius: 36px;
+    overflow: hidden;
 }
 
 .footer-glass-wrapper {
