@@ -183,13 +183,13 @@
         .article-byline-author{color:var(--text-secondary);font-weight:600;}
         .article-byline-sep{color:rgba(255,255,255,0.15);}
         .article-divider{width:60px;height:2px;background:linear-gradient(90deg,var(--accent-primary),transparent);margin:28px auto 0 auto;border-radius:2px;}
-        .essay-card{padding:52px 56px;}
-        .essay-body{font-size:1.08rem;color:var(--text-secondary);line-height:1.95;}
-        .essay-body p{margin-bottom:1.6rem;text-align:justify;}
+        .essay-card{padding:48px 52px;}
+        .essay-body{font-size:1.05rem;color:var(--text-secondary);line-height:1.75;}
+        .essay-body p{margin-bottom:0.85rem;text-align:left;word-break:break-word;}
         .essay-body p:last-child{margin-bottom:0;}
-        .pull-quote{font-family:var(--font-title)!important;font-size:1.3rem!important;font-style:italic;color:var(--text-primary)!important;border-left:3px solid var(--accent-primary);padding-left:20px!important;margin:2.4rem 0!important;line-height:1.7!important;text-align:left!important;}
-        .essay-ornament{text-align:center;color:var(--accent-primary);font-size:1.1rem;opacity:0.5;margin:2rem 0;letter-spacing:12px;}
-        .essay-disclaimer{margin-top:2.8rem;padding:20px 24px;border-radius:var(--radius-md);border:1px solid rgba(178,34,34,0.2);background:rgba(178,34,34,0.04);font-size:0.88rem;color:var(--text-muted);line-height:1.7;font-style:italic;}
+        .pull-quote{font-family:var(--font-title)!important;font-size:1.25rem!important;font-style:italic;color:var(--text-primary)!important;border-left:3px solid var(--accent-primary);padding-left:16px!important;margin:1.4rem 0!important;line-height:1.55!important;text-align:left!important;}
+        .essay-ornament{text-align:center;color:var(--accent-primary);font-size:1rem;opacity:0.5;margin:1.2rem 0;letter-spacing:10px;}
+        .essay-disclaimer{margin-top:2rem;padding:18px 22px;border-radius:var(--radius-md);border:1px solid rgba(178,34,34,0.2);background:rgba(178,34,34,0.04);font-size:0.88rem;color:var(--text-muted);line-height:1.65;font-style:italic;}
         .nav-back-card{padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
         .btn-back{display:inline-flex;align-items:center;gap:10px;padding:11px 24px;border:1px solid var(--accent-primary);background:transparent;color:var(--text-primary);text-decoration:none;font-size:0.88rem;font-weight:600;letter-spacing:0.5px;border-radius:50px;transition:var(--transition-smooth);cursor:pointer;}
         .btn-back:hover{background:var(--accent-primary);box-shadow:0 0 20px var(--accent-glow);color:white;transform:translateX(-3px);}
@@ -227,13 +227,19 @@
         @media(max-width:768px){
             body{padding:80px 16px 32px 16px;}
             .eco-navbar-inner{gap:4px;}.eco-link{font-size:0.62rem;padding:3px 8px;letter-spacing:0.5px;}.eco-separator{display:none;}
-            .card{padding:30px 20px;border-radius:var(--radius-md);}.essay-card{padding:32px 22px;}
+            .card{padding:30px 20px;border-radius:var(--radius-md);}.essay-card{padding:28px 20px;}
+            .essay-body{font-size:0.95rem;line-height:1.68;}
+            .essay-body p{margin-bottom:0.75rem;text-align:left!important;}
+            .pull-quote{font-size:1.15rem!important;padding-left:14px!important;margin:1.1rem 0!important;line-height:1.5!important;}
+            .essay-ornament{margin:1rem 0;letter-spacing:8px;}
             .eco-crosslink-grid{grid-template-columns:1fr;}
             .nav-back-card{flex-direction:column;align-items:flex-start;padding:24px 20px;}
         }
         @media(max-width:480px){
-            body{padding:72px 10px 24px 10px;}.card{padding:20px 16px;}.essay-card{padding:24px 16px;}
-            .essay-body{font-size:1rem;}.pull-quote{font-size:1.1rem!important;padding-left:14px!important;}
+            body{padding:72px 10px 24px 10px;}.card{padding:20px 16px;}.essay-card{padding:22px 16px;}
+            .essay-body{font-size:0.92rem;line-height:1.65;}
+            .essay-body p{margin-bottom:0.7rem;text-align:left!important;}
+            .pull-quote{font-size:1.05rem!important;padding-left:12px!important;margin:0.95rem 0!important;}
         }
     </style>
 </head>
