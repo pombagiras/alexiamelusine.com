@@ -1133,6 +1133,29 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    /* === MOBILE TEXT OVERRIDES — Card Utilidade Pública & Manifesto === */
+    /* Remove CSS gradient text (renders inconsistently across Samsung/Motorola). 
+       Uses solid color for reliable rendering on all Android browsers. */
+    #card-utilidade-publica p,
+    .manifesto-content p {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #ff9e00 !important;
+        color: #ff9e00 !important;
+        text-shadow: none !important;
+        text-align: left !important;
+        font-size: 0.92rem !important;
+        line-height: 1.7 !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.01em !important;
+        word-spacing: 0 !important;
+    }
+
+    .manifesto-content {
+        gap: 16px !important;
+    }
+
     .mobile-only-btn {
         display: inline-flex !important;
         align-items: center;
@@ -1191,5 +1214,14 @@ body {
 
     .expandable-content.expanded::after {
         opacity: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens — further readability refinements */
+    #card-utilidade-publica p,
+    .manifesto-content p {
+        font-size: 0.88rem !important;
+        line-height: 1.65 !important;
     }
 }
