@@ -775,7 +775,7 @@ body {
 }
 
 .hijras-img {
-    object-position: center 30%;
+    object-position: center 25%;
     filter: grayscale(100%) contrast(1.15) brightness(0.9);
     transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
