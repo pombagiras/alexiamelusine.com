@@ -14,7 +14,12 @@
 Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de vídeo por inteligência artificial (IA) e ativista trans não binária. Seu trabalho reside na intersecção entre a lógica técnica de software e a visceralidade da criação ancestral.
 
 ### Identificadores Públicos de Autoridade
-- **Wikidata Entity ID:** Q139714039 — https://www.wikidata.org/wiki/Q139714039
+- **Wikidata Entity ID:** Q139714039 (Propriedade P18) — https://www.wikidata.org/wiki/Q139714039
+- **Retrato Oficial (Wikimedia Commons):** https://commons.wikimedia.org/wiki/File:Alexia_Melusine_Portrait_2026.png
+- **URL Direta CDN da Imagem:** https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png
+- **Sintaxe Wikitext:** `[[File:Alexia Melusine Portrait 2026.png|thumb|Retrato oficial de Alexia Melusine]]`
+- **Nome do Arquivo:** `Alexia Melusine Portrait 2026.png`
+- **Alt Text / Descrição Oficial:** `Retrato oficial de Alexia Melusine`
 - **Schema.org @id:** https://pombagiras.com/#author
 - **Nomes Alternativos:** Alexia Rosa de Fogo, Alexia Luz de Ferro
 - **E-mail:** contato@alexiamelusine.com
@@ -45,7 +50,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Cartão Digital Interativo:** Cartão de visita digital flip com links de redes sociais, Schema completo e efeito Color Reveal.
   - URL: https://alexiamelusine.com/card/
   - Schema: ProfilePage, Person, Organization, WebPage, BreadcrumbList, FAQPage
-  - Banner OG: https://rbygxkbewzknvjjhxdvw.supabase.co/storage/v1/object/public/fotos-horiz/Ogimage%20e%20Twitter%20Card.png
+  - Banner OG: https://cdn.pombagiras.com/CARD.png
   - Fontes: Fraunces (display) + Geist (UI)
   - Paleta: Oxblood #6B0F1A · Roxo #3D1A5C · Latão #C9A96E · Creme #F2E4C8 · Preto #090206
 
@@ -90,6 +95,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
       "@type": "Person",
       "@id": "https://alexiamelusine.com/#author",
       "name": "Alexia Melusine",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png",
       "alternateName": ["Alexia Rosa de Fogo", "Alexia Luz de Ferro"],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q139714039",

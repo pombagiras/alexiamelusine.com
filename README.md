@@ -1,7 +1,7 @@
 # 🌙 Alexia Melusine
 
 <p align="center">
-  <img src="assets/ale-perfil.png" alt="Alexia Melusine" width="280">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png" alt="Retrato oficial de Alexia Melusine" width="280">
 </p>
 
 <p align="center">
