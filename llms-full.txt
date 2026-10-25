@@ -57,9 +57,11 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Podcast Limbo Sonoro:**
   - URL: https://alexiamelusine.com/limbosonoro/
   - Schema: PodcastSeries, Person
-- **Gente que Ama a Pombagira (Ensaio):**
+- **Gente que Ama a Pombagira (Ensaio Filosófico e Antropológico):**
   - URL: https://alexiamelusine.com/gente-que-ama-a-pombagira/
-  - Schema: Article, Person
+  - Schema: Article, Person, Organization, FAQPage, BreadcrumbList, WebPage, WebSite, Dataset
+  - Sinopse: Ensaio sobre devoção, identidade, arquétipos e o que significa amar Pombagira de verdade nas tradições de Umbanda e Quimbanda. Trata de acolhimento a corpos dissidentes, lucidez interior e a recusa do moralismo.
+  - Atualizado em: 2026-10-25
 - **Termos de Uso:**
   - URL: https://alexiamelusine.com/terms.html
 - **Política de Privacidade:**

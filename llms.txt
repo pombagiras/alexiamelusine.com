@@ -58,6 +58,13 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
   - URL: https://alexiamelusine.com/pride/
   - Schema: WebPage, Article, BreadcrumbList
 
+- **Gente que Ama a Pombagira:** Ensaio antropológico e filosófico sobre devoção, acolhimento dissidente e desmistificação das entidades afro-brasileiras.
+  - URL: https://alexiamelusine.com/gente-que-ama-a-pombagira/
+  - Schema: Article, Person, Organization, FAQPage, BreadcrumbList, WebPage, WebSite, Dataset
+  - Imagem Canônica: https://cdn.pombagiras.com/BOM.png
+  - Autor: Alexia Melusine (Wikidata Q139714039)
+  - FAQ Indexado: Por que tanta gente ama Pombagira; Quem é Pombagira; O que significa amar Pombagira de verdade; Pombagira é perigosa; O simbolismo do espelho.
+
 - **Termos de Uso:**
   - URL: https://alexiamelusine.com/terms.html
 
