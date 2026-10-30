@@ -100,7 +100,8 @@
         0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px #ff7300; }
         50% { opacity: 0.45; transform: scale(1.35); box-shadow: 0 0 14px #ff9e00; }
       }
-      .podcast-status-container {
+      .podcast-status-container,
+      .textos-status-container {
         display: inline-flex !important;
         align-items: center !important;
         gap: 6px !important;
@@ -118,14 +119,16 @@
         text-decoration: none !important;
         text-shadow: 0 0 8px rgba(199, 125, 255, 0.4) !important;
       }
-      .podcast-status-container:hover {
+      .podcast-status-container:hover,
+      .textos-status-container:hover {
         background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 100%) !important;
         border-color: #ffffff !important;
         color: #ffffff !important;
         box-shadow: 0 4px 20px rgba(197, 123, 255, 0.65) !important;
         transform: translateY(-1.5px) !important;
       }
-      .podcast-status-dot {
+      .podcast-status-dot,
+      .textos-status-dot {
         width: 7px !important;
         height: 7px !important;
         border-radius: 50% !important;
@@ -437,6 +440,10 @@
                         <span>Ativista Trans Não Binária</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 10px;">
+                        <a href="https://alexiamelusine.com/anatomia-do-abismo-textos-originais/" class="textos-status-container" style="text-decoration: none;">
+                            <span class="textos-status-dot"></span>
+                            <span class="textos-status-text">Textos</span>
+                        </a>
                         <a href="https://alexiamelusine.com/card/" class="status-container" style="text-decoration: none;">
                             <span class="status-dot"></span>
                             <span class="status-text">Card</span>
