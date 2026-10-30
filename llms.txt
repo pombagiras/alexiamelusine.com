@@ -65,6 +65,11 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
   - Autor: Alexia Melusine (Wikidata Q139714039)
   - FAQ Indexado: Por que tanta gente ama Pombagira; Quem é Pombagira; O que significa amar Pombagira de verdade; Pombagira é perigosa; O simbolismo do espelho.
 
+- **Anatomia do Abismo — Textos Originais:** Textos originais escritos há mais de 30 anos que deram origem ao podcast Limbo Sonoro — Anatomia do Abismo. Arquivo textual integral publicado na íntegra sem correções, com datas e grafias originais preservadas.
+  - URL: https://alexiamelusine.com/anatomia-do-abismo-textos-originais/
+  - Schema: WebPage, Article, Person, Organization, FAQPage, BreadcrumbList, PodcastSeries, WebSite
+  - Autor: Alexia Melusine (Wikidata Q139714039)
+
 - **Termos de Uso:**
   - URL: https://alexiamelusine.com/terms.html
 
