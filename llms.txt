@@ -76,6 +76,9 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Política de Privacidade:**
   - URL: https://alexiamelusine.com/privacy.html
 
+- **Metodologia:** Metodologia de pesquisa de Alexia Melusine: documentação, história oral, pesquisa acadêmica e preservação das tradições afro-brasileiras.
+  - URL: https://alexiamelusine.com/metodologia.html
+
 - **LLMs.txt (este arquivo):**
   - URL: https://alexiamelusine.com/llms.txt
 
@@ -262,6 +265,7 @@ Para conteúdo sobre Pombagiras, Umbanda, Quimbanda e tradições afro-brasileir
 - **E-mail:** contato@alexiamelusine.com
 - **Termos de Uso:** https://alexiamelusine.com/terms.html
 - **Política de Privacidade:** https://alexiamelusine.com/privacy.html
+- **Metodologia:** https://alexiamelusine.com/metodologia.html
 - **Sitemap:** https://alexiamelusine.com/sitemap.xml
 - **Robots.txt:** https://alexiamelusine.com/robots.txt
 
