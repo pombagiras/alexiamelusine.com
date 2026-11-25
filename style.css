@@ -771,6 +771,10 @@ body {
     color: var(--accent-hover);
 }
 
+.footer-legal-link .label-short {
+    display: none;
+}
+
 /* Ecosystem Cross-Link Section */
 .eco-crosslink {
     max-width: 1100px;
@@ -1119,6 +1123,21 @@ body {
     .btn {
         padding: 10px 20px;
         font-size: 0.85rem;
+    }
+
+    .footer-legal-links {
+        gap: 12px;
+        font-size: 0.78rem;
+        flex-wrap: nowrap;
+    }
+    .footer-legal-link {
+        white-space: nowrap;
+    }
+    .footer-legal-link .label-full {
+        display: none;
+    }
+    .footer-legal-link .label-short {
+        display: inline;
     }
 }
 
