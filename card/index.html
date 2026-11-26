@@ -10,13 +10,13 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#0d0408">
   <meta name="color-scheme" content="dark">
-  <link rel="canonical" href="https://alexiamelusine.com/">
+  <link rel="canonical" href="https://alexiamelusine.com/card/">
   <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.pombagiras.com/assets/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.pombagiras.com/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="https://cdn.pombagiras.com/assets/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.pombagiras.com/assets/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="https://cdn.pombagiras.com/assets/favicon-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.pombagiras.com/assets/apple-touch-icon.png">
   <link rel="manifest" href="https://alexiamelusine.com/manifest.webmanifest">
 
@@ -144,7 +144,7 @@
         "url": "https://alexiamelusine.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://cdn.pombagiras.com/assets/favicon-192x192.png?v=3.0"
+          "url": "/assets/favicon-192x192.png"
         },
         "founder": {
           "@id": "https://pombagiras.com/#author"
@@ -1490,7 +1490,6 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite">Link copiado ✦</div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 <script>
 /* CURSOR */
 (function(){
@@ -1585,22 +1584,6 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 
-/* SUPABASE */
-var SB_URL = "https://qvbjwzszdijhydgcqvyu.supabase.co";
-var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2Ymp3enN6ZGlqaHlkZ2Nxdnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUzMjA3NDQsImV4cCI6MjA4MDg5Njc0NH0.w__h1N2owBQC5HDedmCjRX4IPcXODs_Kc5RyfYeHk_g";
-var sbClient;
-
-function initSB(){
-  try{ sbClient=supabase.createClient(SB_URL,SB_KEY); return true; }
-  catch(e){ return false; }
-}
-async function trackVisit(){
-  if(!sbClient) return;
-  try{ await sbClient.from("page_visits").insert([{route:"card"}]); } catch(e){}
-}
-window.addEventListener('load',function(){
-  if(typeof supabase!=='undefined'&&initSB()) trackVisit();
-});
 </script>
 </body>
 </html>
