@@ -43,7 +43,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Limbo Sonoro — Anatomia do Abismo | Alexia Melusine">
   <meta property="og:description" content="Um mergulho visceral em cápsulas de memória escritas há mais de três décadas. Alexia Melusine transforma fragmentos do abismo em som, narração e sobrevivência.">
-  <meta property="og:image" content="https://cdn.pombagiras.com/LIMBO-SONORO.png">
+  <meta property="og:image" content="https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Limbo Sonoro — Anatomia do Abismo por Alexia Melusine">
@@ -53,7 +53,7 @@
   <meta name="twitter:url" content="https://alexiamelusine.com/limbosonoro/">
   <meta name="twitter:title" content="Limbo Sonoro — Anatomia do Abismo | Alexia Melusine">
   <meta name="twitter:description" content="Um mergulho visceral em cápsulas de memória. Alexia Melusine transforma fragmentos do abismo em som. Podcast no Spotify.">
-  <meta name="twitter:image" content="https://cdn.pombagiras.com/LIMBO-SONORO.png">
+  <meta name="twitter:image" content="https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp">
   <meta name="twitter:creator" content="@AlexiaMelusine">
   <meta name="twitter:site" content="@AlexiaMelusine">
 
@@ -116,7 +116,7 @@
         "description": "Alexia Melusine revisita escritos produzidos há mais de três décadas, transformando fragmentos de memória em narrativas sobre dor, sobrevivência, identidade, delírio e consciência expandida.",
         "author": {"@id": "https://pombagiras.com/#author"},
         "url": "https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW",
-        "image": "https://cdn.pombagiras.com/LIMBO-SONORO.png",
+        "image": "https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp",
         "inLanguage": "pt-BR",
         "genre": ["Autobiográfico","Narrativa Pessoal","Arte Sonora"]
       },
@@ -146,7 +146,7 @@
         "about": {"@id": "https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW"},
         "breadcrumb": {"@id": "https://alexiamelusine.com/limbosonoro/#breadcrumb"},
         "inLanguage": "pt-BR",
-        "image": "https://cdn.pombagiras.com/LIMBO-SONORO.png"
+        "image": "https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp"
       },
       {
         "@type": "BreadcrumbList",
@@ -487,6 +487,46 @@
       transition: opacity 0.3s ease;
     }
     .sf:hover iframe { opacity: 0.95; }
+    .spotify-facade {
+      position: relative; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; width: 100%; height: 352px; padding: 28px 32px; border: none;
+      background: linear-gradient(135deg, rgba(28, 9, 44, 0.92) 0%, rgba(12, 4, 20, 0.96) 100%);
+      color: var(--creme); cursor: pointer; text-align: left; font-family: var(--fb);
+      overflow: hidden; transition: var(--tr);
+    }
+    .spotify-facade-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.24; filter: blur(6px) saturate(1.15); transform: scale(1.06);
+      pointer-events: none; transition: opacity .35s ease;
+    }
+    .spotify-facade:hover .spotify-facade-bg { opacity: 0.34; }
+    .spotify-facade-cover {
+      position: relative; z-index: 1; width: 170px; height: 170px; flex-shrink: 0;
+      border-radius: var(--rSm); overflow: hidden;
+      border: 1px solid rgba(197, 123, 255, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    }
+    .spotify-facade-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .spotify-facade-meta {
+      position: relative; z-index: 1; flex: 1; min-width: 0;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+    }
+    .spotify-facade-tag {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2.2px;
+      color: #1ed760; background: rgba(30, 215, 96, 0.14);
+      border: 1px solid rgba(30, 215, 96, 0.35); border-radius: 50px; padding: 4px 12px;
+    }
+    .spotify-facade-title {
+      font-family: var(--ft); font-size: 1.45rem; font-weight: 700; color: #f5edff; line-height: 1.25;
+    }
+    .spotify-facade-sub { font-size: .9rem; color: #dfd0ec; }
+    .spotify-facade-btn {
+      display: inline-flex; align-items: center; gap: 9px; margin-top: 6px;
+      padding: 10px 20px; border-radius: 50px; background: #1db954; color: #09130c;
+      font-size: .84rem; font-weight: 700; box-shadow: 0 6px 20px rgba(29, 185, 84, 0.35);
+      transition: transform .25s ease, background-color .25s ease;
+    }
+    .spotify-facade:hover .spotify-facade-btn { transform: translateY(-2px) scale(1.03); background: #1ed760; }
 
     /* ══ NARRATIVE CARDS — ROXO REVELATION ══ */
     .narrative-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -664,6 +704,11 @@
 
       .warn-card { flex-direction: column; gap: 9px; }
       .sf iframe { height: 152px !important; }
+      .spotify-facade { height: 152px !important; padding: 14px 16px; gap: 12px; }
+      .spotify-facade-cover { width: 92px; height: 92px; }
+      .spotify-facade-title { font-size: 1rem; }
+      .spotify-facade-sub { display: none; }
+      .spotify-facade-btn { padding: 7px 14px; font-size: .76rem; margin-top: 2px; }
       .memoir-q { font-size: 1.1rem; }
       .debate-line { font-size: .93rem; padding: 11px 14px; }
 
@@ -816,7 +861,21 @@
         <span id="embed-lbl">Anatomia do Abismo — Ouça Agora</span>
       </div>
       <div class="sf">
-        <iframe src="https://open.spotify.com/embed/show/6ahRd7QT2wcq7ldt5CJHZW?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Limbo Sonoro — Anatomia do Abismo no Spotify" aria-label="Player Spotify — Limbo Sonoro"></iframe>
+        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/6ahRd7QT2wcq7ldt5CJHZW?utm_source=generator&theme=0" data-embed-title="Limbo Sonoro — Anatomia do Abismo no Spotify" data-embed-label="Player Spotify — Limbo Sonoro" aria-label="Carregar player do Spotify: Limbo Sonoro — Anatomia do Abismo">
+          <img src="limbo-sonoro.webp" alt="" class="spotify-facade-bg" width="800" height="420" loading="lazy" decoding="async" aria-hidden="true">
+          <div class="spotify-facade-cover">
+            <img src="limbo-sonoro.webp" alt="Capa de Limbo Sonoro — Anatomia do Abismo" width="800" height="420" loading="lazy" decoding="async">
+          </div>
+          <div class="spotify-facade-meta">
+            <span class="spotify-facade-tag">Podcast no Spotify</span>
+            <span class="spotify-facade-title">Limbo Sonoro — Anatomia do Abismo</span>
+            <span class="spotify-facade-sub">Alexia Melusine · Clique para carregar o player oficial</span>
+            <span class="spotify-facade-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Ouvir no player Spotify
+            </span>
+          </div>
+        </button>
       </div>
     </section>
 
@@ -870,7 +929,21 @@
       <p class="sec-sub">O outro podcast do ecossistema — disponível em múltiplas plataformas</p>
 
       <div class="sf" style="margin-bottom:18px;">
-        <iframe src="https://open.spotify.com/embed/show/0oeCL1QScD3v7dHeUvJjgJ?utm_source=generator&theme=0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Pombagira Força Revelada no Spotify" aria-label="Player Spotify — Pombagira Força Revelada"></iframe>
+        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/0oeCL1QScD3v7dHeUvJjgJ?utm_source=generator&theme=0" data-embed-title="Pombagira Força Revelada no Spotify" data-embed-label="Player Spotify — Pombagira Força Revelada" aria-label="Carregar player do Spotify: Pombagira — Força Revelada">
+          <img src="limbo-sonoro.webp" alt="" class="spotify-facade-bg" width="800" height="420" loading="lazy" decoding="async" aria-hidden="true">
+          <div class="spotify-facade-cover">
+            <img src="limbo-sonoro.webp" alt="Capa do ecossistema Pombagira — Força Revelada" width="800" height="420" loading="lazy" decoding="async">
+          </div>
+          <div class="spotify-facade-meta">
+            <span class="spotify-facade-tag">Podcast no Spotify</span>
+            <span class="spotify-facade-title">Pombagira — Força Revelada</span>
+            <span class="spotify-facade-sub">Alexia Melusine · Clique para carregar o player oficial</span>
+            <span class="spotify-facade-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Ouvir no player Spotify
+            </span>
+          </div>
+        </button>
       </div>
 
       <div class="plat-badges-art" aria-label="Plataformas disponíveis">
@@ -918,21 +991,41 @@
   (function(){
     'use strict';
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* 0. SPOTIFY CLICK-TO-LOAD FACADES */
+    document.querySelectorAll('.spotify-facade').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = btn.getAttribute('data-embed-src');
+        iframe.title = btn.getAttribute('data-embed-title') || 'Player Spotify';
+        iframe.setAttribute('aria-label', btn.getAttribute('data-embed-label') || 'Player Spotify');
+        iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+        iframe.allowFullscreen = true;
+        btn.replaceWith(iframe);
+      }, { once: true });
+    });
 
     /* 1. CUSTOM CURSOR */
     const ring = document.getElementById('cursor-ring');
     const dot  = document.getElementById('cursor-dot');
-    if (!isTouch && ring && dot) {
-      let mx=-100,my=-100,rx=-100,ry=-100;
+    if (!isTouch && !prefersReducedMotion && ring && dot) {
+      let mx=-100,my=-100,rx=-100,ry=-100,rRaf=null;
       document.addEventListener('mousemove', e => {
         mx=e.clientX; my=e.clientY;
         dot.style.left=mx+'px'; dot.style.top=my+'px';
       });
-      (function animR(){
+      function animR(){
+        if (document.hidden) { rRaf = null; return; }
         rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
         ring.style.left=rx+'px'; ring.style.top=ry+'px';
-        requestAnimationFrame(animR);
-      })();
+        rRaf = requestAnimationFrame(animR);
+      }
+      rRaf = requestAnimationFrame(animR);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && rRaf) { cancelAnimationFrame(rRaf); rRaf = null; }
+        else if (!document.hidden && !rRaf) { rRaf = requestAnimationFrame(animR); }
+      });
       document.querySelectorAll('a,button,.haptic-btn,.nc').forEach(el=>{
         el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
         el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
@@ -1097,10 +1190,51 @@
         ctx.stroke();
 
         ctx.restore();
-        requestAnimationFrame(drawTrident);
       }
 
-      requestAnimationFrame(drawTrident);
+      let tridentRafId = null;
+      let tridentInView = true;
+
+      function animTrident() {
+        if (!tridentInView || document.hidden || prefersReducedMotion) {
+          tridentRafId = null;
+          return;
+        }
+        drawTrident();
+        tridentRafId = requestAnimationFrame(animTrident);
+      }
+
+      function startTridentLoop() {
+        if (!prefersReducedMotion && tridentInView && !document.hidden && !tridentRafId) {
+          tridentRafId = requestAnimationFrame(animTrident);
+        }
+      }
+
+      function stopTridentLoop() {
+        if (tridentRafId) {
+          cancelAnimationFrame(tridentRafId);
+          tridentRafId = null;
+        }
+      }
+
+      // Sempre desenha 1 quadro estático inicial (para prefers-reduced-motion e antes do loop)
+      drawTrident();
+
+      if (!prefersReducedMotion) {
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(entries => {
+            tridentInView = entries[0].isIntersecting;
+            if (tridentInView) startTridentLoop();
+            else stopTridentLoop();
+          }, { threshold: 0.01 }).observe(canvas);
+        } else {
+          startTridentLoop();
+        }
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) stopTridentLoop();
+          else startTridentLoop();
+        });
+      }
     }
 
   })();

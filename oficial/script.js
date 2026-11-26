@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Detectar Dispositivo Touch
+    // Detectar Dispositivo Touch e preferência de movimento reduzido
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ==========================================================================
        1. Cursor Customizado Interativo (Apenas Desktop)
@@ -35,9 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.custom-cursor');
     const cursorDot = document.querySelector('.custom-cursor-dot');
 
-    if (!isTouchDevice && cursor && cursorDot) {
+    if (!isTouchDevice && !prefersReducedMotion && cursor && cursorDot) {
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
+        let cursorRafId = null;
 
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
@@ -50,7 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Loop de animação suave para o círculo externo do cursor
         const animateCursor = () => {
-            // Interpolação linear (lag suave)
+            if (document.hidden) {
+                cursorRafId = null;
+                return;
+            }
             const ease = 0.15;
             cursorX += (mouseX - cursorX) * ease;
             cursorY += (mouseY - cursorY) * ease;
@@ -58,9 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
             cursor.style.left = `${cursorX}px`;
             cursor.style.top = `${cursorY}px`;
 
-            requestAnimationFrame(animateCursor);
+            cursorRafId = requestAnimationFrame(animateCursor);
         };
-        requestAnimationFrame(animateCursor);
+        cursorRafId = requestAnimationFrame(animateCursor);
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !cursorRafId) {
+                cursorRafId = requestAnimationFrame(animateCursor);
+            } else if (document.hidden && cursorRafId) {
+                cancelAnimationFrame(cursorRafId);
+                cursorRafId = null;
+            }
+        });
 
         // Feedback visual ao entrar e sair da janela
         document.addEventListener('mouseenter', () => {
@@ -214,8 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Registrar eventos para inicializar áudio por segurança (políticas de autoplay)
-    ['click', 'touchstart', 'mousemove'].forEach(evt => {
+    // Registrar eventos de gesto explícito (click/keydown) para inicializar áudio
+    ['click', 'keydown'].forEach(evt => {
         document.addEventListener(evt, initAudio, { once: true });
     });
 
@@ -471,14 +485,55 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.addEventListener('resize', resize);
 
                     const startTime = performance.now();
-                    const render = () => {
+                    let glRafId = null;
+                    let glInView = true;
+
+                    const drawFrame = () => {
                         const elapsed = (performance.now() - startTime) / 1000;
                         gl.uniform1f(uTime, elapsed);
                         gl.uniform2f(uRes, heroCanvas.width, heroCanvas.height);
                         gl.drawArrays(gl.TRIANGLES, 0, 6);
-                        requestAnimationFrame(render);
                     };
-                    requestAnimationFrame(render);
+
+                    const render = () => {
+                        if (!glInView || document.hidden || prefersReducedMotion) {
+                            glRafId = null;
+                            return;
+                        }
+                        drawFrame();
+                        glRafId = requestAnimationFrame(render);
+                    };
+
+                    const startGlLoop = () => {
+                        if (!prefersReducedMotion && glInView && !document.hidden && !glRafId) {
+                            glRafId = requestAnimationFrame(render);
+                        }
+                    };
+                    const stopGlLoop = () => {
+                        if (glRafId) {
+                            cancelAnimationFrame(glRafId);
+                            glRafId = null;
+                        }
+                    };
+
+                    // Sempre desenha 1 quadro inicial (estático para prefers-reduced-motion)
+                    drawFrame();
+
+                    if (!prefersReducedMotion) {
+                        if ('IntersectionObserver' in window) {
+                            new IntersectionObserver((entries) => {
+                                glInView = entries[0].isIntersecting;
+                                if (glInView) startGlLoop();
+                                else stopGlLoop();
+                            }, { threshold: 0.01 }).observe(heroCanvas);
+                        } else {
+                            startGlLoop();
+                        }
+                        document.addEventListener('visibilitychange', () => {
+                            if (document.hidden) stopGlLoop();
+                            else startGlLoop();
+                        });
+                    }
                 }
             }
         } catch (e) {

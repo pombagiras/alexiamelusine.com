@@ -52,8 +52,8 @@
     <meta property="twitter:image" content="https://cdn.pombagiras.com/PRIDE.png">
     <meta name="twitter:creator" content="@AlexiaMelusine">
 
-    <!-- Tailwind CSS v4 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS v4 Estático -->
+    <link rel="stylesheet" href="tailwind.css?v=1.0">
     <!-- FontAwesome Icons (non-blocking) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
@@ -336,14 +336,14 @@
     <canvas id="glitterCanvas"></canvas>
 
     <!-- Mobile Hamburger Trigger Button (Visible only on mobile) -->
-    <button id="hamburger-btn" onclick="toggleMobileMenuDrawer(true)" class="fixed top-4 left-4 z-50 p-3 rounded-full glass-panel border border-white/20 text-[#5BCEFA] hover:text-[#F5A9B8] transition-all duration-300 flex items-center justify-center focus:outline-none" aria-label="Abrir menu de navegação">
+    <button id="hamburger-btn" class="fixed top-4 left-4 z-50 p-3 rounded-full glass-panel border border-white/20 text-[#5BCEFA] hover:text-[#F5A9B8] transition-all duration-300 flex items-center justify-center focus:outline-none" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
         <i class="fa-solid fa-bars text-xl"></i>
     </button>
 
     <!-- Mobile Hamburger Drawer Menu Overlay -->
     <div id="mobile-menu" class="mobile-menu-drawer">
         <!-- Overlay backdrop blur click-away target -->
-        <div id="menu-backdrop" onclick="toggleMobileMenuDrawer(false)" class="mobile-menu-backdrop"></div>
+        <div id="menu-backdrop" class="mobile-menu-backdrop"></div>
         
         <!-- Drawer content panel -->
         <div class="mobile-menu-panel">
@@ -356,7 +356,7 @@
                         Orgulho Trans
                     </span>
                 </div>
-                <button id="close-menu-btn" onclick="toggleMobileMenuDrawer(false)" class="text-gray-400 hover:text-[#F5A9B8] transition-colors p-1" aria-label="Fechar menu">
+                <button id="close-menu-btn" class="text-gray-400 hover:text-[#F5A9B8] transition-colors p-1" aria-label="Fechar menu">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
@@ -665,7 +665,7 @@
             
             <!-- SECTION 1: As Bandeiras do Orgulho -->
             <div id="section-flags" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(91,206,250,0.5)]">🏳️‍⚧️</span>
                         <div>
@@ -729,7 +729,7 @@
 
             <!-- SECTION 2: Nossa História -->
             <div id="section-history" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(245,169,184,0.5)]">📖</span>
                         <div>
@@ -781,7 +781,7 @@
 
             <!-- SECTION 3: Pessoas Trans Inspiradoras -->
             <div id="section-inspiradoras" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left active" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left active" aria-expanded="true" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">✨</span>
                         <div>
@@ -802,7 +802,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Marsha_P._Johnson" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Marsha-P-Johnson.jpg" 
-                                     alt="Marsha P. Johnson" class="reveal-img person-img">
+                                     alt="Marsha P. Johnson" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Marsha P. Johnson</h4>
@@ -815,7 +815,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Sylvia_Rivera" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Sylvia%20Rivera.png" 
-                                     alt="Sylvia Rivera" class="reveal-img person-img">
+                                     alt="Sylvia Rivera" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Sylvia Rivera</h4>
@@ -828,7 +828,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Christine_Jorgensen" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Christine-Jorgensen-.webp" 
-                                     alt="Christine Jorgensen" class="reveal-img person-img">
+                                     alt="Christine Jorgensen" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Christine Jorgensen</h4>
@@ -841,7 +841,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Lili_Elbe" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Lili-in-Paris-1024x1024-1.jpg" 
-                                     alt="Lili Elbe" class="reveal-img person-img">
+                                     alt="Lili Elbe" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Lili Elbe</h4>
@@ -854,7 +854,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Laverne_Cox" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Laverne_Cox).jpg" 
-                                     alt="Laverne Cox" class="reveal-img person-img">
+                                     alt="Laverne Cox" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Laverne Cox</h4>
@@ -867,7 +867,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Janet_Mock" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Janet_Mock_Head_Shot.png" 
-                                     alt="Janet Mock" class="reveal-img person-img">
+                                     alt="Janet Mock" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Janet Mock</h4>
@@ -880,7 +880,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Elliot_Page" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Elliot_Page_2021.png" 
-                                     alt="Elliot Page" class="reveal-img person-img">
+                                     alt="Elliot Page" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Elliot Page</h4>
@@ -893,7 +893,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Caitlyn_Jenner" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Caitlyn_Jenner_2017.jpg" 
-                                     alt="Caitlyn Jenner" class="reveal-img person-img">
+                                     alt="Caitlyn Jenner" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Caitlyn Jenner</h4>
@@ -906,7 +906,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Erika_Hilton" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Erika-Hilton.webp" 
-                                     alt="Erika Hilton" class="reveal-img person-img">
+                                     alt="Erika Hilton" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Erika Hilton</h4>
@@ -919,7 +919,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Laerte_Coutinho" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Laerte%20Coutinho.jpg" 
-                                     alt="Laerte Coutinho" class="reveal-img person-img">
+                                     alt="Laerte Coutinho" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Laerte Coutinho</h4>
@@ -932,7 +932,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Roberta_Close" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/ROBERTA%20CLOSE%20.jpg" 
-                                     alt="Roberta Close" class="reveal-img person-img">
+                                     alt="Roberta Close" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Roberta Close</h4>
@@ -945,7 +945,7 @@
                         <a href="https://en.wikipedia.org/wiki/Buzz_Bissinger" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/2023_Buzz_Bissinger_(cropped).jpg" 
-                                     alt="Buzz Bissinger" class="reveal-img person-img">
+                                     alt="Buzz Bissinger" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Buzz Bissinger</h4>
@@ -958,7 +958,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Mait%C3%AA_Schneider" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://raw.githubusercontent.com/alexialuzdeferro/orgulho-trans/refs/heads/main/Maite%CC%82-Shneider-e1648432660953.webp" 
-                                     alt="Maitê Schneider" class="reveal-img person-img">
+                                     alt="Maitê Schneider" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Maitê Schneider</h4>
@@ -984,7 +984,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Leo_%C3%81quilla" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Leo_Aquilla.jpg" 
-                                     alt="Léo Áquilla" class="reveal-img person-img">
+                                     alt="Léo Áquilla" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Léo Áquilla</h4>
@@ -997,7 +997,7 @@
                         <a href="https://pt.wikipedia.org/wiki/Rog%C3%A9ria" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/26_Pr%C3%AAmio_da_M%C3%BAsica_Brasileira_%2818523218108%29.jpg" 
-                                     alt="Rogéria" class="reveal-img person-img">
+                                     alt="Rogéria" class="reveal-img person-img" loading="lazy" decoding="async">
                             </div>
                             <div class="p-3 text-center">
                                 <h4 class="font-bold text-white text-xs truncate">Rogéria</h4>
@@ -1064,7 +1064,7 @@
 
             <!-- SECTION 4: Linha do Tempo -->
             <div id="section-timeline" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(156,89,209,0.5)]">📜</span>
                         <div>
@@ -1208,7 +1208,7 @@
 
             <!-- SECTION 5: Lugares pelo Mundo -->
             <div class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(91,206,250,0.5)]">🌍</span>
                         <div>
@@ -1349,7 +1349,7 @@
 
             <!-- SECTION 6: Organizações de Apoio -->
             <div id="section-support" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(245,169,184,0.5)]">💜</span>
                         <div>
@@ -1451,7 +1451,7 @@
 
             <!-- SECTION 7: Emprego & Saúde -->
             <div id="section-jobs" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">💼</span>
                         <div>
@@ -1490,7 +1490,7 @@
 
             <!-- SECTION 8: Vitórias Conquistadas -->
             <div class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(91,206,250,0.5)]">🏆</span>
                         <div>
@@ -1529,7 +1529,7 @@
 
             <!-- SECTION 9: Datas Comemorativas -->
             <div id="section-dates" class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(245,169,184,0.5)]">📅</span>
                         <div>
@@ -1590,7 +1590,7 @@
 
             <!-- SECTION 10: Depoimentos -->
             <div class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">💬</span>
                         <div>
@@ -1663,7 +1663,7 @@
 
             <!-- SECTION 11: Glossário de Termos -->
             <div class="glass-panel rounded-3xl overflow-hidden shadow-xl">
-                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" onclick="toggleAccordion(this)">
+                <button class="accordion-btn w-full px-6 py-5 flex items-center justify-between text-left" aria-expanded="false" onclick="toggleAccordion(this)">
                     <div class="flex items-center gap-4">
                         <span class="text-3xl filter drop-shadow-[0_0_8px_rgba(91,206,250,0.5)]">📖</span>
                         <div>
@@ -1803,6 +1803,6 @@
     </footer>
 
     <!-- JavaScript script bundle link -->
-    <script src="script.js?v=1.7"></script>
+    <script src="script.js?v=1.9"></script>
 </body>
 </html>

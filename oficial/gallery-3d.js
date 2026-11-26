@@ -221,8 +221,9 @@
             cardElements.push({ element: card, index: index });
         });
 
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let currentAngle = 0;
-        let velocity = 0.12; 
+        let velocity = prefersReducedMotion ? 0 : 0.12;
         let isDragging = false;
         let isDraggingState = false;
         let startX = 0;
@@ -230,6 +231,8 @@
         let isHovered = false;
         let tiltX = 0;
         let tiltY = 0;
+        let galleryInView = false;
+        let galleryRafId = null;
 
         function getRadius() {
             const w = window.innerWidth;
@@ -238,18 +241,7 @@
             return 500;
         }
 
-        function render60FPS() {
-            if (!isDragging) {
-                if (Math.abs(velocity) > 0.12) {
-                    velocity *= 0.95; 
-                } else if (!isHovered) {
-                    velocity = 0.12; 
-                } else {
-                    velocity *= 0.92;
-                }
-                currentAngle += velocity;
-            }
-
+        function drawCylinder() {
             const radius = getRadius();
             cylinder.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 
@@ -269,11 +261,58 @@
                 item.element.style.opacity = opacity;
                 item.element.style.zIndex = Math.round(z + radius);
             });
-
-            requestAnimationFrame(render60FPS);
         }
 
-        requestAnimationFrame(render60FPS);
+        function render60FPS() {
+            if (!galleryInView || document.hidden || prefersReducedMotion) {
+                galleryRafId = null;
+                return;
+            }
+            if (!isDragging) {
+                if (Math.abs(velocity) > 0.12) {
+                    velocity *= 0.95; 
+                } else if (!isHovered) {
+                    velocity = 0.12; 
+                } else {
+                    velocity *= 0.92;
+                }
+                currentAngle += velocity;
+            }
+
+            drawCylinder();
+            galleryRafId = requestAnimationFrame(render60FPS);
+        }
+
+        function startGalleryLoop() {
+            if (!prefersReducedMotion && galleryInView && !document.hidden && !galleryRafId) {
+                galleryRafId = requestAnimationFrame(render60FPS);
+            }
+        }
+        function stopGalleryLoop() {
+            if (galleryRafId) {
+                cancelAnimationFrame(galleryRafId);
+                galleryRafId = null;
+            }
+        }
+
+        drawCylinder();
+
+        if (!prefersReducedMotion) {
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver((entries) => {
+                    galleryInView = entries[0].isIntersecting;
+                    if (galleryInView) startGalleryLoop();
+                    else stopGalleryLoop();
+                }, { rootMargin: '100px 0px', threshold: 0.01 }).observe(root);
+            } else {
+                galleryInView = true;
+                startGalleryLoop();
+            }
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) stopGalleryLoop();
+                else startGalleryLoop();
+            });
+        }
 
         function handlePointerDown(e) {
             isDragging = true;
@@ -302,8 +341,9 @@
                 }
                 const sensitivity = window.innerWidth < 640 ? 0.35 : 0.25;
                 currentAngle += deltaX * sensitivity;
-                velocity = deltaX * sensitivity * 0.8;
+                velocity = prefersReducedMotion ? 0 : deltaX * sensitivity * 0.8;
                 lastX = clientX;
+                if (prefersReducedMotion) drawCylinder();
             }
         }
 

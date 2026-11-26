@@ -1,16 +1,20 @@
 // JavaScript functionality for Pride 2026
+const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Pride 2026 initialized successfully.');
     
-    // Set initial active state for first accordion if any
-    const activeAccordions = document.querySelectorAll('.accordion-btn.active');
-    activeAccordions.forEach(btn => {
-        const content = btn.nextElementSibling;
-        if (content) {
-            content.classList.add('open');
-            content.style.maxHeight = content.scrollHeight + "px";
-            content.style.paddingBottom = "1.5rem";
+    // Sync aria-expanded and set initial active state for first accordion if any
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        const isActive = btn.classList.contains('active');
+        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        if (isActive) {
+            const content = btn.nextElementSibling;
+            if (content) {
+                content.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.paddingBottom = "1.5rem";
+            }
         }
     });
 
@@ -67,7 +71,8 @@ function toggleAccordion(button) {
     if (!button) return;
     
     // Toggle active class on the button itself
-    button.classList.toggle('active');
+    const willOpen = button.classList.toggle('active');
+    button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     
     // Get the next sibling element which is the accordion content wrapper
     const content = button.nextElementSibling;
@@ -99,9 +104,59 @@ window.addEventListener('resize', () => {
 
 let canvas, ctx;
 let particles = [];
+let isGlitterAnimating = false;
 const transColors = ['#5BCEFA', '#F5A9B8', '#FFFFFF', '#9C59D1', '#FCF434'];
 
+function animateGlitter() {
+    if (!ctx || !canvas || prefersReducedMotion || particles.length === 0) {
+        if (ctx && canvas) ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isGlitterAnimating = false;
+        return;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.15; // Gravity
+        p.vx *= 0.98; // Friction
+        p.life--;
+
+        // Draw particle as a sparkling diamond shape
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.beginPath();
+        ctx.moveTo(0, -p.size);
+        ctx.lineTo(p.size * 0.7, 0);
+        ctx.lineTo(0, p.size);
+        ctx.lineTo(-p.size * 0.7, 0);
+        ctx.closePath();
+
+        ctx.fillStyle = p.color;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = p.color;
+        ctx.globalAlpha = p.life / p.maxLife;
+        ctx.fill();
+        ctx.restore();
+
+        if (p.life <= 0) {
+            particles.splice(i, 1);
+        }
+    }
+
+    if (particles.length > 0 && !document.hidden) {
+        requestAnimationFrame(animateGlitter);
+    } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        isGlitterAnimating = false;
+    }
+}
+
 function initGlitterCanvas() {
+    if (prefersReducedMotion) return;
     canvas = document.getElementById('glitterCanvas');
     if (!canvas) return;
     
@@ -118,46 +173,6 @@ function initGlitterCanvas() {
         }
         createGlitterBurst(e.clientX, e.clientY, 20);
     });
-    
-    // Animation Loop
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        for (let i = particles.length - 1; i >= 0; i--) {
-            let p = particles[i];
-            p.x += p.vx;
-            p.y += p.vy;
-            p.vy += 0.15; // Gravity
-            p.vx *= 0.98; // Friction
-            p.life--;
-            
-            // Draw particle as a sparkling diamond shape
-            ctx.save();
-            ctx.translate(p.x, p.y);
-            ctx.rotate(p.rotation);
-            ctx.beginPath();
-            ctx.moveTo(0, -p.size);
-            ctx.lineTo(p.size * 0.7, 0);
-            ctx.lineTo(0, p.size);
-            ctx.lineTo(-p.size * 0.7, 0);
-            ctx.closePath();
-            
-            ctx.fillStyle = p.color;
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = p.color;
-            ctx.globalAlpha = p.life / p.maxLife;
-            ctx.fill();
-            ctx.restore();
-            
-            if (p.life <= 0) {
-                particles.splice(i, 1);
-            }
-        }
-        
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
 }
 
 function resizeCanvas() {
@@ -167,6 +182,7 @@ function resizeCanvas() {
 }
 
 function createGlitterBurst(x, y, count = 20) {
+    if (prefersReducedMotion || !ctx) return;
     for (let i = 0; i < count; i++) {
         let angle = Math.random() * Math.PI * 2;
         let speed = Math.random() * 6 + 2;
@@ -181,6 +197,10 @@ function createGlitterBurst(x, y, count = 20) {
             life: Math.random() * 30 + 30,
             maxLife: 60
         });
+    }
+    if (!isGlitterAnimating && particles.length > 0) {
+        isGlitterAnimating = true;
+        requestAnimationFrame(animateGlitter);
     }
 }
 
@@ -336,7 +356,9 @@ function initEvolutionSlideshow() {
 
     // Start everything
     updateSlides();
-    startAutoplay();
+    if (!prefersReducedMotion) {
+        startAutoplay();
+    }
 }
 
 /* ==========================================================================
@@ -404,6 +426,8 @@ function initHeroSlideshow() {
         }
         slideshowInterval = setInterval(nextSlide, time);
     }
+
+    if (prefersReducedMotion) return;
 
     // Start default slow slideshow
     startInterval(slowSpeed);
