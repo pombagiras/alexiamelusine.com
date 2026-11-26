@@ -762,6 +762,10 @@ body {
 }
 
 .footer-legal-link {
+    display: inline-flex;
+    align-items: center;
+    padding-block: 4px;
+    min-height: 24px;
     color: var(--text-muted);
     text-decoration: none;
     transition: var(--transition-smooth);

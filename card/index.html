@@ -323,8 +323,6 @@
     }
 
     /* ─── CURSOR ─── */
-    html { cursor: none; }
-
     #cur-dot {
       position: fixed;
       width: 7px;
@@ -433,7 +431,7 @@
         0 2px 0 rgba(255,255,255,.10) inset,
         0 40px 100px rgba(0,0,0,.75),
         0 0 50px rgba(107,15,26,.15);
-      cursor: none;
+      cursor: pointer;
     }
 
     /* COLOR REVEAL — foto começa dessaturada, revela ao hover */
@@ -600,7 +598,7 @@
       border: 1px solid var(--border-1);
       border-radius: 18px;
       margin-bottom: 18px;
-      cursor: none;
+      cursor: pointer;
       transition: background .25s, border-color .25s, transform .2s;
     }
     .back-header:hover {
@@ -698,7 +696,7 @@
       display: flex; align-items: center; justify-content: center;
       gap: 7px;
       position: relative; overflow: hidden;
-      cursor: none;
+      cursor: pointer;
       /* COLOR REVEAL — começa um pouco colorido, hover traz tudo */
       filter: saturate(.45);
       transition:
@@ -754,7 +752,7 @@
       letter-spacing: 2.5px; text-transform: uppercase;
       border-radius: 14px;
       position: relative; overflow: hidden;
-      cursor: none;
+      cursor: pointer;
       transition:
         background .35s, border-color .35s, color .3s,
         transform .22s, box-shadow .35s;
@@ -928,7 +926,7 @@
       background: var(--surface-1);
       border: 1px solid var(--border-1);
       border-radius: 9px;
-      cursor: none;
+      cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       font-size: 13px; z-index: 10;
       transition: background .2s, border-color .2s, transform .2s;
@@ -1345,7 +1343,7 @@
       <!-- FRENTE -->
       <div class="flip-card-front" onclick="flipCard()" tabindex="0"
            onkeydown="if(event.key==='Enter'||event.key===' ')flipCard()"
-           role="button" aria-label="Ver verso do cartão">
+           role="button">
 
         <img
           src="../assets/alexia-melusine-portrait-2026.webp"
@@ -1381,7 +1379,7 @@
 
           <div class="back-header" onclick="flipCard()" tabindex="0"
                onkeydown="if(event.key==='Enter'||event.key===' ')flipCard()"
-               role="button" aria-label="Virar cartão">
+               role="button">
             <img
               src="../assets/alexia-melusine-portrait-2026.webp"
               alt="Retrato oficial de Alexia Melusine" class="photo-back"
@@ -1437,22 +1435,19 @@
             </blockquote>
 
             <a href="https://pombagiras.com/" target="_blank" rel="noopener noreferrer"
-               class="site-button btn-oxblood" id="btn-site" onclick="event.stopPropagation()"
-               aria-label="Acessar pombagiras.com">
+               class="site-button btn-oxblood" id="btn-site" onclick="event.stopPropagation()">
               ❤ Pombagiras.com
               <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
 
             <a href="https://alexiamelusine.com/" target="_blank" rel="noopener noreferrer"
-               class="site-button btn-lato" id="btn-alexia" onclick="event.stopPropagation()"
-               aria-label="Acessar alexiamelusine.com">
+               class="site-button btn-lato" id="btn-alexia" onclick="event.stopPropagation()">
               ✧ Alexia Melusine
               <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
 
             <a href="https://alexiamelusine.com/pride/" target="_blank" rel="noopener noreferrer"
-               class="site-button btn-roxo" id="btn-pride" onclick="event.stopPropagation()"
-               aria-label="Acessar Orgulho Trans - Pride">
+               class="site-button btn-roxo" id="btn-pride" onclick="event.stopPropagation()">
               ⚜ Pride · Orgulho
               <span class="btn-arrow" aria-hidden="true">→</span>
             </a>

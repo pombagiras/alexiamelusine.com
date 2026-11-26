@@ -4,8 +4,6 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Oficial Alexia Melusine Page initialized.');
-
     // Alternância de Cores no Contorno da Foto de Perfil ao Clicar na Foto
     const portraitCard = document.getElementById('portrait-interactive-card');
     if (portraitCard) {

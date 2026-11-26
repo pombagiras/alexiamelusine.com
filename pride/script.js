@@ -2,8 +2,6 @@
 const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Pride 2026 initialized successfully.');
-    
     // Sync aria-expanded and set initial active state for first accordion if any
     document.querySelectorAll('.accordion-btn').forEach(btn => {
         const isActive = btn.classList.contains('active');

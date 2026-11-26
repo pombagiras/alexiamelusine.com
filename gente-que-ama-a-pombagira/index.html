@@ -683,6 +683,7 @@
             box-shadow: 0 0 16px rgba(197, 160, 89, 0.3);
         }
 
+        .author-info h3,
         .author-info h4 {
             font-family: var(--ff-display);
             font-size: 1.15rem;
@@ -710,6 +711,8 @@
             font-family: var(--ff-sans);
             display: inline-flex;
             align-items: center;
+            padding-block: 4px;
+            min-height: 24px;
             gap: 4px;
             transition: color 0.2s ease;
         }
@@ -737,6 +740,10 @@
         }
 
         footer a {
+            display: inline-flex;
+            align-items: center;
+            padding-block: 4px;
+            min-height: 24px;
             color: var(--accent-pink);
             text-decoration: none;
             transition: color 0.2s ease;
@@ -774,6 +781,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-family: inherit;
             font-size: 0.82rem;
             cursor: pointer;
             color: var(--text-color);
@@ -911,7 +919,7 @@
             <a href="https://pombagiras.com/" class="brand" aria-label="POMBAGIRAS.COM">POMBAGIRAS<span>.COM</span></a>
             <div class="portal-header-links">
                 <a href="https://pombagiras.com/portal/" aria-label="Voltar ao Portal de Ensaios">← Voltar ao Portal</a>
-                <a href="https://alexiamelusine.com/" aria-label="Voltar ao Hub Alexia Melusine">Hub Oficial</a>
+                <a href="https://alexiamelusine.com/" aria-label="Hub Oficial — Voltar ao Hub Alexia Melusine">Hub Oficial</a>
             </div>
         </header>
 
@@ -1198,7 +1206,7 @@
             <div class="author-box" id="autoria">
                 <img src="https://cdn.pombagiras.com/assets/favicon-round-192.png" alt="Retrato oficial de Alexia Melusine" class="author-avatar" width="76" height="76" loading="lazy">
                 <div class="author-info">
-                    <h4>Alexia Melusine</h4>
+                    <h3>Alexia Melusine</h3>
                     <p>Pesquisadora independente de antropologia afro-brasileira, desenvolvedora web, diretora de vídeo por IA e ensaísta. Curadora editorial do ecossistema Pombagiras.com.</p>
                     <div class="author-links">
                         <a href="https://alexiamelusine.com/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i> alexiamelusine.com</a>
@@ -1215,11 +1223,11 @@
             <p>Idealizado com rigor ético e teológico por <strong>Alexia Melusine</strong>. Todos os direitos reservados.</p>
             
             <div style="margin-top: 10px; margin-bottom: 5px; text-align: center; display: flex; justify-content: center;">
-                <span class="email-copy-trigger" onclick="const e='contato'+'@'+'pombagiras.com'; navigator.clipboard.writeText(e); const t=this.querySelector('.copy-status'); t.textContent='Copiado!'; t.style.color='#00ff88'; setTimeout(()=>{t.textContent='(Copiar)'; t.style.color='';}, 2000);" role="button" aria-label="Copiar e-mail de contato">
+                <button type="button" class="email-copy-trigger" onclick="const e='contato'+'@'+'pombagiras.com'; navigator.clipboard.writeText(e); const t=this.querySelector('.copy-status'); t.textContent='Copiado!'; t.style.color='#00ff88'; setTimeout(()=>{t.textContent='(Copiar)'; t.style.color='';}, 2000);">
                     <i class="fa-solid fa-envelope" style="color: #800020;" aria-hidden="true"></i>
                     <span style="font-weight: 400; letter-spacing: 0.5px;">contato@pombagiras.com</span>
                     <span class="copy-status" style="font-size: 0.72rem; opacity: 0.7; transition: color 0.2s;">(Copiar)</span>
-                </span>
+                </button>
             </div>
 
             <div class="footer-legal-links">

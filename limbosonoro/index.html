@@ -42,7 +42,7 @@
   <meta property="og:site_name" content="Alexia Melusine">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Limbo Sonoro — Anatomia do Abismo | Alexia Melusine">
-  <meta property="og:description" content="Um mergulho visceral em cápsulas de memória escritas há mais de três décadas. Alexia Melusine transforma fragmentos do abismo em som, narração e sobrevivência.">
+  <meta property="og:description" content="Cápsulas de memória de há mais de três décadas, transformadas por Alexia Melusine em som, narração e sobrevivência. Podcast Anatomia do Abismo.">
   <meta property="og:image" content="https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -52,7 +52,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://alexiamelusine.com/limbosonoro/">
   <meta name="twitter:title" content="Limbo Sonoro — Anatomia do Abismo | Alexia Melusine">
-  <meta name="twitter:description" content="Um mergulho visceral em cápsulas de memória. Alexia Melusine transforma fragmentos do abismo em som. Podcast no Spotify.">
+  <meta name="twitter:description" content="Cápsulas de memória de há mais de três décadas, transformadas por Alexia Melusine em som, narração e sobrevivência. Podcast Anatomia do Abismo.">
   <meta name="twitter:image" content="https://alexiamelusine.com/limbosonoro/limbo-sonoro.webp">
   <meta name="twitter:creator" content="@AlexiaMelusine">
   <meta name="twitter:site" content="@AlexiaMelusine">
@@ -209,7 +209,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     /* ─── CURSOR ─── */
-    html { cursor: none; }
     #cursor-ring {
       position: fixed; top: 0; left: 0;
       width: 36px; height: 36px;
@@ -293,7 +292,8 @@
       font-family: var(--fb); font-size: .74rem; font-weight: 600;
       letter-spacing: .5px; text-transform: none;
       color: #e0aaff; text-decoration: none;
-      padding: 3px 12px; border-radius: 50px; border: 1px solid transparent;
+      padding: 4px 12px; min-height: 24px; display: inline-flex; align-items: center;
+      border-radius: 50px; border: 1px solid transparent;
       transition: var(--tr);
     }
     .bc-link:hover { color: #ffffff; border-color: rgba(197, 123, 255, 0.45); background: rgba(157, 78, 221, 0.18); box-shadow: 0 0 12px rgba(197, 123, 255, 0.35); }
@@ -557,8 +557,8 @@
       transform: rotate(-3deg) scale(1.06);
       box-shadow: 0 0 22px rgba(197, 123, 255, 0.5);
     }
-    .nc h3 { font-family: var(--ft); font-size: 1.5rem; font-weight: 700; color: #c77dff; margin-bottom: 10px; transition: color .4s; text-shadow: 0 0 10px rgba(199, 125, 255, 0.3); }
-    .nc:hover h3 { color: #f3e8ff; }
+    .nc h2, .nc h3 { font-family: var(--ft); font-size: 1.5rem; font-weight: 700; color: #c77dff; margin-bottom: 10px; transition: color .4s; text-shadow: 0 0 10px rgba(199, 125, 255, 0.3); }
+    .nc:hover h2, .nc:hover h3 { color: #f3e8ff; }
     .nc p { font-size: .93rem; color: #dfd0ec; line-height: 1.72; margin-bottom: 16px; transition: color .4s; }
     .nc:hover p { color: #f5edff; }
     .nc-q {
@@ -656,7 +656,7 @@
       width: 100%; max-width: 1100px; margin-top: 6px; z-index: 1;
     }
     .footer p { font-size: .82rem; color: #dfd0ec; margin-bottom: 5px; }
-    .footer a { color: #c77dff; text-decoration: none; border-bottom: 1px dotted rgba(197, 123, 255, 0.4); transition: var(--tr); }
+    .footer a { display: inline-flex; align-items: center; padding-block: 4px; min-height: 24px; color: #c77dff; text-decoration: none; border-bottom: 1px dotted rgba(197, 123, 255, 0.4); transition: var(--tr); }
     .footer a:hover { color: #ffffff; text-shadow: 0 0 10px rgba(197, 123, 255, 0.6); border-bottom-color: #ffffff; }
     .footer-tag { font-family: var(--ft); font-size: .75rem; text-transform: uppercase; letter-spacing: 2.5px; color: #c77dff; opacity: .9; margin-top: 9px; text-shadow: 0 0 12px rgba(199, 125, 255, 0.4); }
     .footer-btm { font-size: .78rem; letter-spacing: 2px; color: #e0aaff; margin-top: 16px; text-shadow: 0 0 14px rgba(157, 78, 221, 0.6); font-weight: 600; }
@@ -667,7 +667,7 @@
       html { cursor: auto; }
 
       body { padding: 66px 13px 48px; }
-      .bc-link, .bc-cur { font-size: .62rem; padding: 2px 7px; }
+      .bc-link, .bc-cur { font-size: .62rem; padding: 4px 8px; min-height: 24px; }
       .card { padding: 22px 18px; border-radius: 18px; }
 
       .hero-grid { grid-template-columns: 1fr !important; gap: 18px; }
@@ -808,7 +808,7 @@
 
           <!-- Action row: Ouvir Agora + shares ao lado -->
           <div class="nav-btns-row" role="group" aria-label="Ações principais">
-            <a href="https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW" class="btn-nav btn-p haptic-btn" target="_blank" rel="noopener noreferrer" aria-label="Ouvir no Spotify">
+            <a href="https://open.spotify.com/show/6ahRd7QT2wcq7ldt5CJHZW" class="btn-nav btn-p haptic-btn" target="_blank" rel="noopener noreferrer" aria-label="Ouvir Agora no Spotify">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
               Ouvir Agora
             </a>
@@ -861,7 +861,7 @@
         <span id="embed-lbl">Anatomia do Abismo — Ouça Agora</span>
       </div>
       <div class="sf">
-        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/6ahRd7QT2wcq7ldt5CJHZW?utm_source=generator&theme=0" data-embed-title="Limbo Sonoro — Anatomia do Abismo no Spotify" data-embed-label="Player Spotify — Limbo Sonoro" aria-label="Carregar player do Spotify: Limbo Sonoro — Anatomia do Abismo">
+        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/6ahRd7QT2wcq7ldt5CJHZW?utm_source=generator&theme=0" data-embed-title="Limbo Sonoro — Anatomia do Abismo no Spotify" data-embed-label="Player Spotify — Limbo Sonoro">
           <img src="limbo-sonoro.webp" alt="" class="spotify-facade-bg" width="800" height="420" loading="lazy" decoding="async" aria-hidden="true">
           <div class="spotify-facade-cover">
             <img src="limbo-sonoro.webp" alt="Capa de Limbo Sonoro — Anatomia do Abismo" width="800" height="420" loading="lazy" decoding="async">
@@ -888,7 +888,7 @@
             <line x1="12" y1="2" x2="12" y2="22"/><path d="M2 12h20"/>
           </svg>
         </div>
-        <h3>A Travessia</h3>
+        <h2>A Travessia</h2>
         <p>Textos escritos há mais de três décadas — cápsulas de memória de uma época que insiste em ecoar. Este projeto é ponte entre o que fomos e o abismo que nos moldou.</p>
         <div class="nc-q">"Onde o som é ponte para lugares onde nunca voltamos."</div>
       </article>
@@ -900,7 +900,7 @@
             <path d="M12 8v4M12 16h.01"/>
           </svg>
         </div>
-        <h3>O Abismo</h3>
+        <h2>O Abismo</h2>
         <p>Porque alguns abismos não se superam — apenas se narram. E é na narração que encontramos frestas de luz. Cada episódio é um mergulho sem rede.</p>
         <div class="nc-q">"Porque alguns abismos não se superam — apenas se narram."</div>
       </article>
@@ -929,7 +929,7 @@
       <p class="sec-sub">O outro podcast do ecossistema — disponível em múltiplas plataformas</p>
 
       <div class="sf" style="margin-bottom:18px;">
-        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/0oeCL1QScD3v7dHeUvJjgJ?utm_source=generator&theme=0" data-embed-title="Pombagira Força Revelada no Spotify" data-embed-label="Player Spotify — Pombagira Força Revelada" aria-label="Carregar player do Spotify: Pombagira — Força Revelada">
+        <button type="button" class="spotify-facade" data-embed-src="https://open.spotify.com/embed/show/0oeCL1QScD3v7dHeUvJjgJ?utm_source=generator&theme=0" data-embed-title="Pombagira Força Revelada no Spotify" data-embed-label="Player Spotify — Pombagira Força Revelada">
           <img src="limbo-sonoro.webp" alt="" class="spotify-facade-bg" width="800" height="420" loading="lazy" decoding="async" aria-hidden="true">
           <div class="spotify-facade-cover">
             <img src="limbo-sonoro.webp" alt="Capa do ecossistema Pombagira — Força Revelada" width="800" height="420" loading="lazy" decoding="async">
