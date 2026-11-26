@@ -571,7 +571,7 @@
 
     .back-bg {
       position: absolute; inset: 0;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png');
+      background-image: url('../assets/alexia-melusine-portrait-2026.webp');
       background-size: cover;
       background-position: center 15%;
       /* Color reveal — mais claro desde o início */
@@ -1356,13 +1356,12 @@
            role="button" aria-label="Ver verso do cartão">
 
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png"
+          src="../assets/alexia-melusine-portrait-2026.webp"
           alt="Retrato oficial de Alexia Melusine"
           class="photo-front"
-          loading="eager" decoding="async"
-          referrerpolicy="no-referrer"
+          loading="eager" fetchpriority="high" decoding="async"
           onerror="this.src='https://cdn.pombagiras.com/PODCAST/A.Melusine.png'"
-          width="360" height="620">
+          width="720" height="583">
 
         <div class="front-gradient" aria-hidden="true"></div>
         <div class="top-pill" aria-hidden="true">Pombagiras.com</div>
@@ -1392,10 +1391,10 @@
                onkeydown="if(event.key==='Enter'||event.key===' ')flipCard()"
                role="button" aria-label="Virar cartão">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png"
+              src="../assets/alexia-melusine-portrait-2026.webp"
               alt="Retrato oficial de Alexia Melusine" class="photo-back"
+              width="720" height="583"
               loading="lazy" decoding="async"
-              referrerpolicy="no-referrer"
               onerror="this.src='https://cdn.pombagiras.com/PODCAST/A.Melusine.png'">
             <div class="back-header-text">
               <p class="back-name">Alexia Melusine</p>
