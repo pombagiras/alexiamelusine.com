@@ -447,7 +447,11 @@
     <header class="hero-cover">
         <!-- Mobile Static Background (Visible only on mobile) -->
         <div class="absolute inset-0 z-0 mobile-hero-bg">
-            <img src="https://cdn.pombagiras.com/Amoled%20(8).png" alt="Orgulho Trans Mobile" class="main-cover-img w-full h-full object-cover">
+            <!-- <picture> com media: só o telemóvel (≤768px) descarrega esta imagem; no computador fica o GIF 1×1 inline -->
+            <picture>
+                <source media="(max-width: 768px)" srcset="amoled-8.webp" type="image/webp" width="816" height="1456">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Orgulho Trans Mobile" class="main-cover-img w-full h-full object-cover" width="816" height="1456" fetchpriority="high" decoding="async">
+            </picture>
             <!-- Glass Overlay -->
             <div class="absolute inset-0 hover-overlay pointer-events-none z-10"></div>
         </div>
@@ -455,20 +459,36 @@
         <!-- Background Image Container (Slideshow) (Visible only on desktop/tablet) -->
         <div class="absolute inset-0 z-0 hero-slideshow-container">
             <div class="hero-slides-track h-full w-full relative">
+                <!-- Slideshow só de computador: <picture> com media (min-width: 769px) — o telemóvel não descarrega nenhum destes slides -->
                 <div class="hero-slide active">
-                    <img src="https://cdn.pombagiras.com/pride/vida_pride_8.webp" alt="Vida Pride - Orgulho Trans" class="main-cover-img">
+                    <picture>
+                        <source media="(min-width: 769px)" srcset="https://cdn.pombagiras.com/pride/vida_pride_8.webp" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Vida Pride - Orgulho Trans" class="main-cover-img" fetchpriority="high" decoding="async">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="https://cdn.pombagiras.com/pride/gente_pride_1.webp" alt="Gente Pride 1" class="main-cover-img">
+                    <picture>
+                        <source media="(min-width: 769px)" srcset="https://cdn.pombagiras.com/pride/gente_pride_1.webp" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Gente Pride 1" class="main-cover-img" fetchpriority="low" decoding="async">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="https://cdn.pombagiras.com/pride/Mpride%20(10).png" alt="Mpride 10" class="main-cover-img">
+                    <picture>
+                        <source media="(min-width: 769px)" srcset="mpride-10.webp" type="image/webp" width="1920" height="1075">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Mpride 10" class="main-cover-img" width="1920" height="1075" fetchpriority="low" decoding="async">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="https://cdn.pombagiras.com/pride/gente_pride_3.webp" alt="Gente Pride 3" class="main-cover-img">
+                    <picture>
+                        <source media="(min-width: 769px)" srcset="https://cdn.pombagiras.com/pride/gente_pride_3.webp" type="image/webp">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Gente Pride 3" class="main-cover-img" fetchpriority="low" decoding="async">
+                    </picture>
                 </div>
                 <div class="hero-slide">
-                    <img src="https://cdn.pombagiras.com/pride/Mpride%20(114).png" alt="Mpride 114" class="main-cover-img">
+                    <picture>
+                        <source media="(min-width: 769px)" srcset="mpride-114.webp" type="image/webp" width="1920" height="1075">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Mpride 114" class="main-cover-img" width="1920" height="1075" fetchpriority="low" decoding="async">
+                    </picture>
                 </div>
             </div>
             <!-- Glass Overlay -->
@@ -534,11 +554,24 @@
                     Seu navegador não suporta vídeos HTML5.
                 </video>
                 -->
-                <video autoplay loop muted playsinline controls width="100%" poster="https://cdn.pombagiras.com/pride/pride-video-poster.jpg" class="w-full rounded-3xl object-cover">
+                <!-- preload="none" + poster: o vídeo só é descarregado quando entra no ecrã (o atributo autoplay forçaria o download logo no carregamento) -->
+                <video id="prideVideo" data-autoplay loop muted playsinline controls preload="none" width="100%" poster="https://cdn.pombagiras.com/pride/pride-video-poster.jpg" class="w-full rounded-3xl object-cover">
                   <source src="https://cdn.pombagiras.com/pride/pride-video.webm" type="video/webm">
                   <source src="https://cdn.pombagiras.com/pride/pride-video-optimized.mp4" type="video/mp4">
                   Seu navegador não suporta a reprodução deste vídeo.
                 </video>
+                <script>
+                  (function () {
+                    var v = document.getElementById('prideVideo');
+                    if (!v) return;
+                    if (!('IntersectionObserver' in window)) { v.play().catch(function () {}); return; }
+                    new IntersectionObserver(function (entries) {
+                      entries.forEach(function (e) {
+                        if (e.isIntersecting) { v.play().catch(function () {}); } else if (!v.paused) { v.pause(); }
+                      });
+                    }, { rootMargin: '0px', threshold: 0.25 }).observe(v);
+                  })();
+                </script>
             </div>
         </section>
 
@@ -551,7 +584,7 @@
             <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
                 <!-- Image Container -->
                 <div class="lgbt-image-container flex-shrink-0 relative overflow-hidden rounded-2xl border border-white/10 shadow-lg mx-auto md:mx-0">
-                    <img src="https://cdn.pombagiras.com/MidPride%20(22).png" alt="Pombagira e as Pessoas LGBT+" class="lgbt-img w-full h-full object-cover">
+                    <img src="midpride-22.webp" alt="Pombagira e as Pessoas LGBT+" class="lgbt-img w-full h-full object-cover" width="728" height="408" loading="lazy" decoding="async">
                     <div class="lgbt-color-overlay"></div>
                 </div>
                 
@@ -937,7 +970,7 @@
                         <!-- Pabllo Vittar -->
                         <a href="https://pt.wikipedia.org/wiki/Pabllo_Vittar" target="_blank" class="card-hover-wrapper bg-white/5 rounded-2xl overflow-hidden block">
                             <div class="h-44 overflow-hidden bg-black/20">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pabllo_Vittar_during_an_interview_in_April_2018_01.png" 
+                                <img src="pabllo-vittar.webp" width="400" height="600" loading="lazy" decoding="async"
                                      alt="Pabllo Vittar" class="reveal-img person-img">
                             </div>
                             <div class="p-3 text-center">
@@ -1616,7 +1649,7 @@
                                 "O orgulho para mim é resistir, é existir em um mundo que tenta nos apagar e mostrar todos os dias que somos reais, fortes e merecemos respeito e felicidade."
                             </p>
                             <div class="flex items-center gap-3">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pabllo_Vittar_during_an_interview_in_April_2018_01.png" alt="Pabllo Vittar" class="w-10 h-10 rounded-full object-cover">
+                                <img src="pabllo-vittar.webp" alt="Pabllo Vittar" class="w-10 h-10 rounded-full object-cover" width="400" height="600" loading="lazy" decoding="async">
                                 <div>
                                     <h5 class="font-bold text-white text-xs">Pabllo Vittar</h5>
                                     <p class="text-[9px] text-[#F5A9B8]">Cantora e Ícone Pop</p>

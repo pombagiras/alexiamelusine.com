@@ -7,84 +7,84 @@
     const GALLERY_ITEMS = [
         {
             id: 1,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/Al%C3%AA%20(2).png",
+            full: "galeria/galeria-01.webp",
             title: "Alê (II)",
             desc: "Expressão & Identidade",
             caption: "Alê (II) — Expressão e Identidade"
         },
         {
             id: 2,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/Al%C3%AA%20(3).png",
+            full: "galeria/galeria-02.webp",
             title: "Alê (III)",
             desc: "O Despertar da Alma",
             caption: "Alê (III) — O Despertar da Alma"
         },
         {
             id: 3,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2023%20de%20dez.%20de%202025%2C%2013_50_31.png",
+            full: "galeria/galeria-03.webp",
             title: "Matriz Carmesim",
             desc: "Dezembro de 2025",
             caption: "Matriz Carmesim — Dezembro de 2025"
         },
         {
             id: 4,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2023%20de%20dez.%20de%202025%2C%2013_54_19.png",
+            full: "galeria/galeria-04.webp",
             title: "Visceral & Técnica",
             desc: "Direção de Imagem",
             caption: "Visceral & Tecnológica — Direção de Imagem"
         },
         {
             id: 5,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2023%20de%20dez.%20de%202025%2C%2013_56_22.png",
+            full: "galeria/galeria-05.webp",
             title: "Reflexos nas Sombras",
             desc: "Dualidade Gótica",
             caption: "Reflexos nas Sombras — A Dualidade Gótica"
         },
         {
             id: 6,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2023%20de%20dez.%20de%202025%2C%2013_57_28.png",
+            full: "galeria/galeria-06.webp",
             title: "Olhar da Esquerda",
             desc: "Proteção e Força",
             caption: "O Olhar da Esquerda — Proteção e Força"
         },
         {
             id: 7,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025%20de%20dez.%20de%202025%2C%2015_41_02.png",
+            full: "galeria/galeria-07.webp",
             title: "Manifestação Física",
             desc: "Natal de 2025",
             caption: "Manifestação Física — Natal de 2025"
         },
         {
             id: 8,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025%20de%20dez.%20de%202025%2C%2017_49_49.png",
+            full: "galeria/galeria-08.webp",
             title: "Capa do Útero",
             desc: "Beleza Fêmea",
             caption: "A Capa do Útero Transmutada — Beleza Fêmea"
         },
         {
             id: 9,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025_12_2025%2C%2017_32_47.png",
+            full: "galeria/galeria-09.webp",
             title: "Lógica Hermética",
             desc: "Desenho do Destino",
             caption: "Lógica Hermética — O Desenho do Destino"
         },
         {
             id: 10,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025_12_2025%2C%2017_34_32.png",
+            full: "galeria/galeria-10.webp",
             title: "Equilíbrio de Libra",
             desc: "Justiça & Simetria",
             caption: "Equilíbrio de Libra — Justiça e Simetria"
         },
         {
             id: 11,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025_12_2025%2C%2017_36_45.png",
+            full: "galeria/galeria-11.webp",
             title: "Transgressão de Gênero",
             desc: "Livre & Altiva",
             caption: "Transgressão de Gênero — Livre e Altiva"
         },
         {
             id: 12,
-            full: "https://raw.githubusercontent.com/alexialuzdeferro/card-photos/refs/heads/main/ChatGPT%20Image%2025%20de%20dez.%20de%202025%2C%2017_46_21.png",
+            full: "galeria/galeria-12.webp",
             title: "Mutação Plena",
             desc: "Irreversível & Plena",
             caption: "A Mutação Plena e Irreversível"
@@ -176,7 +176,7 @@
 
             card.innerHTML = `
                 <div style="position: relative; width: 100%; height: 265px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(250, 246, 238, 0.1);">
-                    <img src="${item.full}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%) brightness(0.85); transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;">
+                    <img src="${item.full}" alt="${item.title}" width="720" height="1080" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%) brightness(0.85); transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;">
                     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(36, 2, 6, 0.85) 0%, rgba(61, 5, 12, 0.15) 50%, transparent 100%); opacity: 0.8;"></div>
                 </div>
                 <div style="padding: 0.5rem 0.3rem 0.2rem 0.3rem; display: flex; flex-direction: column;">
