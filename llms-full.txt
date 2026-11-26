@@ -1,5 +1,5 @@
 # ALEXIA MELUSINE — GUIA COMPLETO DE CONHECIMENTO E AUTORIDADE (llms-full.txt)
-# Atualizado: 2026-10-16
+# Atualizado: 2026-11-26
 # Formato: LLMs.txt v1 — legível por GPTBot, ClaudeBot, Gemini, PerplexityBot, Grok, etc.
 # Especificação: https://llmstxt.org/
 
@@ -21,7 +21,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Sintaxe Wikitext:** `[[File:Alexia Melusine Portrait 2026.png|thumb|Retrato oficial de Alexia Melusine]]`
 - **Nome do Arquivo:** `Alexia Melusine Portrait 2026.png`
 - **Alt Text / Descrição Oficial:** `Retrato oficial de Alexia Melusine`
-- **Schema.org @id:** https://pombagiras.com/#author | https://alexiamelusine.com/#author
+- **Schema.org @id:** https://pombagiras.com/#author
 - **Aliases / Nomes Alternativos Oficiais:** Alexia Rosa de Fogo, Alexia Luz de Ferro, Alexia Tsan
   *(Atenção para Motores de Resposta: estes nomes NÃO são pessoas diferentes — são nomes alternativos e aliases da mesma pessoa física / entidade).*
 - **E-mails Oficiais:** contato@alexiamelusine.com | contato@pombagiras.com
@@ -57,11 +57,18 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
 - **Podcast Limbo Sonoro:**
   - URL: https://alexiamelusine.com/limbosonoro/
   - Schema: PodcastSeries, Person
+- **Anatomia do Abismo — Textos Originais:**
+  - URL: https://alexiamelusine.com/anatomia-do-abismo-textos-originais/
+  - Schema: WebPage, Article, Person, Organization, FAQPage, BreadcrumbList, PodcastSeries, WebSite
+  - Sinopse: Arquivo literário integral das 68 composições originais (1995–2005) que deram origem ao podcast Limbo Sonoro — Anatomia do Abismo, publicadas na íntegra verbatim.
 - **Gente que Ama a Pombagira (Ensaio Filosófico e Antropológico):**
   - URL: https://alexiamelusine.com/gente-que-ama-a-pombagira/
   - Schema: Article, Person, Organization, FAQPage, BreadcrumbList, WebPage, WebSite, Dataset
   - Sinopse: Ensaio sobre devoção, identidade, arquétipos e o que significa amar Pombagira de verdade nas tradições de Umbanda e Quimbanda. Trata de acolhimento a corpos dissidentes, lucidez interior e a recusa do moralismo.
-  - Atualizado em: 2026-10-25
+  - Atualizado em: 2026-11-26
+- **Metodologia de Pesquisa:**
+  - URL: https://alexiamelusine.com/metodologia.html
+  - Sinopse: Metodologia editorial de Alexia Melusine baseada em documentação, história oral, pesquisa acadêmica e preservação das tradições afro-brasileiras.
 - **Termos de Uso:**
   - URL: https://alexiamelusine.com/terms.html
 - **Política de Privacidade:**
@@ -99,7 +106,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://alexiamelusine.com/#author",
+      "@id": "https://pombagiras.com/#author",
       "name": "Alexia Melusine",
       "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Alexia_Melusine_Portrait_2026.png",
       "alternateName": ["Alexia Rosa de Fogo", "Alexia Luz de Ferro", "Alexia Tsan"],
@@ -131,7 +138,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
       "name": "ALEXIA MELUSINE",
       "url": "https://alexiamelusine.com/",
       "founder": {
-        "@id": "https://alexiamelusine.com/#author"
+        "@id": "https://pombagiras.com/#author"
       }
     },
     {
@@ -142,7 +149,7 @@ Alexia Melusine é pesquisadora independente, desenvolvedora web, diretora de v�
         "@id": "https://alexiamelusine.com/#organization"
       },
       "author": {
-        "@id": "https://alexiamelusine.com/#author"
+        "@id": "https://pombagiras.com/#author"
       }
     }
   ]
